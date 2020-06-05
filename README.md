@@ -14,7 +14,7 @@ We do not claim to conduct a full research project, but we aim to provide prelim
 ## Architecture
 Architecture of the current branch:
 * **hatebaseAccess** Scripts and hard-coded datasets to compile a list of racist slurs from papers, hatebase.org and Wikipedia
-* **src** :information_source: Main directory for the preprocessing and analysis :information_source:
+* **src** Main directory for the preprocessing and analysis
   * **results** :information_source: Main directory for the results of analysis scripts :information_source:
     * **classification** :information_source: Results of the classification pipeline :information_source:
     * **slurFreq** :information_source: Results of the pipeline to compute the frequency of known slurs :information_source:
