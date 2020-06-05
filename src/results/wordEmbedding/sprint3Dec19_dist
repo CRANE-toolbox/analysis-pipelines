@@ -1,0 +1,1018 @@
+Enter word or sentence (EXIT to break): 
+Word: virus  Position in vocabulary: 8468
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                           viruses		0.796287
+                                         injection		0.747909
+                                         infection		0.746389
+                                          infected		0.744549
+                                           disease		0.740689
+                                             lymph		0.709893
+                                            immune		0.704534
+                                          bacteria		0.691811
+                                           vaccine		0.680240
+                                             tumor		0.678267
+                                          diseases		0.668462
+                                              lung		0.662144
+                                            anemia		0.661405
+                                         influenza		0.661260
+                                           chronic		0.659340
+                                            asthma		0.656794
+                                            fungal		0.655578
+                                        hemorrhage		0.655072
+                                       antibiotics		0.654273
+                                          microbes		0.651540
+                                        infections		0.651157
+                                         bacterial		0.650946
+                                             ebola		0.650769
+                                           bladder		0.649722
+                                      vaccineswork		0.646159
+                                     schizophrenia		0.645353
+                                        meningitis		0.641093
+                                             cured		0.640213
+                                               flu		0.638834
+                                          inflamed		0.638259
+                                             colds		0.634934
+                                         pneumonia		0.633799
+                                         irritable		0.631469
+                                          migraine		0.629305
+                                             cells		0.629124
+                                            plague		0.626518
+                                          vaccines		0.625153
+                                          symptoms		0.624699
+                                      undetectable		0.623256
+                                               vax		0.621684
+Enter word or sentence (EXIT to break): 
+Word: corona  Position in vocabulary: 22003
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                           bacardi		0.680407
+                                          hennessy		0.650870
+                                               ale		0.646477
+                                           jameson		0.637837
+                                           bourbon		0.625941
+                                           whiskey		0.625747
+                                             henny		0.621682
+                                           bayside		0.619183
+                                              wine		0.612279
+                                            turnup		0.610443
+                                           sangria		0.606458
+                                         champagne		0.605830
+                                        drinklocal		0.604397
+                                          drinking		0.601802
+                                              ales		0.591567
+                                             lager		0.590265
+                                           drinkin		0.589789
+                                            bottle		0.587726
+                                         craftbeer		0.585498
+                                            malibu		0.584440
+                                               rum		0.584264
+                                         moonshine		0.584151
+                                           tequila		0.582556
+                                              skyy		0.580889
+                                           redbull		0.580712
+                                           martini		0.580242
+                                         tropicana		0.579883
+                                          fountain		0.579058
+                                          marlboro		0.578394
+                                               gin		0.578356
+                                             vodka		0.574933
+                                         speakeasy		0.574580
+                                          daiquiri		0.573621
+                                       winetasting		0.572911
+                                           orchard		0.570506
+                                              beer		0.567343
+                                         waterford		0.566613
+                                          birdsong		0.564030
+                                           moscato		0.563323
+                                             grove		0.562677
+Enter word or sentence (EXIT to break): 
+Word: coronavirus  Position in vocabulary: -1
+Out of dictionary word!
+Enter word or sentence (EXIT to break): 
+Word: covid  Position in vocabulary: -1
+Out of dictionary word!
+Enter word or sentence (EXIT to break): 
+Word: kungflu  Position in vocabulary: -1
+Out of dictionary word!
+Enter word or sentence (EXIT to break): 
+Word: kung  Position in vocabulary: 12045
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                           maganda		0.863755
+                                               ako		0.862164
+                                              lang		0.848770
+                                             kahit		0.844298
+                                              dito		0.840500
+                                               pag		0.838545
+                                             gusto		0.838238
+                                              nila		0.837293
+                                               ung		0.837050
+                                             ganun		0.836978
+                                             isang		0.836661
+                                                ng		0.835327
+                                               ang		0.835130
+                                              ikaw		0.834039
+                                            talaga		0.832583
+                                              sayo		0.832336
+                                            ganyan		0.830851
+                                            namang		0.829179
+                                             buhay		0.826996
+                                              kasi		0.826929
+                                         kailangan		0.826390
+                                             pwede		0.825985
+                                             tapos		0.825031
+                                              yung		0.824680
+                                               yun		0.824517
+                                             saken		0.824430
+                                             sakin		0.823571
+                                            sarili		0.821334
+                                              kaya		0.820334
+                                               sya		0.819036
+                                             bakit		0.818942
+                                              pala		0.818895
+                                              ayaw		0.818722
+                                                sa		0.818340
+                                            naging		0.817354
+                                               nag		0.817247
+                                            parang		0.816754
+                                             naman		0.816255
+                                            nakita		0.816096
+                                            kilala		0.815747
+Enter word or sentence (EXIT to break): 
+Word: wuflu  Position in vocabulary: -1
+Out of dictionary word!
+Enter word or sentence (EXIT to break): 
+Word: infection  Position in vocabulary: 8140
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                            asthma		0.811816
+                                         pneumonia		0.797017
+                                        infections		0.792468
+                                              lung		0.777787
+                                         bacterial		0.765685
+                                             sinus		0.760546
+                                           disease		0.759767
+                                          symptoms		0.759136
+                                               flu		0.758816
+                                         influenza		0.756507
+                                       antibiotics		0.747796
+                                           surgery		0.747092
+                                             virus		0.746389
+                                            nausea		0.746154
+                                           chronic		0.743865
+                                       respiratory		0.743070
+                                          migraine		0.742537
+                                          swelling		0.740717
+                                      inflammation		0.738430
+                                            spinal		0.734380
+                                           allergy		0.733981
+                                           vaccine		0.732246
+                                   hospitalization		0.731696
+                                         arthritis		0.731311
+                                          outbreak		0.729089
+                                             ulcer		0.723879
+                                         migraines		0.723725
+                                            anemia		0.722532
+                                           thyroid		0.721849
+                                        bronchitis		0.720737
+                                              acne		0.716543
+                                        hemorrhage		0.714602
+                                             colds		0.713154
+                                             strep		0.712388
+                                        meningitis		0.711924
+                                         abdominal		0.711619
+                                             lupus		0.711120
+                                             lymph		0.710293
+                                         untreated		0.704909
+                                              meds		0.703990
+Enter word or sentence (EXIT to break): 
+Word: infecting  Position in vocabulary: 51455
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                          infected		0.620179
+                                         homicidal		0.584287
+                                              gmos		0.580311
+                                      vaccineswork		0.579931
+                                          rantings		0.575221
+                                      anti-vaxxers		0.567791
+                                         endangers		0.566827
+                                          diseased		0.564603
+                                        discusting		0.563122
+                                         parasites		0.561593
+                                         epileptic		0.553886
+                                          epidemic		0.553414
+                                          virulent		0.551795
+                                          injected		0.551778
+                                          steroids		0.549880
+                                            infect		0.549721
+                                         pathogens		0.549451
+                                        dissenters		0.547656
+                                          syphilis		0.546225
+                                             polio		0.545731
+                                         victimize		0.541620
+                                         parasitic		0.539610
+                                     pseudoscience		0.538339
+                                         cancerous		0.536269
+                                        nauseating		0.535299
+                                          infested		0.533493
+                                            fevers		0.529661
+                                        gaslighted		0.527940
+                                        eradicated		0.526072
+                                          subhuman		0.522983
+                                             virus		0.522817
+                                       exacerbates		0.521903
+                                       trumpanzees		0.521026
+                                       mccarthyism		0.520735
+                                              bile		0.520607
+                                            opiate		0.520298
+                                         imbecilic		0.518473
+                                      categorizing		0.517389
+                                         weaklings		0.515953
+                                          inhumane		0.515674
+Enter word or sentence (EXIT to break): 
+Word: disease  Position in vocabulary: 3474
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                          diseases		0.876672
+                                           chronic		0.831626
+                                      inflammation		0.822619
+                                          diabetes		0.819018
+                                        autoimmune		0.805297
+                                          disorder		0.782977
+                                         disorders		0.778465
+                                         alzheimer		0.770836
+                                              lung		0.770664
+                                     schizophrenia		0.769355
+                                           obesity		0.769177
+                                         treatable		0.766657
+                                      fibromyalgia		0.765847
+                                          symptoms		0.763549
+                                    cardiovascular		0.763204
+                                        infections		0.760825
+                                           vaccine		0.760818
+                                         infection		0.759767
+                                             lupus		0.758231
+                                             tumor		0.755161
+                                            anemia		0.754922
+                                      neurological		0.754178
+                                      hypertension		0.753293
+                                         diagnosis		0.751706
+                                            artery		0.751685
+                                         arthritis		0.749907
+                                   hospitalization		0.749044
+                                        meningitis		0.743086
+                                       gallbladder		0.743054
+                                         bacterial		0.742149
+                                            asthma		0.741811
+                                           illness		0.741652
+                                             virus		0.740689
+                                      osteoporosis		0.738796
+                                         incurable		0.738678
+                                           ailment		0.737599
+                                              lyme		0.735172
+                                           thyroid		0.735150
+                                             cured		0.735145
+                                        recurrence		0.727112
+Enter word or sentence (EXIT to break): 
+Word: bat  Position in vocabulary: 3739
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                               mth		0.626496
+                                          rideable		0.624173
+                                              bats		0.608250
+                                            parrot		0.604639
+                                           flyable		0.604337
+                                             galet		0.601161
+                                               fly		0.588597
+                                             artic		0.582255
+                                               nrf		0.575137
+                                             shrew		0.573774
+                                             broom		0.570629
+                                               fnr		0.563158
+                                         reindeers		0.561057
+                                            dragon		0.559831
+                                                nr		0.558570
+                                           clubbed		0.556239
+                                               qsp		0.551068
+                                               snm		0.550099
+                                            potion		0.540897
+                                           giraffe		0.540288
+                                              haye		0.538077
+                                             frost		0.537512
+                                           potions		0.535594
+                                     adoptmetrades		0.532767
+                                     adoptmeoffers		0.528190
+                                               dai		0.525764
+                                          bludgeon		0.522895
+                                               bee		0.519344
+                                              crow		0.517987
+                                               hen		0.517480
+                                       adoptmepets		0.516833
+                                           penguin		0.515899
+                                               vib		0.514563
+                                               nfr		0.513505
+                                              fock		0.513414
+                                            arctic		0.512839
+                                              neon		0.511862
+                                        hoverboard		0.509886
+                                             shiba		0.509235
+                                               vet		0.509073
+Enter word or sentence (EXIT to break): 
+Word: bats  Position in vocabulary: 14190
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                              bees		0.657976
+                                             foxes		0.651039
+                                            wombat		0.644141
+                                               bat		0.608250
+                                             birds		0.600619
+                                            insect		0.599153
+                                            snakes		0.596423
+                                           spiders		0.580628
+                                          giraffes		0.580117
+                                           clubbed		0.579895
+                                          reptiles		0.579168
+                                           monkeys		0.560030
+                                           insects		0.553958
+                                           lizards		0.553231
+                                             tiger		0.548220
+                                           hunters		0.547222
+                                             pucks		0.543211
+                                           rabbits		0.543204
+                                            robins		0.542226
+                                             moose		0.540055
+                                          penguins		0.537974
+                                         squirrels		0.536162
+                                             nests		0.536021
+                                            hooves		0.532461
+                                         battering		0.532100
+                                            hounds		0.531614
+                                            lizard		0.529742
+                                            sharks		0.529334
+                                             koala		0.527785
+                                          reindeer		0.527172
+                                            barked		0.526607
+                                           mammals		0.526476
+                                           pigeons		0.524300
+                                           species		0.521976
+                                            whales		0.520337
+                                            arctic		0.519605
+                                               pet		0.518459
+                                       cockroaches		0.518122
+                                         reindeers		0.517214
+                                          mosquito		0.516694
+Enter word or sentence (EXIT to break): 
+Word: pangolin  Position in vocabulary: -1
+Out of dictionary word!
+Enter word or sentence (EXIT to break): 
+Word: pangolins  Position in vocabulary: -1
+Out of dictionary word!
+Enter word or sentence (EXIT to break): 
+Word: quarantine  Position in vocabulary: 43971
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                          infested		0.528148
+                                          banished		0.516868
+                                       bludgeoning		0.508865
+                                            thrown		0.508688
+                                             fleas		0.501087
+                                         predators		0.496624
+                                        prosecuted		0.492974
+                                        sterilized		0.490130
+                                             virus		0.488868
+                                            banned		0.487589
+                                            filthy		0.480529
+                                          barbaric		0.479727
+                                             germs		0.479606
+                                       permanently		0.479503
+                                            bodies		0.479369
+                                           sodding		0.478137
+                                        euthanized		0.476400
+                                            smelly		0.475048
+                                           puritan		0.475024
+                                         penalised		0.474492
+                                         illegally		0.473049
+                                           treated		0.472923
+                                       defenceless		0.472252
+                                            maimed		0.471534
+                                         castrated		0.471117
+                                         summarily		0.470364
+                                           advised		0.468367
+                                             rspca		0.467204
+                                       chickenshit		0.465983
+                                           ectopic		0.465857
+                                        altogether		0.465010
+                                       defenseless		0.463930
+                                         subjected		0.463919
+                                          bludgeon		0.461590
+                                             goyim		0.460802
+                                         inundated		0.460619
+                                          enraging		0.459970
+                                           removed		0.459147
+                                           flogged		0.458681
+                                      exterminated		0.458154
+Enter word or sentence (EXIT to break): 
+Word: china  Position in vocabulary: 1018
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                            chinas		0.822102
+                                              iran		0.780875
+                                         sanctions		0.766828
+                                          xinjiang		0.765158
+                                               ccp		0.756501
+                                           chinese		0.738907
+                                             libya		0.726619
+                                            russia		0.724523
+                                              dprk		0.714881
+                                               prc		0.714034
+                                           uighurs		0.713704
+                                           rouhani		0.711615
+                                           erdogan		0.705891
+                                            uighur		0.705809
+                                           germany		0.705385
+                                            france		0.696555
+                                            taiwan		0.695105
+                                           imports		0.693027
+                                         countries		0.682703
+                                             syria		0.682338
+                                              nato		0.682235
+                                           uyghurs		0.680619
+                                           mideast		0.678989
+                                           exports		0.677953
+                                        militarily		0.671368
+                                         venezuela		0.669925
+                                           lebanon		0.669402
+                                            syrian		0.667585
+                                            saudis		0.665436
+                                                hk		0.665321
+                                            regime		0.664865
+                                           tariffs		0.663362
+                                             irans		0.663016
+                                        nordstream		0.662815
+                                            haftar		0.662115
+                                            aramco		0.661100
+                                            uyghur		0.660850
+                                      iraqprotests		0.660374
+                                             saudi		0.659668
+                                           chinazi		0.659193
+Enter word or sentence (EXIT to break): 
+Word: chinese  Position in vocabulary: 1755
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                             china		0.738907
+                                         taiwanese		0.684371
+                                            chinas		0.667288
+                                          japanese		0.651981
+                                        vietnamese		0.648882
+                                          xinjiang		0.642860
+                                            german		0.638653
+                                           uighurs		0.636654
+                                            taiwan		0.635947
+                                           turkish		0.630581
+                                            uighur		0.627364
+                                         cantonese		0.621436
+                                          shanghai		0.611324
+                                        internment		0.609300
+                                            french		0.599444
+                                           british		0.597334
+                                           koreans		0.595400
+                                               ccp		0.594832
+                                           germany		0.594801
+                                           italian		0.593606
+                                          tibetans		0.591951
+                                            korean		0.590976
+                                             japan		0.586490
+                                           uyghurs		0.584374
+                                            turkey		0.579063
+                                            france		0.577220
+                                           beijing		0.576513
+                                          canadian		0.575285
+                                concentrationcamps		0.570876
+                                      re-education		0.570706
+                             humanrightsviolations		0.570263
+                                            syrian		0.569518
+                                         factories		0.568061
+                                           swedish		0.566163
+                                             asian		0.564931
+                                            uyghur		0.564530
+                                          lebanese		0.563439
+                                           mexican		0.562861
+                                             saudi		0.562795
+                                            yemeni		0.561920
+Enter word or sentence (EXIT to break): 
+Word: asian  Position in vocabulary: 2315
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                            latina		0.628414
+                                          hispanic		0.626853
+                                            korean		0.618512
+                                            asians		0.612446
+                                           african		0.612266
+                                       masturbates		0.611380
+                                             busty		0.600423
+                                          japanese		0.599331
+                                        sweetheart		0.588942
+                                         caucasian		0.586746
+                                           shivani		0.585083
+                                           latinas		0.572973
+                                           amature		0.568620
+                                           chinese		0.564931
+                                          jamaican		0.564131
+                                           amateur		0.564030
+                                             latin		0.554926
+                                       interracial		0.553961
+                                          pornstar		0.551980
+                                              desi		0.551070
+                                          brunette		0.551006
+                                             south		0.548413
+                                            africa		0.544544
+                                        heartthrob		0.543073
+                                          foursome		0.540458
+                                           mexican		0.539747
+                                mmkalwayskeepgoing		0.538450
+                                              milf		0.537243
+                                      standrewsday		0.536597
+                                          filipino		0.534612
+                                           brothel		0.533976
+                                              porn		0.532876
+                                          modestly		0.532854
+                                         powerpuff		0.532183
+                                             ebony		0.531313
+                                              teen		0.530375
+                                           lesbian		0.527921
+                                      masturbating		0.527640
+                                         videochat		0.525833
+                                            blonde		0.523969
+Enter word or sentence (EXIT to break): 
+Word: asia  Position in vocabulary: 4924
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                         indonesia		0.798828
+                                            africa		0.758979
+                                         singapore		0.741833
+                                              gulf		0.733230
+                                            europe		0.723521
+                                          malaysia		0.722180
+                                            france		0.708373
+                                          thailand		0.707012
+                                             japan		0.701515
+                                            region		0.693741
+                                       switzerland		0.688887
+                                             south		0.688302
+                                            sweden		0.678517
+                                            norway		0.676716
+                                            greece		0.669143
+                                         peninsula		0.669115
+                                            canada		0.663476
+                                       philippines		0.661915
+                                           belgium		0.656600
+                                            taiwan		0.654230
+                                             china		0.653986
+                                         southeast		0.652761
+                                        azerbaijan		0.647279
+                                           germany		0.645040
+                                             sudan		0.644861
+                                             nepal		0.642119
+                                             coast		0.639429
+                                          bulgaria		0.638423
+                                           oceania		0.638342
+                                              east		0.635226
+                                           myanmar		0.633522
+                                           tunisia		0.628878
+                                          tanzania		0.628367
+                                              laos		0.626612
+                                             korea		0.625568
+                                          province		0.623726
+                                         australia		0.622655
+                                               uae		0.621782
+                                           denmark		0.620636
+                                          ethiopia		0.617170
+Enter word or sentence (EXIT to break): 
+Word: chingchong  Position in vocabulary: -1
+Out of dictionary word!
+Enter word or sentence (EXIT to break): 
+Word: wuhan  Position in vocabulary: -1
+Out of dictionary word!
+Enter word or sentence (EXIT to break): 
+Word: chink  Position in vocabulary: 58141
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                       implication		0.655504
+                                        pejorative		0.618301
+                                         adjective		0.583782
+                                            phrase		0.574559
+                                          singular		0.571524
+                                        dogwhistle		0.566517
+                                             piece		0.559863
+                                       contraption		0.555010
+                                           analogy		0.553982
+                                    characteristic		0.547617
+                                          anecdote		0.534230
+                                             idiom		0.533727
+                                        definition		0.532926
+                                            notion		0.532108
+                                           plainly		0.531573
+                                            symbol		0.530336
+                                          verbiage		0.528231
+                                         euphemism		0.526055
+                                   heteronormative		0.525828
+                                  incomprehensible		0.521752
+                                            merely		0.518273
+                                             trope		0.515600
+                                            theory		0.514079
+                                           bluntly		0.512940
+                                           element		0.512415
+                                          artifact		0.512191
+                                             lends		0.511555
+                                       revisionism		0.510985
+                                          oxymoron		0.509775
+                                    generalization		0.506653
+                                        dictionary		0.506344
+                                              such		0.504492
+                                             woman		0.504008
+                                             vowel		0.503911
+                                           example		0.503725
+                                               sqq		0.503064
+                                         construct		0.502903
+                                       sapiosexual		0.500536
+                                        genderless		0.500090
+                                          smartass		0.498720
+Enter word or sentence (EXIT to break): 
+Word: chinaman  Position in vocabulary: -1
+Out of dictionary word!
+Enter word or sentence (EXIT to break): 
+Word: jap  Position in vocabulary: 26074
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                               tgk		0.783529
+                                              baru		0.773601
+                                             cukup		0.770569
+                                               sbb		0.763815
+                                            sampai		0.762410
+                                               aja		0.760766
+                                             takut		0.752978
+                                               tak		0.752939
+                                               aku		0.751817
+                                            sorang		0.749919
+                                               apa		0.748170
+                                             dalam		0.743577
+                                             lepas		0.742672
+                                             pulak		0.742382
+                                              tahu		0.742373
+                                               dah		0.740727
+                                               lah		0.740511
+                                             kerja		0.739299
+                                              buat		0.738744
+                                             dekat		0.737637
+                                             sikit		0.737269
+                                            melayu		0.736637
+                                            mintak		0.735795
+                                            nampak		0.734391
+                                            pernah		0.733126
+                                             nanti		0.731611
+                                            tengok		0.729882
+                                             suruh		0.729737
+                                             balik		0.729439
+                                              kene		0.728798
+                                              dulu		0.728388
+                                               nak		0.728080
+                                             betul		0.727763
+                                             kenal		0.725845
+                                             jumpa		0.725633
+                                            mereka		0.725573
+                                              tadi		0.723308
+                                             kawan		0.722333
+                                               dia		0.722151
+                                             sudah		0.721702
+Enter word or sentence (EXIT to break): 
+Word: slant  Position in vocabulary: 29772
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                           handoff		0.653928
+                                              fant		0.633277
+                                         downfield		0.619239
+                                              punt		0.612815
+                                            kicker		0.612701
+                                           endzone		0.612659
+                                            punter		0.608685
+                                             -yard		0.607324
+                                           yardage		0.606312
+                                         touchdown		0.604196
+                                          receiver		0.602817
+                                          returner		0.599794
+                                          reciever		0.593740
+                                                td		0.590816
+                                            lazard		0.590616
+                                             oline		0.585281
+                                           novsten		0.585093
+                                           edelman		0.584216
+                                          clevspit		0.582965
+                                          brissett		0.579093
+                                         offensive		0.578790
+                                           upfield		0.575065
+                                           dobbins		0.574854
+                                            rusher		0.574379
+                                          fichtner		0.573946
+                                         backfield		0.573944
+                                           darnold		0.571751
+                                           gesicki		0.571708
+                                                yd		0.569994
+                                                qb		0.569443
+                                             field		0.565107
+                                               rpo		0.564252
+                                                wr		0.561224
+                                             yards		0.560855
+                                           goedert		0.559998
+                                             guice		0.556080
+                                           punting		0.555108
+                                           oakvskc		0.554862
+                                           timeout		0.553496
+                                            fumble		0.553165
+Enter word or sentence (EXIT to break): 
+Word: immigration  Position in vocabulary: 4154
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                       legislation		0.799972
+                                        immigrants		0.792935
+                                      undocumented		0.759701
+                                            reform		0.755416
+                                           enacted		0.753891
+                                       protections		0.752228
+                                            policy		0.738928
+                                       deportation		0.736022
+                                          illegals		0.728500
+                                          policies		0.720787
+                                            repeal		0.720591
+                                              daca		0.718772
+                                     incarceration		0.717747
+                                       governments		0.712367
+                                              laws		0.711507
+                                         obamacare		0.708843
+                                               gov		0.707910
+                                          stricter		0.707286
+                                           federal		0.706220
+                                          citizens		0.700490
+                                           amnesty		0.700283
+                                        government		0.699864
+                                           illegal		0.698356
+                                            unions		0.697379
+                                             legal		0.693678
+                                          migrants		0.692642
+                                          taxation		0.687889
+                                       regulations		0.687750
+                                         deporting		0.684651
+                                         redlining		0.680711
+                                       legislature		0.680515
+                                      homelessness		0.676409
+                                           migrant		0.674940
+                                      underfunding		0.673789
+                                         repealing		0.672977
+                                       legislators		0.670984
+                                            fiscal		0.666542
+                                          economic		0.665624
+                                      confiscation		0.664172
+                                          repealed		0.663818
+Enter word or sentence (EXIT to break): 
+Word: immigrant  Position in vocabulary: 8965
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                           migrant		0.765827
+                                      undocumented		0.747696
+                                        immigrants		0.714733
+                                           fleeing		0.686230
+                                           illegal		0.682954
+                                       deportation		0.672731
+                                           refugee		0.659656
+                                       immigration		0.657620
+                                       naturalized		0.655537
+                                          migrants		0.653739
+                                          american		0.649391
+                                       palestinian		0.639491
+                                         deporting		0.636835
+                                         murdering		0.630811
+                                          abortion		0.630805
+                                          illegals		0.628531
+                                       imprisoning		0.626101
+                                          deported		0.625659
+                                        indigenous		0.616980
+                                         apartheid		0.616085
+                                          mexicans		0.611577
+                                         illegally		0.610541
+                                        detainment		0.608107
+                                            jewish		0.606670
+                                          hispanic		0.603281
+                                        occupation		0.600260
+                                         americans		0.598518
+                                          murdered		0.597896
+                                     criminalizing		0.596788
+                                            unborn		0.596640
+                                          refugees		0.596109
+                                        foreigners		0.594912
+                                            antifa		0.592760
+                                            blacks		0.591958
+                                            latinx		0.591593
+                                            asylum		0.591235
+                                            native		0.589041
+                                     incarceration		0.588873
+                                               poc		0.588420
+                                        venezuelan		0.588350
+Enter word or sentence (EXIT to break): 
+Word: immigrants  Position in vocabulary: 4406
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                          migrants		0.831138
+                                          illegals		0.821574
+                                        foreigners		0.821046
+                                       immigration		0.792935
+                                          citizens		0.780434
+                                           illegal		0.777865
+                                          refugees		0.767459
+                                      undocumented		0.762969
+                                      bangladeshis		0.742562
+                                         illegally		0.731098
+                                        minorities		0.728456
+                                         americans		0.721070
+                                         countries		0.720292
+                                       bangladeshi		0.718993
+                                          deported		0.715073
+                                         immigrant		0.714733
+                                              laws		0.707932
+                                            deport		0.699462
+                                         deporting		0.688428
+                                             visas		0.686580
+                                      californians		0.686401
+                                         rohingyas		0.685772
+                                        population		0.675860
+                                           indians		0.675409
+                                       deportation		0.674424
+                                 african-americans		0.670153
+                                            sharia		0.669854
+                                          minority		0.667896
+                                    discriminatory		0.665478
+                                            asylum		0.661183
+                                         apartheid		0.659032
+                                           enacted		0.659029
+                                           amnesty		0.658230
+                                         immigrate		0.657318
+                                         criminals		0.656697
+                                       citizenship		0.655204
+                                      neighbouring		0.654447
+                                       zimbabweans		0.649556
+                                           muslims		0.648470
+                                        persecuted		0.647643
+Enter word or sentence (EXIT to break): 
+Word: country  Position in vocabulary: 362
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                            nation		0.750296
+                                         democracy		0.734298
+                                           america		0.708016
+                                      dictatorship		0.701435
+                                          shithole		0.695726
+                                         countries		0.685521
+                                          citizens		0.674463
+                                        motherland		0.660217
+                                          countrys		0.659919
+                                          dividing		0.653480
+                                          freedoms		0.652916
+                                           nations		0.647184
+                                         continent		0.646803
+                                        foreigners		0.644337
+                                        immigrants		0.642147
+                                         shitholes		0.635219
+                                           borders		0.635096
+                                          republic		0.631475
+                                         homelands		0.631059
+                                         sovereign		0.628738
+                                        communists		0.627767
+                                        government		0.624260
+                                          minority		0.624081
+                                       forefathers		0.623133
+                                           islamic		0.623090
+                                          hellhole		0.621053
+                                     overpopulated		0.619877
+                                         civilized		0.618278
+                                       sovereignty		0.618132
+                                       politicians		0.617006
+                                          dictator		0.615881
+                                           rascist		0.613982
+                                          politics		0.612301
+                                         dictators		0.611426
+                                           secular		0.609737
+                                        destroying		0.608822
+                                        politicans		0.606603
+                                            govern		0.605884
+                                            muslim		0.604659
+                                         barbarism		0.604217
+Enter word or sentence (EXIT to break): 
+Word: disgusting  Position in vocabulary: 1278
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                         sickening		0.870300
+                                              vile		0.858708
+                                        despicable		0.814974
+                                       disgraceful		0.809592
+                                          pathetic		0.802524
+                                           hateful		0.774895
+                                         repulsive		0.769821
+                                          shameful		0.768861
+                                         abhorrent		0.755370
+                                      embarrassing		0.720670
+                                     disrespectful		0.719830
+                                          horrible		0.719079
+                                        ridiculous		0.715657
+                                            stupid		0.713725
+                                             gross		0.707743
+                                              scum		0.702369
+                                          ignorant		0.700292
+                                          disgrace		0.700286
+                                      manipulative		0.693151
+                                         appalling		0.692941
+                                        delusional		0.692856
+                                        outrageous		0.692849
+                                          deranged		0.692744
+                                          retarded		0.689314
+                                         classless		0.688959
+                                          horrific		0.686620
+                                           pitiful		0.684857
+                                         unethical		0.682391
+                                     reprehensible		0.682362
+                                      hypocritical		0.681804
+                                        deplorable		0.679447
+                                      unacceptable		0.677934
+                                            scummy		0.677186
+                                       infuriating		0.676844
+                                     irresponsible		0.675712
+                                          childish		0.675448
+                                       insensitive		0.674445
+                                    unprofessional		0.673628
+                                          inhumane		0.673495
+                                      misogynistic		0.673083
+Enter word or sentence (EXIT to break): 
+Word: alien  Position in vocabulary: 4756
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                            aliens		0.681271
+                                            spider		0.654621
+                                        terminator		0.651488
+                                   anthropomorphic		0.651225
+                                              wasp		0.650349
+                                          nephilim		0.640544
+                                          monsters		0.635423
+                                         armagedon		0.627809
+                                         spaceship		0.622795
+                                      independance		0.619551
+                                         dinosaurs		0.614120
+                                              ogre		0.609280
+                                            cyborg		0.607287
+                                            tulips		0.604885
+                                  extraterrestrial		0.600232
+                                      stormtrooper		0.599165
+                                             dwarf		0.592373
+                                              hutt		0.591864
+                                          skeleton		0.582229
+                                          galactic		0.581911
+                                          jurassic		0.578805
+                                           avenger		0.578247
+                                          vampires		0.577942
+                                            mutant		0.574617
+                                          twilight		0.573463
+                                              wolf		0.573228
+                                            lizard		0.573155
+                                           cyclops		0.572211
+                                            batman		0.568790
+                                           hunters		0.567953
+                                            albino		0.566726
+                                               ufo		0.565248
+                                            kenner		0.563864
+                                            cosmic		0.562002
+                                            goblin		0.560736
+                                          superman		0.558670
+                                            zombie		0.558624
+                                             clone		0.556683
+                                           revnant		0.556514
+                                          sentient		0.555375
+Enter word or sentence (EXIT to break): 

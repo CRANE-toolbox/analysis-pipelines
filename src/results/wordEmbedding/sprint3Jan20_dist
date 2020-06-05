@@ -1,0 +1,1186 @@
+Enter word or sentence (EXIT to break): 
+Word: virus  Position in vocabulary: 1106
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                          outbreak		0.903256
+                                            corona		0.889211
+                                              ncov		0.876744
+                                       coronavirus		0.872366
+                                             wuhan		0.863849
+                                              sars		0.846362
+                                  wuhancoronavirus		0.839422
+                                    coronaoutbreak		0.839318
+                                         pneumonia		0.831553
+                                          wuhanflu		0.830945
+                                        chinavirus		0.823267
+                                          infected		0.818439
+                                      coronarvirus		0.817872
+                                  novelcoronavirus		0.810414
+                                        wuhanvirus		0.806071
+                                             -ncov		0.806037
+                               coronavirusoutbreak		0.802741
+                                  wuhancoronovirus		0.801776
+                                     wuhanoutbreak		0.797558
+                                         wuhansars		0.797280
+                                         sars-like		0.794539
+                                          pandemic		0.790588
+                                             hubei		0.788313
+                                    wuhanpneumonia		0.787374
+                                             ebola		0.786521
+                          wuhancoronavirusoutbreak		0.784227
+                                           viruses		0.784101
+                                           mutates		0.781447
+                                               cdc		0.779267
+                                     coronavirusph		0.769333
+                                          epidemic		0.768502
+                                     coronaviruses		0.768279
+                                 coronaviruscanada		0.768151
+                                    chinapneumonia		0.766958
+                                    human-to-human		0.764909
+                                         influenza		0.763402
+                                         bioweapon		0.761340
+                                         epicentre		0.761057
+                                         infection		0.760146
+                                     wuhanlockdown		0.759200
+Enter word or sentence (EXIT to break): 
+Word: corona  Position in vocabulary: 2919
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                             virus		0.889211
+                                              ncov		0.800687
+                                          outbreak		0.798860
+                                             wuhan		0.785730
+                                          infected		0.773512
+                                       coronavirus		0.771633
+                                              sars		0.771393
+                                    human-to-human		0.770042
+                                    coronaoutbreak		0.766120
+                                          wuhanflu		0.760787
+                                         sars-like		0.757858
+                                        wuhanvirus		0.752877
+                                  wuhancoronavirus		0.752345
+                                             -ncov		0.749583
+                                         pneumonia		0.748166
+                                         influenza		0.746926
+                                      coronarvirus		0.742918
+                                 coronaviruscanada		0.731283
+                                  novelcoronavirus		0.727531
+                                               cdc		0.723429
+                                        chinavirus		0.722416
+                                             ebola		0.720516
+                                           coronas		0.719572
+                                       viruscorona		0.718441
+                                         outbreaks		0.718141
+                                         wuhansars		0.716446
+                                  wuhancoronovirus		0.715685
+                               coronavirusoutbreak		0.713947
+                                     wuhanlockdown		0.710549
+                                           viruses		0.710139
+                                     coronaviruses		0.706905
+                                      transmission		0.702854
+                                     wuhanoutbreak		0.702695
+                                             hubei		0.701956
+                                    wuhanpneumonia		0.698866
+                                  chinacoronavirus		0.697858
+                                        infections		0.695625
+                                     coronavirusph		0.694744
+                                         epicenter		0.693484
+                          wuhancoronavirusoutbreak		0.693154
+Enter word or sentence (EXIT to break): 
+Word: coronavirus  Position in vocabulary: 826
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                          outbreak		0.931635
+                                  wuhancoronavirus		0.882973
+                                              ncov		0.873110
+                                    coronaoutbreak		0.872558
+                                             virus		0.872366
+                                             wuhan		0.867372
+                                      coronarvirus		0.859004
+                               coronavirusoutbreak		0.858465
+                                             -ncov		0.852744
+                                               cdc		0.842957
+                                        wuhanvirus		0.835389
+                                  novelcoronavirus		0.833116
+                                    wuhanpneumonia		0.828775
+                                        chinavirus		0.828346
+                                             pheic		0.817938
+                                          wuhanflu		0.808339
+                                         wuhansars		0.805097
+                                 coronaviruscanada		0.801319
+                                         pneumonia		0.800926
+                                              sars		0.800305
+                                       viruscorona		0.799614
+                                     wuhanoutbreak		0.798653
+                                     coronarovirus		0.795098
+                                  person-to-person		0.791584
+                                             hubei		0.791303
+                                    chinapneumonia		0.789886
+                                         sars-like		0.789749
+                                       coronovirus		0.786833
+                                  coronaviruschina		0.784207
+                                         epicentre		0.784204
+                                          pandemic		0.780630
+                                  wuhancoronovirus		0.779666
+                                    human-to-human		0.775114
+                                     coronavirusuk		0.771665
+                                            corona		0.771633
+                                       quarantines		0.766035
+                          wuhancoronavirusoutbreak		0.766025
+                                         outbreaks		0.762803
+                                       caronavirus		0.758821
+                                     wuhanlockdown		0.758720
+Enter word or sentence (EXIT to break): 
+Word: covid  Position in vocabulary: -1
+Out of dictionary word!
+Enter word or sentence (EXIT to break): 
+Word: kungflu  Position in vocabulary: -1
+Out of dictionary word!
+Enter word or sentence (EXIT to break): 
+Word: kung  Position in vocabulary: 11487
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                                ng		0.826471
+                                               nyo		0.816181
+                                              diba		0.814450
+                                              yung		0.811442
+                                               yun		0.810961
+                                              kasi		0.807632
+                                              nila		0.805743
+                                               mga		0.805545
+                                               nga		0.803447
+                                            ganito		0.803170
+                                               jud		0.800562
+                                              lang		0.798830
+                                               ang		0.798025
+                                               rin		0.797731
+                                             naman		0.797166
+                                            talaga		0.793530
+                                                sa		0.793519
+                                             bigla		0.792302
+                                              pero		0.791452
+                                             kapag		0.791151
+                                              dito		0.789163
+                                             anong		0.788240
+                                              ayaw		0.787559
+                                              niya		0.786888
+                                             gusto		0.786577
+                                               yon		0.785887
+                                              kaya		0.784401
+                                               daw		0.783724
+                                              sila		0.783303
+                                             namin		0.783253
+                                               yan		0.782543
+                                               ako		0.782296
+                                              pala		0.782280
+                                              nang		0.781865
+                                            ngayon		0.781403
+                                             paano		0.781043
+                                             sakin		0.779607
+                                              niyo		0.779192
+                                            tayong		0.778632
+                                              baka		0.777606
+Enter word or sentence (EXIT to break): 
+Word: wuflu  Position in vocabulary: 68800
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                    coronaoutbreak		0.756303
+                                          zoonotic		0.747482
+                                  chinacoronavirus		0.746560
+                                              mers		0.740784
+                                      coronarvirus		0.738379
+                                          outbreak		0.730229
+                                  novelcoronavirus		0.728366
+                                             wuhan		0.727721
+                                          mutating		0.726430
+                                             virus		0.724068
+                                         sars-like		0.723738
+                                     wuhanlockdown		0.723262
+                                     wuhanoutbreak		0.715468
+                                    chinapneumonia		0.714997
+                                              sars		0.713672
+                                          wuhanflu		0.708951
+                                          infected		0.703774
+                                         bioweapon		0.698584
+                                         pathogens		0.698027
+                                     coronaviruses		0.697378
+                                           mutates		0.695321
+                                        wuhanvirus		0.694864
+                                         pneumonia		0.691184
+                                              ncov		0.689722
+                               coronavirusoutbreak		0.689351
+                                         wuhansars		0.689239
+                                           viruses		0.688369
+                                    wuhanpneumonia		0.688153
+                                  wuhancoronavirus		0.687425
+                                        infectious		0.686945
+                                 coronaviruscanada		0.681592
+                          wuhancoronavirusoutbreak		0.681138
+                                  wuhancoronovirus		0.678508
+                                         outbreaks		0.677099
+                                        infections		0.676092
+                                            mutate		0.675948
+                                  coronaviruschina		0.674528
+                                         influenza		0.673532
+                                         epicentre		0.673196
+                                          pandemic		0.670506
+Enter word or sentence (EXIT to break): 
+Word: infection  Position in vocabulary: 6567
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                         pneumonia		0.861855
+                                        infections		0.855948
+                                         influenza		0.837664
+                                          symptoms		0.800739
+                                           disease		0.799605
+                                               flu		0.783044
+                                           measles		0.776904
+                                          infected		0.767553
+                                       respiratory		0.764611
+                                               hiv		0.762785
+                                          diseases		0.761378
+                                             virus		0.760146
+                                            strain		0.758554
+                                        infectious		0.757959
+                                           vaccine		0.755010
+                                      asymptomatic		0.752410
+                                       antibiotics		0.750881
+                                             strep		0.750825
+                                           viruses		0.748324
+                                          flu-like		0.746728
+                                        chickenpox		0.745493
+                                        autoimmune		0.745097
+                                              lung		0.741036
+                                         bacterial		0.739808
+                                        bronchitis		0.736929
+                                              mrsa		0.734203
+                                          bacteria		0.734020
+                                         treatable		0.731490
+                                              sars		0.729084
+                                          epidemic		0.727901
+                                            dengue		0.727325
+                                             sinus		0.724847
+                                               hpv		0.724806
+                                      complication		0.724741
+                                        antibiotic		0.723334
+                                             acute		0.722388
+                                         norovirus		0.720698
+                                            fevers		0.713010
+                                       symptomatic		0.712866
+                                           ovarian		0.712629
+Enter word or sentence (EXIT to break): 
+Word: infecting  Position in vocabulary: 28727
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                          infected		0.766729
+                                      prayforwuhan		0.716492
+                                           viruses		0.698893
+                                       quarantined		0.689459
+                                             virus		0.678613
+                                     wuhanlockdown		0.677349
+                                            infect		0.673851
+                                          wuhanflu		0.669167
+                                       quarantines		0.664171
+                                           mutates		0.660422
+                                     coronaviruses		0.658359
+                                             wuhan		0.654781
+                          wuhancoronavirusoutbreak		0.653455
+                                       coranavirus		0.652382
+                                  chinacoronavirus		0.650561
+                                        quarantine		0.650364
+                                  wuhancoronovirus		0.647223
+                                          mutating		0.647047
+                                      coronarvirus		0.646292
+                                         lockdowns		0.643881
+                                         epidemics		0.643723
+                                           infects		0.642601
+                                  novelcoronavirus		0.641142
+                                      quarantining		0.640043
+                                    coronaoutbreak		0.639997
+                                            fevers		0.639018
+                                              ncov		0.638980
+                                  wuhancoronavirus		0.638762
+                               coronavirusoutbreak		0.638083
+                                          diseases		0.637913
+                                            corona		0.637677
+                                        wuhanvirus		0.637629
+                                         sars-like		0.637418
+                                        chinavirus		0.637170
+                                    chinapneumonia		0.634151
+                                     coronavirusuk		0.632477
+                                    wuhanpneumonia		0.629124
+                                        contagious		0.627230
+                                         pneumonia		0.626918
+                                          outbreak		0.625849
+Enter word or sentence (EXIT to break): 
+Word: disease  Position in vocabulary: 2763
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                          diseases		0.889027
+                                           measles		0.813096
+                                         illnesses		0.811938
+                                         infection		0.799605
+                                              lung		0.797702
+                                        infections		0.795445
+                                          symptoms		0.783685
+                                           chronic		0.783218
+                                         pneumonia		0.782824
+                                               hiv		0.782175
+                                         treatable		0.780991
+                                        autoimmune		0.777679
+                                           vaccine		0.777011
+                                              lyme		0.776302
+                                           urinary		0.773921
+                                         disorders		0.767479
+                                         sufferers		0.762846
+                                         incurable		0.762021
+                                          diabetes		0.759131
+                                         alzheimer		0.759112
+                                           ovarian		0.756529
+                                             cured		0.756192
+                                           curable		0.755259
+                                            anemia		0.755031
+                                          epidemic		0.754923
+                                           ailment		0.754175
+                                            strain		0.751601
+                                           viruses		0.749070
+                                      osteoporosis		0.747672
+                                         metabolic		0.746990
+                                         influenza		0.743129
+                                      tuberculosis		0.742297
+                                               hpv		0.741861
+                                        chickenpox		0.740130
+                                          disorder		0.738902
+                                            tumors		0.737875
+                                        parkinsons		0.737373
+                                      vaccinations		0.737049
+                                          zoonotic		0.736764
+                                          vaccines		0.735038
+Enter word or sentence (EXIT to break): 
+Word: bat  Position in vocabulary: 3193
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                            dragon		0.612948
+                                          rideable		0.579663
+                                           giraffe		0.579004
+                                             shrew		0.574028
+                                            potion		0.572147
+                                           girrafe		0.571462
+                                          reindeer		0.570329
+                                            arctic		0.569774
+                                            donkey		0.569633
+                                             panda		0.565414
+                                               elf		0.561111
+                                         reindeers		0.559326
+                                         post-teen		0.558297
+                                              neon		0.553650
+                                               dai		0.552356
+                                              poke		0.549346
+                                             frost		0.545160
+                                               ose		0.541709
+                                             artic		0.539057
+                                               bee		0.537638
+                                     adoptmeoffers		0.535307
+                                           penguin		0.532497
+                                        legendarys		0.530624
+                                            zombie		0.528426
+                                            mallet		0.528402
+                                            santas		0.527988
+                                               fly		0.527381
+                                            parrot		0.525132
+                                       adoptmepets		0.523700
+                                            sleigh		0.523000
+                                    adoptmetraders		0.522541
+                                              bats		0.522516
+                                              kyou		0.522098
+                                               fnr		0.521460
+                                     adoptmetrader		0.521032
+                                             shina		0.519859
+                                   adoptmetradings		0.519276
+                                   adoptmegiveaway		0.512493
+                                                fu		0.512469
+                                               amc		0.510730
+Enter word or sentence (EXIT to break): 
+Word: bats  Position in vocabulary: 6833
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                              mice		0.769606
+                                           rodents		0.759238
+                                            snakes		0.726517
+                                           rabbits		0.676183
+                                           monkeys		0.668021
+                                              rats		0.664775
+                                              cows		0.654178
+                                           insects		0.649250
+                                             avian		0.646664
+                                         droppings		0.634887
+                                        unsanitary		0.630853
+                                           lizards		0.627696
+                                           viruses		0.623465
+                                            cattle		0.621487
+                                              pigs		0.619802
+                                           mammals		0.619760
+                                            zombie		0.619279
+                                           mutated		0.617004
+                                        carnivores		0.616397
+                                       carnivorous		0.615760
+                                             foxes		0.615216
+                                           possums		0.614965
+                                           pigeons		0.612067
+                                           donkeys		0.610512
+                                   slaughterhouses		0.609933
+                                              boar		0.608422
+                                        mosquitoes		0.604922
+                                            rabies		0.604430
+                                          chickens		0.602484
+                                          reptiles		0.602484
+                                          primates		0.600756
+                                             frogs		0.599203
+                                             swine		0.597383
+                                         livestock		0.596894
+                                            infect		0.596105
+                                            sloths		0.595930
+                                         outbreaks		0.593803
+                                        salmonella		0.592178
+                                          infected		0.592100
+                                          tadpoles		0.592056
+Enter word or sentence (EXIT to break): 
+Word: pangolin  Position in vocabulary: 63127
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                          elephant		0.608570
+                               wildlifephotography		0.599521
+                                            lizard		0.590507
+                                           piglets		0.588719
+                                            animal		0.584353
+                                             egret		0.580913
+                                          siberian		0.574721
+                                         elephants		0.565358
+                                            insect		0.562175
+                                   birdphotography		0.561192
+                                             tiger		0.558791
+                                           raccoon		0.553156
+                                          poachers		0.552641
+                                               zoo		0.552338
+                                              deer		0.545606
+                                         carcasses		0.545554
+                                          gorillas		0.545515
+                                        salamander		0.545356
+                                         droppings		0.543160
+                                            jungle		0.540342
+                                         frenchart		0.536730
+                                             giant		0.536533
+                                   nationalbirdday		0.535949
+                                            albino		0.534871
+                                        orangutans		0.532769
+                                         porcupine		0.529366
+                                         xenomorph		0.528544
+                                          reptiles		0.526316
+                                           grizzly		0.525979
+                                           ghostly		0.525386
+                                           dolphin		0.523342
+                                           mammoth		0.521849
+                                             acorn		0.521694
+                                              boar		0.520863
+                                          dinosaur		0.520601
+                                            camels		0.519644
+                                         ducklings		0.518187
+                                             whale		0.516978
+                                              loch		0.514909
+                                            exotic		0.514654
+Enter word or sentence (EXIT to break): 
+Word: pangolins  Position in vocabulary: -1
+Out of dictionary word!
+Enter word or sentence (EXIT to break): 
+Word: quarantine  Position in vocabulary: 8069
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                       quarantined		0.873806
+                                          mainland		0.842045
+                                             wuhan		0.842030
+                                             hubei		0.820323
+                                  wuhancoronavirus		0.787447
+                                          lockdown		0.783121
+                                       quarantines		0.772245
+                                          wuhanflu		0.770781
+                                         epicentre		0.769266
+                                              ncov		0.763393
+                                        evacuation		0.763297
+                                          outbreak		0.754803
+                                         epicenter		0.753305
+                                      quarantining		0.751446
+                                  novelcoronavirus		0.747447
+                                          airports		0.745721
+                                        chinavirus		0.745673
+                                  wuhancoronovirus		0.742535
+                                          tourists		0.742185
+                                    coronaoutbreak		0.741392
+                                     wuhanlockdown		0.741299
+                                       coronavirus		0.739295
+                               coronavirusoutbreak		0.737918
+                                  chinacoronavirus		0.737410
+                                         lockdowns		0.735399
+                                      coronarvirus		0.733488
+                          wuhancoronavirusoutbreak		0.729106
+                                             virus		0.726758
+                                    wuhanpneumonia		0.724795
+                                        evacuating		0.724558
+                                       viruscorona		0.723131
+                                        wuhanvirus		0.722229
+                                     wuhanoutbreak		0.716700
+                                          evacuate		0.713132
+                                     coronavirusuk		0.712357
+                                    chinapneumonia		0.708802
+                                         wuhansars		0.707115
+                                     non-essential		0.704470
+                                         evacuated		0.702411
+                                 coronaviruscanada		0.699691
+Enter word or sentence (EXIT to break): 
+Word: china  Position in vocabulary: 645
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                            taiwan		0.795935
+                                            chinas		0.787618
+                                              asia		0.756114
+                                           beijing		0.748813
+                                          mainland		0.733929
+                                             korea		0.731741
+                                              dprk		0.725311
+                                           chinese		0.716312
+                                       quarantines		0.703621
+                                          xinjiang		0.691163
+                                            russia		0.690515
+                                         epicentre		0.689115
+                                       viruscorona		0.687564
+                                         wuhansars		0.679500
+                                          malaysia		0.675403
+                                               prc		0.675375
+                                             wuhan		0.674063
+                                       philippines		0.668286
+                                               ccp		0.667418
+                                           germany		0.665528
+                                      repatriation		0.661465
+                                         singapore		0.660446
+                                            europe		0.659976
+                                          province		0.657989
+                                            poland		0.655972
+                                            france		0.655768
+                                  wuhancoronavirus		0.653138
+                                         guangdong		0.651006
+                                         virus-hit		0.644750
+                                          cambodia		0.643418
+                                          outbreak		0.643382
+                                         nationals		0.642637
+                                          us-china		0.641799
+                                  wuhancoronovirus		0.641036
+                                           denmark		0.640060
+                                             tibet		0.639814
+                                            export		0.637911
+                                          mongolia		0.637856
+                                        quarantine		0.636798
+                                          tourists		0.636194
+Enter word or sentence (EXIT to break): 
+Word: chinese  Position in vocabulary: 1077
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                             china		0.716312
+                                            korean		0.695202
+                                        vietnamese		0.685969
+                                          japanese		0.669495
+                                          filipino		0.669238
+                                         taiwanese		0.665991
+                                            taiwan		0.662966
+                                            german		0.660836
+                                          javanese		0.640643
+                                           jinping		0.639178
+                                             malay		0.634084
+                                            chinas		0.625066
+                                         nationals		0.622881
+                                         virus-hit		0.614287
+                                              thai		0.611925
+                                         cantonese		0.608110
+                                         singapore		0.604151
+                                             japan		0.603878
+                                          mandarin		0.603602
+                                          nepalese		0.603114
+                                         malaysian		0.603002
+                                        indonesian		0.601551
+                                              asia		0.600049
+                                             wuhan		0.595884
+                                           burmese		0.591905
+                                           koreans		0.588292
+                                          malaysia		0.586966
+                                           beijing		0.586381
+                                        originated		0.585457
+                                             asian		0.583056
+                                           chengdu		0.580695
+                                             dutch		0.580654
+                                           italian		0.579695
+                                               ccp		0.578716
+                                            danish		0.578459
+                                         wuhansars		0.578228
+                                           swedish		0.576630
+                                             virus		0.575705
+                                               prc		0.574923
+                                         xijinping		0.571252
+Enter word or sentence (EXIT to break): 
+Word: asian  Position in vocabulary: 3119
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                           african		0.728956
+                                            latina		0.697975
+                                          hispanic		0.656842
+                                         caucasian		0.654202
+                                          filipina		0.646860
+                                            korean		0.640943
+                                         asiangirl		0.626825
+                                        senegalese		0.625459
+                                            asians		0.612215
+                                       interracial		0.611592
+                                              asia		0.607240
+                                              desi		0.596493
+                                           mexican		0.593911
+                                           amateur		0.590892
+                                           descent		0.589921
+                                          japanese		0.589551
+                                            blonds		0.588571
+                                         colombian		0.588081
+                                           chinese		0.583056
+                                            latinx		0.575117
+                                             pinay		0.574833
+                                          filipino		0.573812
+                                          jamaican		0.573540
+                                             latin		0.573264
+                                         malaysian		0.573229
+                                           italian		0.572503
+                                       schoolgirls		0.570217
+                                        fetishized		0.569947
+                                            tgirls		0.568017
+                                          pornstar		0.565613
+                                          moroccan		0.563904
+                                          nonblack		0.562514
+                                             xhosa		0.561356
+                                          romanian		0.560607
+                                            mature		0.560494
+                                         brazilian		0.558195
+                                              male		0.557715
+                                        transexual		0.556485
+                                              thai		0.556311
+                                          brunette		0.553164
+Enter word or sentence (EXIT to break): 
+Word: asia  Position in vocabulary: 4705
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                             korea		0.774920
+                                             china		0.756114
+                                            europe		0.755665
+                                            africa		0.755437
+                                         indonesia		0.713880
+                                             egypt		0.713189
+                                          thailand		0.689377
+                                             italy		0.688797
+                                         singapore		0.687062
+                                       philippines		0.686663
+                                           eastern		0.684286
+                                       switzerland		0.681893
+                                          cambodia		0.681030
+                                           algeria		0.678758
+                                               uae		0.675442
+                                             asias		0.671951
+                                              gulf		0.670367
+                                            taiwan		0.670056
+                                           bahrain		0.668016
+                                           regions		0.665803
+                                      southamerica		0.660874
+                                            sweden		0.659455
+                                           morocco		0.658787
+                                          malaysia		0.658061
+                                            greece		0.657749
+                                       sub-saharan		0.655519
+                                        uzbekistan		0.650751
+                                          slovenia		0.648130
+                                          province		0.646763
+                                         argentina		0.644425
+                                           western		0.643378
+                                              oman		0.641695
+                                             nepal		0.641386
+                                             asean		0.640520
+                                            poland		0.638910
+                                           germany		0.638133
+                                              arab		0.637837
+                                      latinamerica		0.636416
+                                          xinjiang		0.635774
+                                             sudan		0.635211
+Enter word or sentence (EXIT to break): 
+Word: chingchong  Position in vocabulary: -1
+Out of dictionary word!
+Enter word or sentence (EXIT to break): 
+Word: wuhan  Position in vocabulary: 2477
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                             hubei		0.924014
+                                  wuhancoronavirus		0.879567
+                                          outbreak		0.875764
+                                       coronavirus		0.867372
+                                    coronaoutbreak		0.865057
+                                             virus		0.863849
+                                         epicentre		0.861214
+                                  novelcoronavirus		0.848880
+                                    wuhanpneumonia		0.846673
+                                        quarantine		0.842030
+                                  wuhancoronovirus		0.841303
+                                              ncov		0.836465
+                                      coronarvirus		0.835947
+                               coronavirusoutbreak		0.834489
+                                        chinavirus		0.827213
+                                        wuhanvirus		0.819038
+                                         epicenter		0.818502
+                                          wuhanflu		0.816373
+                                  chinacoronavirus		0.814968
+                                       viruscorona		0.812739
+                                          mainland		0.809540
+                                         sars-like		0.809446
+                                     wuhanlockdown		0.808832
+                                       quarantined		0.802467
+                                     wuhanoutbreak		0.799399
+                                 coronaviruscanada		0.798423
+                                         wuhansars		0.794340
+                                              sars		0.793344
+                                         virus-hit		0.792726
+                                       quarantines		0.791342
+                                         pneumonia		0.790987
+                                    chinapneumonia		0.789726
+                                            corona		0.785730
+                                             -ncov		0.783993
+                          wuhancoronavirusoutbreak		0.779201
+                                  coronaviruschina		0.775351
+                                     coronarovirus		0.770275
+                                          infected		0.770133
+                                            taiwan		0.765609
+                                          lockdown		0.765116
+Enter word or sentence (EXIT to break): 
+Word: chink  Position in vocabulary: 42193
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                           clouted		0.580881
+                                               rat		0.574744
+                                           spastic		0.574310
+                                             bicth		0.561315
+                                            stinky		0.560715
+                                             bitch		0.559994
+                                             fugly		0.544807
+                                               pig		0.544201
+                                              slob		0.537632
+                                       mothafuckas		0.537432
+                                              mofo		0.537370
+                                    looooooooooool		0.534835
+                                             wench		0.533708
+                                              ugly		0.527658
+                                              cunt		0.527243
+                                             breed		0.525694
+                                            faggot		0.523893
+                                           gremlin		0.522653
+                                            afffff		0.518522
+                                           wrinkly		0.517990
+                                           geoduck		0.514254
+                                          ballsack		0.512271
+                                            witcho		0.511266
+                                               ass		0.510993
+                                           shutcho		0.508922
+                                     motherfucking		0.507980
+                                             nasty		0.504670
+                                               fat		0.503425
+                                             saggy		0.502208
+                                             oompa		0.501830
+                                      motherfucker		0.501283
+                                           scrawny		0.500178
+                                           reallll		0.498757
+                                              mole		0.497652
+                                              bitc		0.493468
+                                           chested		0.491776
+                                             lippy		0.491200
+                                              bald		0.491129
+                                          hairless		0.490792
+                                             corse		0.490295
+Enter word or sentence (EXIT to break): 
+Word: chinaman  Position in vocabulary: -1
+Out of dictionary word!
+Enter word or sentence (EXIT to break): 
+Word: jap  Position in vocabulary: 25235
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                              sini		0.702691
+                                            tolong		0.694675
+                                               beh		0.672715
+                                             pasti		0.672279
+                                           sombong		0.670293
+                                              hurm		0.663040
+                                             rindu		0.662587
+                                              saya		0.661617
+                                               jom		0.656488
+                                               lah		0.655030
+                                             malam		0.647695
+                                               laa		0.646941
+                                              lagi		0.644622
+                                               nak		0.644092
+                                              anak		0.642852
+                                              trus		0.642739
+                                             masuk		0.642725
+                                               mok		0.638672
+                                               apa		0.636098
+                                                di		0.636037
+                                             susah		0.635275
+                                               kan		0.635231
+                                                je		0.634553
+                                              ikut		0.633502
+                                              awal		0.633399
+                                               tau		0.633338
+                                                ni		0.630895
+                                               kau		0.630054
+                                             bulan		0.630024
+                                              buat		0.629289
+                                            kenapa		0.628946
+                                              cari		0.628270
+                                             kalau		0.627282
+                                               ckp		0.626836
+                                             depan		0.626479
+                                               nya		0.626424
+                                               klo		0.625260
+                                               aku		0.624333
+                                              lain		0.624159
+                                             sudah		0.624085
+Enter word or sentence (EXIT to break): 
+Word: slant  Position in vocabulary: 36465
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                         narrative		0.582410
+                                             msdnc		0.565528
+                                          headline		0.561817
+                                         debunking		0.552063
+                                           tabloid		0.545184
+                                         hyperbole		0.539355
+                                    sensationalism		0.537841
+                                               fox		0.534724
+                                              wapo		0.533334
+                                      commentators		0.533174
+                                        right-wing		0.530301
+                                           murdoch		0.526757
+                                             msnbc		0.520913
+                                     regurgitating		0.517368
+                                               msm		0.514782
+                                           espouse		0.514285
+                                         left-wing		0.513988
+                                        conjecture		0.511704
+                                          sideline		0.511312
+                                            tactic		0.510474
+                                          playbook		0.510296
+                                          cnnmsnbc		0.509000
+                                            outlet		0.508111
+                                        narratives		0.506385
+                                               oan		0.506235
+                                      whataboutery		0.504959
+                                             lefts		0.503999
+                                     propagandists		0.503984
+                                        propoganda		0.500756
+                                        criticisms		0.499242
+                                        propaganda		0.498676
+                                    disinformation		0.498458
+                                              spin		0.498210
+                                        editorials		0.495864
+                                        mainstream		0.494936
+                                       smokescreen		0.494605
+                                       regurgitate		0.493145
+                                          far-left		0.489757
+                                         soundbite		0.488411
+                                        platitudes		0.487821
+Enter word or sentence (EXIT to break): 
+Word: immigration  Position in vocabulary: 4219
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                          migrants		0.782683
+                                        immigrants		0.777201
+                                           migrant		0.724248
+                                              laws		0.712140
+                                          policies		0.710974
+                                       deportation		0.704042
+                                       legislation		0.700672
+                                               law		0.697458
+                                           illegal		0.696781
+                                          refugees		0.693497
+                                         draconian		0.685804
+                                            asylum		0.680834
+                                          illegals		0.680522
+                                            reform		0.679392
+                                     criminalizing		0.678954
+                                         deporting		0.676924
+                                             unhcr		0.666047
+                                      undocumented		0.656606
+                                       enforcement		0.655618
+                                         strictest		0.651323
+                                         migration		0.647158
+                                              daca		0.644597
+                                       governments		0.644318
+                                         immigrant		0.639405
+                                       enforceable		0.638946
+                                          legalise		0.638904
+                                           amnesty		0.638103
+                      youngindiaagainstcaa_npr_nrc		0.637615
+                                           refugee		0.636137
+                                          imposing		0.634268
+                                            sharia		0.634037
+                                         overreach		0.633545
+                                            policy		0.632218
+                                    discriminatory		0.630470
+                                           reforms		0.630351
+                                       regulations		0.629783
+                                           enacted		0.629332
+                                      jurisdiction		0.626847
+                                         secession		0.624658
+                                             enact		0.624607
+Enter word or sentence (EXIT to break): 
+Word: immigrant  Position in vocabulary: 9133
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                        immigrants		0.722669
+                                           migrant		0.701051
+                                           refugee		0.671727
+                                           citizen		0.652958
+                                       immigration		0.639405
+                                      undocumented		0.635002
+                                          american		0.634777
+                                       grandparent		0.627530
+                                          migrants		0.624454
+                                          abortion		0.607158
+                                           elderly		0.602908
+                                       infiltrator		0.600921
+                                         deporting		0.594711
+                                           illegal		0.589059
+                                          refugees		0.586432
+                                            raping		0.583937
+                                      impoverished		0.582504
+                                          deported		0.577006
+                                             child		0.576651
+                                          illegals		0.575855
+                                       infanticide		0.574971
+                                        upstanding		0.572768
+                                          hispanic		0.572135
+                                      incarcerated		0.570057
+                                           atheist		0.565557
+                                        pro-choice		0.563229
+                                            jewish		0.559022
+                                           ghettos		0.556685
+                                               jew		0.556155
+                                          marrying		0.555957
+                                       deportation		0.554142
+                                           country		0.552965
+                                            muslim		0.552595
+                                           athiest		0.548812
+                                            asylum		0.546127
+                                         foreigner		0.545469
+                                        immigrated		0.545260
+                                     incarceration		0.544580
+                                          mexicans		0.542456
+                                              brit		0.541431
+Enter word or sentence (EXIT to break): 
+Word: immigrants  Position in vocabulary: 4618
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                          migrants		0.834301
+                                          illegals		0.804836
+                                          refugees		0.801321
+                                      undocumented		0.778755
+                                       immigration		0.777201
+                                        foreigners		0.741240
+                                           migrant		0.734905
+                                         deporting		0.726936
+                                         immigrant		0.722669
+                                            blacks		0.687282
+                                           natives		0.683198
+                                        minorities		0.683194
+                                            asylum		0.678894
+                                          mexicans		0.677422
+                                           illegal		0.673166
+                                           refugee		0.666811
+                                          citizens		0.664940
+                                disproportionately		0.664921
+                                         non-white		0.662386
+                                      impoverished		0.656674
+                                      californians		0.656043
+                                            whites		0.647507
+                                             gangs		0.640504
+                                         canadians		0.639666
+                                     criminalizing		0.631445
+                                            anglos		0.630944
+                                        aborigines		0.628066
+                                           ghettos		0.627713
+                                          africans		0.623774
+                                           tribals		0.621109
+                                              laws		0.618659
+                                           slavery		0.618514
+                                          licenses		0.616940
+                                         draconian		0.616085
+                                    discriminating		0.614279
+                                         countries		0.613028
+                                              daca		0.611435
+                                          genocide		0.611388
+                                           fleeing		0.610749
+                                            deport		0.609965
+Enter word or sentence (EXIT to break): 
+Word: country  Position in vocabulary: 312
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                            nation		0.765686
+                                         democracy		0.741733
+                                      dictatorship		0.729505
+                                          citizens		0.712949
+                                          shithole		0.701620
+                                           america		0.695779
+                                         continent		0.681146
+                                           divided		0.670669
+                                         goverment		0.664661
+                                         countries		0.662438
+                                          countrys		0.649427
+                                         sovereign		0.648446
+                                          monarchy		0.641176
+                                              ours		0.639002
+                                         autocracy		0.634703
+                                          dictator		0.633900
+                                       forefathers		0.631851
+                                           tyranny		0.628968
+                                         shitholes		0.628483
+                                        government		0.626593
+                                         civilized		0.626375
+                                        population		0.625803
+                                           economy		0.622042
+                                         theocracy		0.617455
+                                           nations		0.617212
+                                            zanupf		0.613452
+                                             usthe		0.612989
+                                       institution		0.611321
+                                          governed		0.610808
+                                          republic		0.609181
+                                     imperialistic		0.607972
+                                            allies		0.607852
+                                           borders		0.607669
+                                         oligarchy		0.607637
+                                          minority		0.605811
+                                           society		0.605197
+                                        tyrannical		0.603496
+                                          american		0.602121
+                                          americas		0.601620
+                                  multiculturalism		0.601578
+Enter word or sentence (EXIT to break): 
+Word: disgusting  Position in vocabulary: 1129
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                              vile		0.828995
+                                         sickening		0.809897
+                                        despicable		0.802147
+                                       disgraceful		0.768864
+                                           hateful		0.768595
+                                          pathetic		0.767686
+                                          ignorant		0.751308
+                                      hypocritical		0.748670
+                                         repulsive		0.737417
+                                         repugnant		0.720847
+                                     reprehensible		0.719966
+                                         abhorrent		0.706488
+                                         brainless		0.703744
+                                         classless		0.703207
+                                     disrespectful		0.702427
+                                           moronic		0.700782
+                                        delusional		0.697523
+                                         appalling		0.696587
+                                            racist		0.694998
+                                         worthless		0.694815
+                                      irredeemable		0.691227
+                                          shameful		0.691151
+                                        unamerican		0.689922
+                                          inhumane		0.689658
+                                           immoral		0.689236
+                                             gross		0.685511
+                                        vindictive		0.685030
+                                         degrading		0.681366
+                                         hypocrite		0.679481
+                                           idiotic		0.676423
+                                          spiteful		0.675236
+                                        ridiculous		0.674631
+                                         insulting		0.673186
+                                      unacceptable		0.673068
+                                       humiliating		0.671783
+                                          arrogant		0.670900
+                                           bigoted		0.670782
+                                         braindead		0.669860
+                                           callous		0.668291
+                                              scum		0.667289
+Enter word or sentence (EXIT to break): 
+Word: alien  Position in vocabulary: 4888
+
+                                              Word       Cosine distance
+------------------------------------------------------------------------
+                                            aliens		0.755605
+                                        terminator		0.716084
+                                        underworld		0.666732
+                                          jurassic		0.651634
+                                         armagedon		0.647703
+                                  extraterrestrial		0.643292
+                                             dwarf		0.635061
+                                          twilight		0.631661
+                                          nephilim		0.625423
+                                           cyclops		0.621309
+                                      independance		0.618794
+                                        inquisitor		0.616396
+                                          superman		0.613304
+                                               ufo		0.612720
+                                            batman		0.612257
+                                            spider		0.612091
+                                            sailor		0.607115
+                                          artifact		0.606428
+                                             droid		0.603833
+                                         chewbacca		0.603479
+                                          werewolf		0.602325
+                                         astronaut		0.601812
+                                   anthropomorphic		0.596012
+                                              star		0.589735
+                                           revnant		0.589350
+                                         spaceship		0.587924
+                                            undead		0.587141
+                                              hawk		0.585722
+                                           qui-gon		0.585318
+                                         tarantula		0.584121
+                                           robocop		0.582068
+                                            ranger		0.581116
+                                              thor		0.581043
+                                           pansies		0.579790
+                                              sith		0.576853
+                                          troopers		0.575708
+                                              ovni		0.574580
+                                           trooper		0.574507
+                                           awakens		0.574441
+                                               ant		0.573784
+Enter word or sentence (EXIT to break): 
