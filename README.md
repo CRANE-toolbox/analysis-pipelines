@@ -149,6 +149,8 @@ To save the results from the `distance` script into a file for easier post-analy
 
 :information_source: Our current keyword list is: [virus, corona, coronavirus, covid, kungflu, kung, wuflu, infection, infecting, disease, bat, bats, pangolin, pangolins, quarantine, china, chinese, asian, asia, chingchong, wuhan, chink, chinaman, jap, slant, immigration, immigrant, immigrants, country, disgusting, alien] :information_source:
 
+:information_source: The binary files result from word2vec have not been uploaded to this repo because they go over the file size limit. :information_source:
+
 Depending on your research question, these results can be used and interpreted in different ways, for example [detecting new words](https://arxiv.org/pdf/2004.04046.pdf) or [tracking trends in topics](https://docs.google.com/spreadsheets/d/1O0N9Yho32oa_P1cCEj89LR0dU2EBi6I39Y9MzPzGcVc/edit?usp=sharing).
 
 ### Topic modelling with LDA
