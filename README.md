@@ -1,4 +1,6 @@
-# tracking-racist-covid19-rhetoric
+# Crisis Racism and Narrative Evaluation
+
+![CRANE thumbnail](https://github.com/CRANE-toolbox/analysis-pipelines/blob/master/thumbnail.jpg?raw=true)
 
 ## Introduction
 This repository is the work of the [CRANE team](https://devpost.com/software/crane-dvkeuf) for the [Resiliency Challenge](https://theresiliencychallenge.devpost.com/?ref_content=default&ref_feature=challenge&ref_medium=discover), on **real-time monitoring of racist rhetoric linked to the Covid19 pandemic**.
