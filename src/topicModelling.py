@@ -69,9 +69,12 @@ def preprocessingTopicModelling(text, segmentHashtags):
 def getCorpusHateSpeech(inputName, date, segmentHashtags):
     """Get the tweets selected by the classifier and split it into two corpora.
 
-    :param str inputName: The name of the file containing the results from the classifier. The file should be located in the "classification" results folder.
-    :param datetime date: A pandas datetime date to split the dataset around.
-    :param bool segmentHashtags: Segment hashtags into words.
+    :param inputName: The name of the file containing the results from the classifier. The file should be located in the "classification" results folder.
+    :type inputName: str
+    :param date: A pandas datetime date to split the dataset around.
+    :type date: datetime
+    :param segmentHashtags: Segment hashtags into words.
+    :type segmentHashtags: bool
     :return: List of tweet text contents from before date, List of tweet text content from after date.
     :rtype: list(str), list(str)
 
@@ -106,8 +109,10 @@ def getCorpusHateSpeech(inputName, date, segmentHashtags):
 def filterFileToDataframe(filePath, keywords):
     """Load json-encoded tweets to a Dataframe, filtering for given keywords.
 
-    :param str filePath: Full path to the file to be read.
-    :param list(str) keywords: List of keywords to select.
+    :param filePath: Full path to the file to be read.
+    :type filePath: str
+    :param keywords: List of keywords to select.
+    :type keywords: list(str)
     :return: A Dataframe containing only tweets with at least of words from keywords.
     :rtype: Dataframe
 
@@ -135,8 +140,10 @@ def filterFileToDataframe(filePath, keywords):
 def getCorpusCovid(date, segmentHashtags):
     """Get tweets containing covid19-related keywords and split into two corpora.
 
-    :param datetime date: A pandas datetime date to split the dataset around.
-    :param bool segmentHashtags: Segment hashtags into words.
+    :param date: A pandas datetime date to split the dataset around.
+    :type date: datetime
+    :param segmentHashtags: Segment hashtags into words.
+    :type segmentHashtags: bool
     :return: List of tweet text contents from before date, List of tweet text content from after date.
     :rtype: list(str), list(str)
 
@@ -194,8 +201,10 @@ def getCorpusCovid(date, segmentHashtags):
 def lemmatizeSingleCorpus(corpus, wordTags):
     """Lemmatize a corpus.
 
-    :param list(str) corpus: List of texts to lemmatize.
-    :param list(str) wordTags: List of one-character strings defining the POS-tags to select.
+    :param corpus: List of texts to lemmatize.
+    :type corpus: list(str)
+    :param wordTags: List of one-character strings defining the POS-tags to select.
+    :type wordTags: list(str)
     :return: A lemmatized list of texts containing only words with wordTag POS-tag.
     :rtype: type
 
@@ -209,8 +218,10 @@ def lemmatizeSingleCorpus(corpus, wordTags):
 def prepareCorpus(rawCorpus, useAdjectives):
     """Prepare a corpus for training.
 
-    :param list(str) rawCorpus: The corpus is a list of texts.
-    :param bool useAdjectives: Use words with adjective POS-tagging in addition to nouns.
+    :param rawCorpus: The corpus is a list of texts.
+    :type rawCorpus: list(str)
+    :param useAdjectives: Use words with adjective POS-tagging in addition to nouns.
+    :type useAdjectives: bool
     :return: The prepared corpus, The corpus dictionary.
     :rtype: list(list(int, int)), Dictionary
 
@@ -269,9 +280,12 @@ def prepareCorpus(rawCorpus, useAdjectives):
 def trainModel(preparedCorpus, dictionary, numberOfTopics):
     """Train LDA model on corpus.
 
-    :param list(list(int, int)) preparedCorpus: The bag-of-words corpus.
-    :param Dictionary dictionary: The Dictionnary corresponding to preparedCorpus.
-    :param int numberOfTopics: Number of topics to train the LDA with.
+    :param preparedCorpus: The bag-of-words corpus.
+    :type preparedCorpus: list(list(int, int))
+    :param dictionary: The Dictionnary corresponding to preparedCorpus.
+    :type dictionary: Dictionary
+    :param numberOfTopics: Number of topics to train the LDA with.
+    :type numberOfTopics: int
     :return: The trained model.
     :rtype: LdaMulticore
 
@@ -313,9 +327,12 @@ def trainModel(preparedCorpus, dictionary, numberOfTopics):
 def printResults(corpus, model, numberOfTopics):
     """Print results of LDA model with topic coherence and main words.
 
-    :param list(list(int, int)) corpus: The bag-of-words corpus.
-    :param LdaMulticore model: The trained LDA model.
-    :param int numberOfTopics: Number of topics the model has been trained for.
+    :param corpus: The bag-of-words corpus.
+    :type corpus: list(list(int, int))
+    :param model: The trained LDA model.
+    :type model: LdaMulticore
+    :param numberOfTopics: Number of topics the model has been trained for.
+    :type numberOfTopics: int
 
     """
 
@@ -330,10 +347,14 @@ def printResults(corpus, model, numberOfTopics):
 def saveResults(corpus, model, numberOfTopics, outputPath):
     """Save results of LDA model with topic coherence and main words.
 
-    :param list(list(int, int)) corpus: The bag-of-words corpus.
-    :param LdaMulticore model: The trained LDA model.
-    :param int numberOfTopics: Number of topics the model has been trained for.
-    :param str outputPath: Full path of the file to save the results to.
+    :param corpus: The bag-of-words corpus.
+    :type corpus: list(list(int, int))
+    :param model: The trained LDA model.
+    :type model: LdaMulticore
+    :param numberOfTopics: Number of topics the model has been trained for.
+    :type numberOfTopics: int
+    :param outputPath: Full path of the file to save the results to.
+    :type outputPath: str
 
     """
 
@@ -352,9 +373,12 @@ def saveResults(corpus, model, numberOfTopics, outputPath):
 def runOnPreppedCorpus(preparedCorpus, dictionary, numberOfTopics):
     """Train the model on a given corpus for a given number of topics.
 
-    :param list(list(int, int)) preparedCorpus: The bag-of-words corpus.
-    :param Dictionary dictionary: The Dictionnary corresponding to preparedCorpus.
-    :param int numberOfTopics: Number of topics to train the LDA with.
+    :param preparedCorpus: The bag-of-words corpus.
+    :type preparedCorpus: list(list(int, int))
+    :param dictionary: The Dictionnary corresponding to preparedCorpus.
+    :type dictionary: Dictionary
+    :param numberOfTopics: Number of topics to train the LDA with.
+    :type numberOfTopics: int
 
     """
 
@@ -373,9 +397,12 @@ def runOnPreppedCorpus(preparedCorpus, dictionary, numberOfTopics):
 def runOnCorpus(rawCorpus, useAdjectives, segmentHashtags):
     """Run full pipeline on a given corpus, using multiple cores.
 
-    :param list(str) rawCorpus: The corpus is a list of texts.
-    :param bool useAdjectives: Use words with adjective POS-tagging in addition to nouns.
-    :param bool segmentHashtags: Segment hashtags into words.
+    :param rawCorpus: The corpus is a list of texts.
+    :type rawCorpus: list(str)
+    :param useAdjectives: Use words with adjective POS-tagging in addition to nouns.
+    :type useAdjectives: bool
+    :param segmentHashtags: Segment hashtags into words.
+    :type segmentHashtags: bool
 
     """
 
@@ -391,10 +418,14 @@ def runOnCorpus(rawCorpus, useAdjectives, segmentHashtags):
 def mainTopicModelling(inputMode, inputName, useAdjectives, segmentHashtags):
     """Run full pipeline. Corpora are pickled on creation, only created once.
 
-    :param int inputMode: 0 for tweets classified as anti-asian hate-speech, 1 for covid19-related tweets.
-    :param str inputName: Ignored if inputMode == 1. The name of the file containing the results from the classifier. The file should be located in the "classification" results folder.
-    :param bool useAdjectives: Use words with adjective POS-tagging in addition to nouns.
-    :param bool segmentHashtags: Segment hashtags into words.
+    :param inputMode: 0 for tweets classified as anti-asian hate-speech, 1 for covid19-related tweets.
+    :type inputMode: int
+    :param inputName: Ignored if inputMode == 1. The name of the file containing the results from the classifier. The file should be located in the "classification" results folder.
+    :type inputName: str
+    :param useAdjectives: Use words with adjective POS-tagging in addition to nouns.
+    :type useAdjectives: bool
+    :param segmentHashtags: Segment hashtags into words.
+    :type segmentHashtags: bool
 
     """
 

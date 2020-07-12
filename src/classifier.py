@@ -21,8 +21,10 @@ from preprocessingTools import *
 def detectSlurs(inputPath, outputPath):
     """Filter tweets from a file, keeping those that contain at least one slur.
 
-    :param str inputPath: Full path to the file containing the json-encoded tweets.
-    :param str outputPath: Full path to the CSV file where the selected tweets should be added. The file will be created if it does not exist.
+    :param inputPath: Full path to the file containing the json-encoded tweets.
+    :type inputPath: str
+    :param outputPath: Full path to the CSV file where the selected tweets should be added. The file will be created if it does not exist.
+    :type outputPath: str
     :return: A DataFrame containing the selected tweets.
     :rtype: DataFrame
 
@@ -112,9 +114,12 @@ perspectiveQps = int(env.get("PERSPECTIVE_QPS"))
 def queryPerspective(tweet, scoreType, threshold):
     """Score the text content of a tweet using Google Perspective API.
 
-    :param Series tweet: One row of a DataFrame, corresponds to a tweet to score.
-    :param str scoreType: The type of score to require from Perspective. Tested values for now are TOXICITY and SEVERE_TOXICITY.
-    :param float threshold: Only tweets scored at or above this threshold will be kept.
+    :param tweet: One row of a DataFrame, corresponds to a tweet to score.
+    :type tweet: Series
+    :param scoreType: The type of score to require from Perspective. Tested values for now are TOXICITY and SEVERE_TOXICITY.
+    :type scoreType: str
+    :param threshold: Only tweets scored at or above this threshold will be kept.
+    :type threshold: float
     :return: The Perspective score, or -1 if the score is below the defined threshold.
     :rtype: int
 
@@ -171,10 +176,14 @@ def queryPerspective(tweet, scoreType, threshold):
 def scoreTweets(flaggedTweets, outputPath, scoreType, threshold):
     """Add a column with the Google Perspective score to a DataFrame of tweets.
 
-    :param DataFrame flaggedTweets: The result from detectSlurs, a DataFrame containing the tweets to score.
-    :param string outputPath: Full path to the CSV file where the selected tweets should be stored. The file will be created if it does not exist.
-    :param str scoreType: The type of score to require from Perspective. Tested values for now are TOXICITY and SEVERE_TOXICITY.
-    :param float threshold: Only tweets scored at or above this threshold will be kept.
+    :param flaggedTweets: The result from detectSlurs, a DataFrame containing the tweets to score.
+    :type flaggedTweets: DataFrame
+    :param outputPath: Full path to the CSV file where the selected tweets should be stored. The file will be created if it does not exist.
+    :type outputPath: str
+    :param scoreType: The type of score to require from Perspective. Tested values for now are TOXICITY and SEVERE_TOXICITY.
+    :type scoreType: str
+    :param threshold: Only tweets scored at or above this threshold will be kept.
+    :type threshold: float
 
     """
 
@@ -204,11 +213,16 @@ def scoreTweets(flaggedTweets, outputPath, scoreType, threshold):
 def runClassifier(outputPrefix, scoreType, threshold, perspectiveOnly, file):
     """Classifier main function, runs detectSlurs and scoreTweets.
 
-    :param str outputPrefix: Prefix for the output files. The output files will be saved in the "classification" results folder.
-    :param str scoreType: The type of score to require from Perspective. Tested values for now are TOXICITY and SEVERE_TOXICITY.
-    :param float threshold: Only tweets scored at or above this threshold will be kept.
-    :param type perspectiveOnly: If true, skip detectSlurs and load its previous result from memory.
-    :param str file: If specified, name of the file to process. The file should be located in the INTERMEDIATE_PATH folder. It should contain one json-encoded tweet per line.
+    :param outputPrefix: Prefix for the output files. The output files will be saved in the "classification" results folder.
+    :type outputPrefix: str
+    :param scoreType: The type of score to require from Perspective. Tested values for now are TOXICITY and SEVERE_TOXICITY.
+    :type scoreType: str
+    :param threshold: Only tweets scored at or above this threshold will be kept.
+    :type threshold: float
+    :param perspectiveOnly: If true, skip detectSlurs and load its previous result from memory.
+    :type perspectiveOnly: bool
+    :param file: If specified, name of the file to process. The file should be located in the INTERMEDIATE_PATH folder. It should contain one json-encoded tweet per line.
+    :type file: str
 
     """
 

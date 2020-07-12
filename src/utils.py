@@ -6,7 +6,8 @@ from datetime import datetime
 def transformDateFormat(df):
     """Add the date of the "timestamp" column of a DataFrame to a "day" column.
 
-    :param DataFrame df: A DataFrame with a "timestamp" column containing pandas datetime objects.
+    :param df: A DataFrame with a "timestamp" column containing pandas datetime objects.
+    :type df: DataFrame
     :return: df with a new column "day" that corresponds to the date version of the "timestamp" column.
     :rtype: DataFrame
 
