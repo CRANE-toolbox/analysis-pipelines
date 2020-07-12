@@ -14,10 +14,14 @@ from preprocessingTools import *
 def getPeriodNumber(dateString, dateFormat, startDate, periodLengthInDays):
     """Return period id for a given date, if periods have a fix number of days.
 
-    :param str dateString: Date for which the period id must be determined.
-    :param str dateFormat: Format of dateString.
-    :param datetime startDate: Beginning date of the first period.
-    :param int periodLengthInDays: Fixed length of a period in days.
+    :param dateString: Date for which the period id must be determined.
+    :type dateString: str
+    :param dateFormat: Format of dateString.
+    :type dateFormat: str
+    :param startDate: Beginning date of the first period.
+    :type startDate: datetime
+    :param periodLengthInDays: Fixed length of a period in days.
+    :type periodLengthInDays: int
     :return: The period id corresponding to dateString. This will be negative is dateString is before startDate.
     :rtype: int
 
@@ -32,8 +36,10 @@ def getPeriodNumber(dateString, dateFormat, startDate, periodLengthInDays):
 def getPeriodMonth(dateString, dateFormat):
     """Return period descriptor for a given date, if period = month.
 
-    :param string dateString: Date for which the period id must be determined.
-    :param str dateFormat: Format of the date strings (dateString and startDate).
+    :param dateString: Date for which the period id must be determined.
+    :type dateString: str
+    :param dateFormat: Format of the date strings (dateString and startDate).
+    :type dateFormat: str
     :return: The period descriptor (month abbreviation + year) corresponding to dateString.
     :rtype: str
 
@@ -45,11 +51,16 @@ def getPeriodMonth(dateString, dateFormat):
 def sortDatasetIntoPeriod(periodMode, outputPrefix, dateFormat, startDate, periodLengthInDays):
     """Preprocess the dataset and split it according to the date of the tweets.
 
-    :param int periodMode: 0 for period = month, 1 for fixed-length periods.
-    :param str outputPrefix: Prefix for the output files. The files will be saved in the "wordEmbedding" results folder.
-    :param str dateFormat: String format for dates.
-    :param datetime startDate: Beginning date of the first period. Ignored if periodMode == 0.
-    :param int periodLengthInDays: Fixed length of a period in days. Ignored if periodMode == 0.
+    :param periodMode: 0 for period = month, 1 for fixed-length periods.
+    :type periodMode: int
+    :param outputPrefix: Prefix for the output files. The files will be saved in the "wordEmbedding" results folder.
+    :type outputPrefix: str
+    :param dateFormat: String format for dates.
+    :type dateFormat: str
+    :param startDate: Beginning date of the first period. Ignored if periodMode == 0.
+    :type startDate: datetime
+    :param periodLengthInDays: Fixed length of a period in days. Ignored if periodMode == 0.
+    :type periodLengthInDays: int
 
     """
 

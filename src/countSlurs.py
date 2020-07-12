@@ -14,9 +14,12 @@ from utils import *
 def countSlurs(outputPrefix, slurs, dateFormat):
     """Count daily occurrences of a given list of slurs in the dataset.
 
-    :param str outputPrefix: Prefix for the output files. The files will be saved in the "slurFreq" results folder.
-    :param: list(list(str)) slurs: The slurs to detect and count. Each element is a list of variants to be counted as the same slur. The first variant is used as the column title.
-    :param: str dateFormat: String defining the format of dates in the dataset.
+    :param outputPrefix: Prefix for the output files. The files will be saved in the "slurFreq" results folder.
+    :type outputPrefix: str
+    :param slurs: The slurs to detect and count. Each element is a list of variants to be counted as the same slur. The first variant is used as the column title.
+    :type slurs: list(list(str))
+    :param dateFormat: String defining the format of dates in the dataset.
+    :type dateFormat: str
     :return: The list of the main variants of the slurs.
     :rtype: list(str)
 
@@ -99,8 +102,10 @@ def countSlurs(outputPrefix, slurs, dateFormat):
 def byWeek(filePrefix, mainVariants):
     """Aggregate the results from countSlurs by week.
 
-    :param str filePrefix: Prefix used for countSlurs.
-    :param: list(str) mainVariants: The main variant for each slur, used as column title.
+    :param filePrefix: Prefix used for countSlurs.
+    :type filePrefix: str
+    :param mainVariants: The main variant for each slur, used as column title.
+    :type mainVariants: list(str)
 
     """
 
@@ -148,9 +153,12 @@ def byWeek(filePrefix, mainVariants):
 def runAnalysis(outputPrefix, slursPath, dateFormat):
     """Main function.
 
-    :param str outputPrefix: Prefix for the output files. The files will be saved in the "slurFreq" results folder.
-    :param str slursPath: Full path to the json file holding the list of slurs and variants to count.
-    :param: str dateFormat: String defining the format of dates in the dataset.
+    :param outputPrefix: Prefix for the output files. The files will be saved in the "slurFreq" results folder.
+    :type outputPrefix: str
+    :param slursPath: Full path to the json file holding the list of slurs and variants to count.
+    :type slursPath: str
+    :param dateFormat: String defining the format of dates in the dataset.
+    :type dateFormat: str
 
     """
     slurs = []
