@@ -117,12 +117,18 @@ def replaceHashtags(text):
 def preprocessing(tweet, replaceOrRemoveUrl, replaceOrRemoveMentions, removeHashtagOrSegment, replaceOrRemovePunctuation, replaceOrRemoveNumbers):
     """Preprocess the text content of a tweet for analysis.
 
-    :param str tweet: Text content of a tweet.
-    :param bool replaceOrRemoveUrl: True to replace URLs, False to remove them.
-    :param bool replaceOrRemoveMentions: True to replace mentions, False to remove them.
-    :param bool removeHashtagOrSegment: True to remove '#' in front of hashtags, False to segment hashtags.
-    :param bool replaceOrRemovePunctuation: True to replace multiple punctuation, False to remove all punctuation.
-    :param bool replaceOrRemoveNumbers: True to replace numbers by their text version, False to remove them.
+    :param tweet: Text content of a tweet.
+    :type tweet: str
+    :param replaceOrRemoveUrl: True to replace URLs, False to remove them.
+    :type replaceOrRemoveUrl: bool
+    :param replaceOrRemoveMentions: True to replace mentions, False to remove them.
+    :type replaceOrRemoveMentions: bool
+    :param removeHashtagOrSegment: True to remove '#' in front of hashtags, False to segment hashtags.
+    :type removeHashtagOrSegment: bool
+    :param replaceOrRemovePunctuation: True to replace multiple punctuation, False to remove all punctuation.
+    :type replaceOrRemovePunctuation: bool
+    :param replaceOrRemoveNumbers: True to replace numbers by their text version, False to remove them.
+    :type replaceOrRemoveNumbers: bool
     :return: The clean version of the text.
     :rtype: str
 

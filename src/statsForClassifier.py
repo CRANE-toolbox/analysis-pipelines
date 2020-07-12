@@ -18,9 +18,12 @@ from utils import *
 def aggregateStats(inputName, outputPrefix, dateFormat):
     """Compute freq of anti-black and anti-asian speech per day in the dataset.
 
-    :param str inputName: Name of the file results of classifier.runClassifier. The file should be located in the "classification" results folder.
-    :param str outputPrefix: Prefix for the output files. The files will be saved in the "classification" results folder.
-    :param: str dateFormat: String defining the format of dates in the dataset.
+    :param inputName: Name of the file results of classifier.runClassifier. The file should be located in the "classification" results folder.
+    :type inputName: str
+    :param outputPrefix: Prefix for the output files. The files will be saved in the "classification" results folder.
+    :type outputPrefix: str
+    :param dateFormat: String defining the format of dates in the dataset.
+    :type dateFormat: str
 
     """
 

@@ -15,7 +15,8 @@ from os import environ as env
 def filterAndLightenTweet(fullTweetData):
     """Filter and lighten one tweet.
 
-    :param dict fullTweetData: A json-encoded tweet, as obtained through Twitter Streaming API.
+    :param fullTweetData: A json-encoded tweet, as obtained through Twitter Streaming API.
+    :type fullTweetData: dict
     :return: A json-encoded lightened tweet, with fields "id", "created_at", and "text".
     :rtype: dict
 
@@ -53,8 +54,10 @@ def filterAndLightenTweet(fullTweetData):
 def combineDay(archiveName, datafileMarker):
     """Filter, lighten and save tweets from a tar.gz archive in a single file.
 
-    :param str archiveName: Path to the archive to iterate on, using DATASET_PATH as the root.
-    :param str datafileMarker: String that identifies all the data files in the archive.
+    :param archiveName: Path to the archive to iterate on, using DATASET_PATH as the root.
+    :type archiveName: str
+    :param datafileMarker: String that identifies all the data files in the archive.
+    :type datafileMarker: str
 
     """
 
