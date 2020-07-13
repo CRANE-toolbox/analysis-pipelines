@@ -11,97 +11,97 @@ from os import environ as env
 from preprocessingTools import *
 
 
-def getPeriodNumber(dateString, dateFormat, startDate, periodLengthInDays):
+def get_period_number(date_string, date_format, start_date, period_length_in_days):
     """Return period id for a given date, if periods have a fix number of days.
 
-    :param dateString: Date for which the period id must be determined.
-    :type dateString: str
-    :param dateFormat: Format of dateString.
-    :type dateFormat: str
-    :param startDate: Beginning date of the first period.
-    :type startDate: datetime
-    :param periodLengthInDays: Fixed length of a period in days.
-    :type periodLengthInDays: int
-    :return: The period id corresponding to dateString. This will be negative is dateString is before startDate.
+    :param date_string: Date for which the period id must be determined.
+    :type date_string: str
+    :param date_format: Format of date_string.
+    :type date_format: str
+    :param start_date: Beginning date of the first period.
+    :type start_date: datetime
+    :param period_length_in_days: Fixed length of a period in days.
+    :type period_length_in_days: int
+    :return: The period id corresponding to date_string. This will be negative is date_string is before start_date.
     :rtype: int
 
     """
 
-    currentDate = datetime.strptime(dateString, dateFormat)
-    dayDiff = (currentDate - startDate).days
-    period = dayDiff // periodLengthInDays
+    current_date = datetime.strptime(date_string, date_format)
+    day_diff = (current_date - start_date).days
+    period = day_diff // period_length_in_days
     return period
 
 
-def getPeriodMonth(dateString, dateFormat):
+def get_period_month(date_string, date_format):
     """Return period descriptor for a given date, if period = month.
 
-    :param dateString: Date for which the period id must be determined.
-    :type dateString: str
-    :param dateFormat: Format of the date strings (dateString and startDate).
-    :type dateFormat: str
-    :return: The period descriptor (month abbreviation + year) corresponding to dateString.
+    :param date_string: Date for which the period id must be determined.
+    :type date_string: str
+    :param date_format: Format of the date strings (date_string and start_date).
+    :type date_format: str
+    :return: The period descriptor (month abbreviation + year) corresponding to date_string.
     :rtype: str
 
     """
-    periodMonth = datetime.strptime(dateString, dateFormat).strftime('%h%y')
-    return periodMonth
+    period_month = datetime.strptime(date_string, date_format).strftime('%h%y')
+    return period_month
 
 
-def sortDatasetIntoPeriod(periodMode, outputPrefix, dateFormat, startDate, periodLengthInDays):
+def sort_dataset_into_period(period_mode, output_prefix, date_format, start_date, period_length_in_days):
     """Preprocess the dataset and split it according to the date of the tweets.
 
-    :param periodMode: 0 for period = month, 1 for fixed-length periods.
-    :type periodMode: int
-    :param outputPrefix: Prefix for the output files. The files will be saved in the "wordEmbedding" results folder.
-    :type outputPrefix: str
-    :param dateFormat: String format for dates.
-    :type dateFormat: str
-    :param startDate: Beginning date of the first period. Ignored if periodMode == 0.
-    :type startDate: datetime
-    :param periodLengthInDays: Fixed length of a period in days. Ignored if periodMode == 0.
-    :type periodLengthInDays: int
+    :param period_mode: 0 for period = month, 1 for fixed-length periods.
+    :type period_mode: int
+    :param output_prefix: Prefix for the output files. The files will be saved in the "wordEmbedding" results folder.
+    :type output_prefix: str
+    :param date_format: String format for dates.
+    :type date_format: str
+    :param start_date: Beginning date of the first period. Ignored if period_mode == 0.
+    :type start_date: datetime
+    :param period_length_in_days: Fixed length of a period in days. Ignored if period_mode == 0.
+    :type period_length_in_days: int
 
     """
 
     # Get paths
-    inputDirectory = env.get("INTERMEDIATE_PATH")
-    inputPaths = [join(inputDirectory, f) for f in listdir(
-        inputDirectory) if isfile(join(inputDirectory, f))]
-    outputDirectory = env.get("RESULTS_PATH")
-    outputPath = outputDirectory + "/wordEmbedding/" + outputPrefix
+    input_directory = env.get("INTERMEDIATE_PATH")
+    input_paths = [join(input_directory, f) for f in listdir(
+        input_directory) if isfile(join(input_directory, f))]
+    output_directory = env.get("RESULTS_PATH")
+    output_path = output_directory + "/wordEmbedding/" + output_prefix
 
     # For each file
-    for inputPath in inputPaths:
-        with open(inputPath, 'r') as inputFile:
+    for input_path in input_paths:
+        with open(input_path, 'r') as input_file:
             # For each tweet
-            for line in inputFile:
+            for line in input_file:
                 tweet = json.loads(line)
-                dateString = tweet["created_at"]
+                date_string = tweet["created_at"]
                 # Get the period
-                periodSuffix = ""
-                if periodMode == 0:
-                    periodSuffix = getPeriodMonth(dateString, dateFormat)
-                elif periodMode == 1:
-                    periodId = getPeriodNumber(
-                        dateString, dateFormat, startDate, periodLengthInDays)
+                period_suffix = ""
+                if period_mode == 0:
+                    period_suffix = get_period_month(date_string, date_format)
+                elif period_mode == 1:
+                    periodId = get_period_number(
+                        date_string, date_format, start_date, period_length_in_days)
                     if periodId < 0:
-                        # If before startDate, ignore tweet
+                        # If before start_date, ignore tweet
                         continue
-                    periodSuffix = "_period%d" % periodId
+                    period_suffix = "_period%d" % periodId
 
                 text = tweet["text"]
                 # Tweet preprocessing
-                cleanText = preprocessing(text, True, True, True, False, False)
+                clean_text = preprocessing(text, True, True, True, False, False)
 
                 # Save to period file
-                outputFullPath = outputPath + periodSuffix + ".txt"
-                with open(outputFullPath, "a+") as outputFile:
-                    outputFile.write(cleanText)
-                    outputFile.write("\n")
+                output_full_path = output_path + period_suffix + ".txt"
+                with open(output_full_path, "a+") as output_file:
+                    output_file.write(clean_text)
+                    output_file.write("\n")
 
 
-def parseArguments():
+def parse_arguments():
     """Parse script arguments.
 
     :return: The command line arguments entered by the user.
@@ -114,16 +114,16 @@ def parseArguments():
 
     # Positional mandatory arguments
     parser.add_argument(
-        "outputPrefix", help="Prefix for the names of the output files")
+        "output_prefix", help="Prefix for the names of the output files")
     parser.add_argument(
-        "periodMode", help="0 for period = month, 1 for fixed length in days", type=int)
+        "period_mode", help="0 for period = month, 1 for fixed length in days", type=int)
 
     # Optional arguments
-    parser.add_argument("-f", "--dateFormat", help="String defining the format of dates in the dataset.", default="%a %b %d %H:%M:%S %z %Y")
-    parser.add_argument("-s", "--startDate", help="First period start date if periodMode == 1, formated as %a %b %d %H:%M:%S %z %Y, else ignored",
+    parser.add_argument("-f", "--date_format", help="String defining the format of dates in the dataset.", default="%a %b %d %H:%M:%S %z %Y")
+    parser.add_argument("-s", "--start_date", help="First period start date if period_mode == 1, formated as %a %b %d %H:%M:%S %z %Y, else ignored",
                         default="Wed Jan 1 00:00:01 +0000 2020")
     parser.add_argument("-d", "--periodLength",
-                        help="Period length in days if periodMode == 1, else ignored", default=7)
+                        help="Period length in days if period_mode == 1, else ignored", default=7)
 
     # Parse arguments
     args = parser.parse_args()
@@ -132,8 +132,8 @@ def parseArguments():
 
 
 # Get arguments
-args = parseArguments()
-startDate = datetime.strptime(args.startDate, args.dateFormat)
+args = parse_arguments()
+start_date = datetime.strptime(args.start_date, args.date_format)
 
-sortDatasetIntoPeriod(args.periodMode, args.outputPrefix, args.dateFormat, startDate,
+sort_dataset_into_period(args.period_mode, args.output_prefix, args.date_format, start_date,
                       args.periodLength)
