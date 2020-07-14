@@ -15,97 +15,97 @@ from os import environ as env
 from utils import *
 
 
-def aggregateStats(inputName, outputPrefix, dateFormat):
+def aggregate_stats(input_name, output_prefix, date_format):
     """Compute freq of anti-black and anti-asian speech per day in the dataset.
 
-    :param inputName: Name of the file results of classifier.runClassifier. The file should be located in the "classification" results folder.
-    :type inputName: str
-    :param outputPrefix: Prefix for the output files. The files will be saved in the "classification" results folder.
-    :type outputPrefix: str
-    :param dateFormat: String defining the format of dates in the dataset.
-    :type dateFormat: str
+    :param input_name: Name of the file results of classifier.runClassifier. The file should be located in the "classification" results folder.
+    :type input_name: str
+    :param output_prefix: Prefix for the output files. The files will be saved in the "classification" results folder.
+    :type output_prefix: str
+    :param date_format: String defining the format of dates in the dataset.
+    :type date_format: str
 
     """
 
     # Count number of tweets per day in data before classification
     # List of files to read
-    inputDirectory = env.get("INTERMEDIATE_PATH")
-    inputPaths = [join(inputDirectory, f) for f in listdir(
-        inputDirectory) if isfile(join(inputDirectory, f))]
-    allDatesCountList = []
+    input_directory = env.get("INTERMEDIATE_PATH")
+    input_paths = [join(input_directory, f) for f in listdir(
+        input_directory) if isfile(join(input_directory, f))]
+    all_dates_count_list = []
     timestamps = []
-    for rawDataName in inputPaths:
-        with open(rawDataName, "r") as rawDataFile:
+    for raw_data_name in input_paths:
+        with open(raw_data_name, "r") as raw_data_file:
             counter = 0
             # For each tweet
-            for line in rawDataFile:
+            for line in raw_data_file:
                 tweet = json.loads(line)
                 date = tweet["created_at"]
                 timestamps.append(date)
                 counter += 1
                 # Aggregate chunks to avoid memory error
                 if counter % 500000 == 0:
-                    tempDates = pd.DataFrame(data={"timestamp": timestamps})
+                    temp_dates = pd.DataFrame(data={"timestamp": timestamps})
                     # Transform timestamps to a date format
-                    tempDates["timestamp"] = pd.to_datetime(
-                        tempDates["timestamp"], format=dateFormat)
-                    tempDates = transformDateFormat(tempDates)
+                    temp_dates["timestamp"] = pd.to_datetime(
+                        temp_dates["timestamp"], format=date_format)
+                    temp_dates = transform_date_format(temp_dates)
                     # Aggregate counts
-                    tempCount = tempDates.groupby(
-                        "day").count().add_suffix('_Count').reset_index()
+                    temp_count = temp_dates.groupby(
+                        "day").count().add_suffix('_count').reset_index()
                     # Save chunk results to a list for performance
-                    allDatesCountList.append(tempCount)
-                    del tempDates, tempCount
+                    all_dates_count_list.append(temp_count)
+                    del temp_dates, temp_count
                     timestamps = []
     # Concatenate all chunks
-    allDatesCounts = pd.concat(allDatesCountList, ignore_index=True)
+    all_dates_counts = pd.concat(all_dates_count_list, ignore_index=True)
     # Aggregate over chunks
-    allDatesCounts = allDatesCounts.groupby("day").sum()
+    all_dates_counts = all_dates_counts.groupby("day").sum()
 
     # Read results from classifier
-    inputName = env.get("RESULTS_PATH") + "/classification/" + inputName
-    data = pd.read_csv(inputName)
+    input_name = env.get("RESULTS_PATH") + "/classification/" + input_name
+    data = pd.read_csv(input_name)
 
     # Transform timestamps to a date format
-    data["timestamp"] = pd.to_datetime(data["timestamp"], format=dateFormat)
-    data = transformDateFormat(data)
+    data["timestamp"] = pd.to_datetime(data["timestamp"], format=date_format)
+    data = transform_date_format(data)
 
     # Aggregate per day for anti-black and anti-asian hate speech
-    dataForAggregation = data[[
+    data_for_aggregation = data[[
         "day", "anti-black detected", "anti-asian detected"]].copy()
-    aggregatedData = dataForAggregation.groupby("day").sum()
+    aggregated_data = data_for_aggregation.groupby("day").sum()
 
     # Divide by daily total to get frequency
-    frequencyData = aggregatedData.copy()
-    frequencyData = pd.concat(
-        [frequencyData, allDatesCounts], axis=1, join='inner')
-    frequencyData["freq anti-black"] = frequencyData["anti-black detected"].map(
-        float) / frequencyData["timestamp_Count"]
-    frequencyData["freq anti-asian"] = frequencyData["anti-asian detected"].map(
-        float) / frequencyData["timestamp_Count"]
+    frequency_data = aggregated_data.copy()
+    frequency_data = pd.concat(
+        [frequency_data, all_dates_counts], axis=1, join='inner')
+    frequency_data["freq anti-black"] = frequency_data["anti-black detected"].map(
+        float) / frequency_data["timestamp_count"]
+    frequency_data["freq anti-asian"] = frequency_data["anti-asian detected"].map(
+        float) / frequency_data["timestamp_count"]
 
     # Save results in ubiquitous CSV format
-    outputPath = env.get("RESULTS_PATH") + "/classification/" + outputPrefix
-    csvOutputPath = outputPath + ".csv"
-    frequencyData.to_csv(csvOutputPath, index=True)
+    output_path = env.get("RESULTS_PATH") + "/classification/" + output_prefix
+    csv_output_path = output_path + ".csv"
+    frequency_data.to_csv(csv_output_path, index=True)
 
     # Generate format for nivo https://nivo.rocks/line/
-    nivoOutputPath = outputPath + ".json"
+    nivo_output_path = output_path + ".json"
     # Extract dataframe with dates and frequencies then transform them to dict
-    aggregatedAsian = pd.DataFrame(data={"x": [x.strftime("%d-%b-%Y") for x in list(
-        frequencyData.index.values)], "y": list(frequencyData["freq anti-asian"])})
-    recordsAsian = aggregatedAsian.to_dict("records")
-    aggregatedBlack = pd.DataFrame(data={"x": [x.strftime("%d-%b-%Y") for x in list(
-        frequencyData.index.values)], "y": list(frequencyData["freq anti-black"])})
-    recordsBlack = aggregatedBlack.to_dict("records")
+    aggregated_asian = pd.DataFrame(data={"x": [x.strftime("%d-%b-%Y") for x in list(
+        frequency_data.index.values)], "y": list(frequency_data["freq anti-asian"])})
+    records_asian = aggregated_asian.to_dict("records")
+    aggregated_black = pd.DataFrame(data={"x": [x.strftime("%d-%b-%Y") for x in list(
+        frequency_data.index.values)], "y": list(frequency_data["freq anti-black"])})
+    records_black = aggregated_black.to_dict("records")
     # Save in proper format
-    nivoFormat = [{"id": "sinophobia", "data": recordsAsian},
-                  {"id": "anti-black racism", "data": recordsBlack}]
-    with open(nivoOutputPath, "w") as nivoFile:
-        json.dump(nivoFormat, nivoFile)
+    nivo_format = [{"id": "sinophobia", "data": records_asian},
+                  {"id": "anti-black racism", "data": records_black}]
+    with open(nivo_output_path, "w") as nivo_file:
+        json.dump(nivo_format, nivo_file)
 
 
-def parseArguments():
+def parse_arguments():
     """Parse script arguments.
 
     :return: The command line arguments entered by the user.
@@ -119,13 +119,13 @@ def parseArguments():
 
     # Positional mandatory arguments
     parser.add_argument(
-        "inputName", help="Name of the result file from the classifier. The file should be located in the 'classification' results folder.")
+        "input_name", help="Name of the result file from the classifier. The file should be located in the 'classification' results folder.")
     parser.add_argument(
-        "outputPrefix", help="Prefix for the names of the output files.")
+        "output_prefix", help="Prefix for the names of the output files.")
 
     # Optional arguments
     parser.add_argument("-d",
-                        "--dateFormat", help="String defining the format of dates in the dataset.", default="%a %b %d %H:%M:%S %z %Y")
+                        "--date_format", help="String defining the format of dates in the dataset.", default="%a %b %d %H:%M:%S %z %Y")
 
     # Parse arguments
     args = parser.parse_args()
@@ -133,6 +133,6 @@ def parseArguments():
     return args
 
 
-args = parseArguments()
+args = parse_arguments()
 
-aggregateStats(args.inputName, args.outputPrefix, args.dateFormat)
+aggregate_stats(args.input_name, args.output_prefix, args.date_format)

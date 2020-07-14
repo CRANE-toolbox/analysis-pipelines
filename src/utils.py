@@ -3,7 +3,7 @@
 import pandas as pd
 from datetime import datetime
 
-def transformDateFormat(df):
+def transform_date_format(df):
     """Add the date of the "timestamp" column of a DataFrame to a "day" column.
 
     :param df: A DataFrame with a "timestamp" column containing pandas datetime objects.
