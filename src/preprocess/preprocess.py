@@ -1,5 +1,6 @@
 # Main preprocessing module
 
+import argparse
 import src.preprocess.preprocessTools
 
 
@@ -76,3 +77,56 @@ def preprocessing(tweet, replace_or_remove_url, replace_or_remove_mentions, remo
         clean_tweet = preprocessTools.remove_numbers(clean_punctuation_tweet)
 
     return clean_tweet
+
+
+def parse_arguments():
+    """Parse script arguments.
+
+    :return: The command line arguments entered by the user.
+    :rtype: ArgumentParser object
+
+    """
+
+    # Create argument parser
+    parser = argparse.ArgumentParser(description="Dataset preprocessing. Prepare the text of each tweet for analysis and count the number of tweets per day.")
+
+    # Positional mandatory arguments
+    parser.add_argument(
+        "input_path", help="Path to the folder containing the dataset formated with the *import* module.")
+    parser.add_argument(
+        "output_path", help="Path to the folder where the preprocessed dataset should be saved.")
+
+    # Optional arguments
+    parser.add_argument("-pi", "--pickled_input",
+                        help="The dataset to load is stored in pickled pandas DataFrame rather than CSV files.",
+                        action='store_true')
+    parser.add_argument("-po", "--pickled_output",
+                        help="The output dataset is saved in pickled pandas DataFrame rather than CSV files.",
+                        action='store_true')
+    parser.add_argument("-url", "--remove_url",
+                        help="Use this flag to remove URLs from the tweets instead of replacing them with 'url'",
+                        action='store_false')
+    parser.add_argument("-mention", "--remove_mentions",
+                        help="Use this flag to remove user mentions '@userHandle' from the tweets instead of replacing them with 'atUser'",
+                        action='store_false')
+    parser.add_argument("-hashtag", "--segment_hashtags",
+                        help="Use this flag to segment hashtags instead of simply removing the preceding '#' character. See documentation for details on the segmentation.",
+                        action='store_false')
+    parser.add_argument("-punct", "--remove_punctuation",
+                        help="Use this flag to remove all punctuation expect hyphens, instead of replacing repeated symbols and newlines.",
+                        action='store_false')
+    parser.add_argument("-num", "--remove_numbers",
+                        help="Use this flag to remove all numbers from the tweets instead of replacing them with their text version",
+                        action='store_false')
+
+    # Parse arguments
+    args = parser.parse_args()
+    return args
+
+
+if __name__ == '__main__':
+
+    args = parse_arguments()
+
+    # Inside the loop use command:
+    # preprocessing(tweet, args.remove_url, args.remove_mentions, args.segment_hashtags, args.remove_punctuation, args.remove_numbers)
