@@ -57,7 +57,7 @@ splitDate = pd.to_datetime(datetime.date(2020, 2, 1)).tz_localize("UTC")
 keywords = {"covid", "corona", "ncov", "cov19",
             "wuhanvirus", "sars-cov", "sarscov"}
 
-# Make the output path global for multithreading
+# Make the output search_path global for multithreading
 outputPath = ""
 
 
@@ -106,7 +106,7 @@ def getCorpusHateSpeech(inputName, date, segmentHashtags):
 def filterFileToDataframe(filePath, keywords):
     """Load json-encoded tweets to a Dataframe, filtering for given keywords.
 
-    :param str filePath: Full path to the file to be read.
+    :param str filePath: Full search_path to the file to be read.
     :param list(str) keywords: List of keywords to select.
     :return: A Dataframe containing only tweets with at least of words from keywords.
     :rtype: Dataframe
@@ -333,7 +333,7 @@ def saveResults(corpus, model, numberOfTopics, outputPath):
     :param list(list(int, int)) corpus: The bag-of-words corpus.
     :param LdaMulticore model: The trained LDA model.
     :param int numberOfTopics: Number of topics the model has been trained for.
-    :param str outputPath: Full path of the file to save the results to.
+    :param str outputPath: Full search_path of the file to save the results to.
 
     """
 

@@ -149,7 +149,7 @@ def runAnalysis(outputPrefix, slursPath, dateFormat):
     """Main function.
 
     :param str outputPrefix: Prefix for the output files. The files will be saved in the "slurFreq" results folder.
-    :param str slursPath: Full path to the json file holding the list of slurs and variants to count.
+    :param str slursPath: Full search_path to the json file holding the list of slurs and variants to count.
     :param: str dateFormat: String defining the format of dates in the dataset.
 
     """
@@ -177,7 +177,7 @@ def parseArguments():
     parser.add_argument(
         "outputPrefix", help="Prefix for the names of the output files.")
     parser.add_argument(
-        "slursPath", help="Full path to the json file holding the list of slurs and variants to count. Must contain a list of lists of slurs. Nested lists are variants of the same slur.")
+        "slursPath", help="Full search_path to the json file holding the list of slurs and variants to count. Must contain a list of lists of slurs. Nested lists are variants of the same slur.")
 
     # Optional arguments
     parser.add_argument("-d",

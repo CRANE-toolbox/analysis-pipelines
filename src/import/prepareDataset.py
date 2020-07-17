@@ -58,11 +58,11 @@ def combineDay(archiveName, datafileMarker):
 
     """
 
-    # Get archive path
+    # Get archive search_path
     archiveDirectory = env.get("DATASET_PATH")
     archivePath = archiveDirectory + "/" + archiveName
 
-    # Get output path
+    # Get output search_path
     archivePrefix = archiveName[:-7]
     filteredDirectory = env.get("INTERMEDIATE_PATH")
     filteredName = filteredDirectory + "/" + archivePrefix

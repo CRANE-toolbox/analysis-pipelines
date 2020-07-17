@@ -21,8 +21,8 @@ from preprocessingTools import *
 def detectSlurs(inputPath, outputPath):
     """Filter tweets from a file, keeping those that contain at least one slur.
 
-    :param str inputPath: Full path to the file containing the json-encoded tweets.
-    :param str outputPath: Full path to the CSV file where the selected tweets should be added. The file will be created if it does not exist.
+    :param str inputPath: Full search_path to the file containing the json-encoded tweets.
+    :param str outputPath: Full search_path to the CSV file where the selected tweets should be added. The file will be created if it does not exist.
     :return: A DataFrame containing the selected tweets.
     :rtype: DataFrame
 
@@ -172,7 +172,7 @@ def scoreTweets(flaggedTweets, outputPath, scoreType, threshold):
     """Add a column with the Google Perspective score to a DataFrame of tweets.
 
     :param DataFrame flaggedTweets: The result from detectSlurs, a DataFrame containing the tweets to score.
-    :param string outputPath: Full path to the CSV file where the selected tweets should be stored. The file will be created if it does not exist.
+    :param string outputPath: Full search_path to the CSV file where the selected tweets should be stored. The file will be created if it does not exist.
     :param str scoreType: The type of score to require from Perspective. Tested values for now are TOXICITY and SEVERE_TOXICITY.
     :param float threshold: Only tweets scored at or above this threshold will be kept.
 
