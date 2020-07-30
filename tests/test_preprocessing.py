@@ -36,13 +36,13 @@ def test_replace_contraction():
     assert replace_contraction("you won't tell him he's late because we're nice.") == "you will not tell him he is late because we are nice."
 
 def test_replace_multi_exclamation_mark():
-    assert replace_multi_exclamation_mark("!!! oh!!bob! my uncle!!!!!") == "multiExclamation  oh multiExclamation bob! my uncle multiExclamation"
+    assert replace_multi_exclamation_mark("!!! oh!!bob! my uncle!!!!!") == " multiExclamation  oh multiExclamation bob! my uncle multiExclamation "
 
 def test_replace_multi_question_mark():
-    assert replace_multi_question_mark("??? oh??bob? my uncle?????") == "multiQuestion  oh multiQuestion bob? my uncle multiQuestion"
+    assert replace_multi_question_mark("??? oh??bob? my uncle?????") == " multiQuestion  oh multiQuestion bob? my uncle multiQuestion "
 
 def test_replace_multi_stop_mark():
-    assert replace_multi_stop_mark("... oh..bob. my uncle.....") == "multiStop  oh multiStop bob. my uncle multiStop"
+    assert replace_multi_stop_mark("... oh..bob. my uncle.....") == " multiStop  oh multiStop bob. my uncle multiStop "
 
 def test_replace_new_line():
     assert replace_new_line("\nbob is my\n uncle, is\n\n he?") == " bob is my  uncle, is   he?"
