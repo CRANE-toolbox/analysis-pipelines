@@ -22,7 +22,6 @@ def replace_url(text):
 def remove_url(text):
     """ Removes url address"""
     text = re.sub(r'(http|ftp|https):\/\/([\w\-_]+(?:(?:\.[\w\-_]+)+))([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?', '', text)
-    text = re.sub(r'#([^\s]+)', r'\1', text)
     return text
 
 
