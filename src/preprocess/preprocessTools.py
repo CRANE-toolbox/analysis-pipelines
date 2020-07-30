@@ -28,13 +28,13 @@ def remove_url(text):
 
 def replace_at_user(text):
     """ Replaces "@user" with "atUser" """
-    text = re.sub('@[^\s]+', 'atUser', text)
+    text = re.sub(r'@[^\s]+', 'atUser', text)
     return text
 
 
 def remove_at_user(text):
     """ Removes "@user" """
-    text = re.sub('@[^\s]+', '', text)
+    text = re.sub(r'@[^\s]+', '', text)
     return text
 
 
@@ -61,8 +61,8 @@ def replace_hashtags(text):
 
 def replace_contraction(text):
     """ Replaces contractions from a string to their equivalents """
-    contraction_patterns = [(r'won\'t', 'will not'), (r'can\'t', 'cannot'), (r'i\'m', 'i am'), (r'ain\'t', 'is not'), (r'(\w+)\'ll', '\g<1> will'), (r'(\w+)n\'t', '\g<1> not'),
-                            (r'(\w+)\'ve', '\g<1> have'), (r'(\w+)\'s', '\g<1> is'), (r'(\w+)\'re', '\g<1> are'), (r'(\w+)\'d', '\g<1> would'), (r'&', 'and'), (r'dammit', 'damn it'), (r'dont', 'do not'), (r'wont', 'will not')]
+    contraction_patterns = [(r'won\'t', 'will not'), (r'can\'t', 'cannot'), (r'i\'m', 'i am'), (r'ain\'t', 'is not'), (r'(\w+)\'ll', r'\g<1> will'), (r'(\w+)n\'t', r'\g<1> not'),
+                            (r'(\w+)\'ve', r'\g<1> have'), (r'(\w+)\'s', r'\g<1> is'), (r'(\w+)\'re', r'\g<1> are'), (r'(\w+)\'d', r'\g<1> would'), (r'&', 'and'), (r'dammit', 'damn it'), (r'dont', 'do not'), (r'wont', 'will not')]
     patterns = [(re.compile(regex), repl)
                 for (regex, repl) in contraction_patterns]
     for (pattern, repl) in patterns:
