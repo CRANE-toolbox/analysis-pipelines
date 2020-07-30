@@ -27,13 +27,13 @@ def remove_url(text):
 
 def replace_at_user(text):
     """ Replaces "@user" with "atUser" """
-    text = re.sub(r'@[^\s]+', 'atUser', text)
+    text = re.sub(r'@[\w]+', 'atUser', text)
     return text
 
 
 def remove_at_user(text):
     """ Removes "@user" """
-    text = re.sub(r'@[^\s]+', '', text)
+    text = re.sub(r'@[\w]+', '', text)
     return text
 
 
