@@ -6,7 +6,7 @@
 from src.preprocess.preprocessTools import *
 
 def test_remove_unicode():
-    assert remove_unicode(r"bob\uff2c is \u008c my \u022c\u002c uncle\ua02dishe?") == r"bob is  my  uncleis \uqq00he?"
+    assert remove_unicode(r"bob\uff2c is \u008c my \u022c\u002c uncle\ua02dishe?") == r"bob is  my  uncleishe?"
     assert remove_unicode(r"bobx96 is x2a my uncle x01xffis he?") == r"bob is  my uncle xffis he?"
     assert remove_unicode(r"bobx96\uff2c is my \ufx96f2c uncle is he?") == r"bob is my \uff2c uncle is he?"
 
@@ -19,8 +19,8 @@ def test_remove_url():
 def test_replace_at_user():
     assert replace_at_user(r"bob@bob is my @uncle https://myuncle@bob.fr") == r"bobatUser is my atUser https://myuncleatUser.fr"
 
-def test_replace_at_user():
-    assert replace_at_user(r"bob@bob is my @uncle https://myuncle@bob.fr") == r"bob is my  https://myuncle.fr"
+def test_remove_at_user():
+    assert remove_at_user(r"bob@bob is my @uncle https://myuncle@bob.fr") == r"bob is my  https://myuncle.fr"
 
 def test_remove_hashtag_in_front_of_word():
     assert remove_hashtag_in_front_of_word(r"#bob ##is my#uncle") == "bob #is myuncle"
