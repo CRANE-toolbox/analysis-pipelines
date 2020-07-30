@@ -12,22 +12,22 @@ def test_remove_unicode():
     # assert remove_unicode(r"bobx96\uff2c is my \ufx96f2c uncle is he?") == r"bob is my \uff2c uncle is he?"
 
 def test_replace_url():
-    assert replace_url(r"bob www.bobismyuncle.totis myhttps://myuncle#isthatrue #uncle http://www.bob.fr") == r"bob url myurl #uncle url"
+    assert replace_url("bob www.bobismyuncle.totis myhttps://myuncle#isthatrue #uncle http://www.bob.fr") == "bob url myurl #uncle url"
 
 def test_remove_url():
-    assert remove_url(r"bob www.bobismyuncle.totis myhttps://myuncle#isthatrue #uncle http://www.bob.fr") == r"bob  my #uncle "
+    assert remove_url("bob www.bobismyuncle.totis myhttps://myuncle#isthatrue #uncle http://www.bob.fr") == "bob  my #uncle "
 
 def test_replace_at_user():
-    assert replace_at_user(r"bob@bob is my @uncle https://myuncle@bob.fr") == r"bobatUser is my atUser https://myuncleatUser.fr"
+    assert replace_at_user("bob@bob is my @uncle https://myuncle@bob.fr") == "bobatUser is my atUser https://myuncleatUser.fr"
 
 def test_remove_at_user():
-    assert remove_at_user(r"bob@bob is my @uncle https://myuncle@bob.fr") == r"bob is my  https://myuncle.fr"
+    assert remove_at_user("bob@bob is my @uncle https://myuncle@bob.fr") == "bob is my  https://myuncle.fr"
 
 def test_remove_hashtag_in_front_of_word():
     assert remove_hashtag_in_front_of_word(r"#bob ##is my#uncle") == "bob #is myuncle"
 
 def test_replace_hashtags():
-    assert replace_hashtags(r"#bobismyuncle, is #he not?") == r"bob is my uncle, is he not?"
+    assert replace_hashtags("#bobismyuncle, is #he not?") == "bob is my uncle, is he not?"
 
 def test_replace_contraction():
     assert replace_contraction("i won't tell you that i can't because i'm holding bob's cat & we've said we wouldn't.") == "i will not tell you that i cannot because i am holding bob's cat and we have said we would not."
@@ -45,7 +45,7 @@ def test_replace_multi_stop_mark():
     assert replace_multi_stop_mark("... oh..bob. my uncle.....") == "multiStop  oh multiStop bob. my uncle multiStop"
 
 def test_replace_new_line():
-    assert replace_new_line(r"\nbob is my\n uncle, is\n\n he?") == r" bob is my  uncle, is   he?"
+    assert replace_new_line("\nbob is my\n uncle, is\n\n he?") == " bob is my  uncle, is   he?"
 
 def test_remove_punctuation():
     assert remove_punctuation(".bob, is;:/my ?! &@-_# uncle.") == "bob ismy  - uncle"
