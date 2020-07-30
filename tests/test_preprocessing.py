@@ -41,8 +41,8 @@ def test_replace_multi_exclamation_mark():
 def test_replace_multi_question_mark():
     assert replace_multi_question_mark("??? oh??bob? my uncle?????") == "multiQuestion  oh multiQuestion bob? my uncle multiQuestion"
 
-def test_replace_multi_exclamation_mark():
-    assert replace_multi_exclamation_mark("... oh..bob. my uncle.....") == "multiStop  oh multiStop bob. my uncle multiStop"
+def test_replace_multi_stop_mark():
+    assert replace_multi_stop_mark("... oh..bob. my uncle.....") == "multiStop  oh multiStop bob. my uncle multiStop"
 
 def test_replace_new_line():
     assert replace_new_line(r"\nbob is my\n uncle, is\n\n he?") == r" bob is my  uncle, is   he?"
