@@ -15,14 +15,13 @@ def remove_unicode(text):
 
 def replace_url(text):
     """ Replaces url address with "url" """
-    text = re.sub('((www\.[^\s]+)|(https?://[^\s]+))', 'url', text)
-    text = re.sub(r'#([^\s]+)', r'\1', text)
+    text = re.sub(r'(http|ftp|https):\/\/([\w\-_]+(?:(?:\.[\w\-_]+)+))([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?', 'url', text)
     return text
 
 
 def remove_url(text):
     """ Removes url address"""
-    text = re.sub('((www\.[^\s]+)|(https?://[^\s]+))', '', text)
+    text = re.sub(r'(http|ftp|https):\/\/([\w\-_]+(?:(?:\.[\w\-_]+)+))([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?', '', text)
     text = re.sub(r'#([^\s]+)', r'\1', text)
     return text
 
