@@ -96,7 +96,7 @@ def replace_new_line(text):
 
 def remove_punctuation(text):
     """ Removes punctuation symbols, except hyphens"""
-    text = re.sub(r"[^\w\s-]", "", text)
+    text = re.sub(r"[^\w\s-]|_", "", text)
     return text
 
 
