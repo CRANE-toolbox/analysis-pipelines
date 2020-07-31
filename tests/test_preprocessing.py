@@ -12,10 +12,10 @@ def test_remove_unicode():
     # assert remove_unicode(r"bobx96\uff2c is my \ufx96f2c uncle is he?") == r"bob is my \uff2c uncle is he?"
 
 def test_replace_url():
-    assert replace_url("bob www.bobismyuncle.totis myhttps://myuncle#isthatrue #uncle http://www.bob.fr") == "bob url myurl #uncle url"
+    assert replace_url("bob www.bobismyuncle.totis myhttps://myuncle#isthatrue.dude #uncle http://www.bob.fr") == "bob url myurl #uncle url"
 
 def test_remove_url():
-    assert remove_url("bob www.bobismyuncle.totis myhttps://myuncle#isthatrue #uncle http://www.bob.fr") == "bob  my #uncle "
+    assert remove_url("bob www.bobismyuncle.totis myhttps://myuncle#isthatrue.dude #uncle http://www.bob.fr") == "bob  my #uncle "
 
 def test_replace_at_user():
     assert replace_at_user("bob@bob is my @uncle https://myuncle@bob.fr") == "bobatUser is my atUser https://myuncleatUser.fr"
