@@ -46,6 +46,7 @@ def remove_hashtag_in_front_of_word(text):
 def segment_hashtag(text):
     """ Removes hastag in front of a word and add hashtag segmentation """
     text = text[1:]
+    wordsegment.load()
     segments = wordsegment.segment(text)
     if len(segments) > 1:
         text = " ".join(segments)
