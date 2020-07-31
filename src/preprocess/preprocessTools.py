@@ -39,7 +39,7 @@ def remove_at_user(text):
 
 def remove_hashtag_in_front_of_word(text):
     """ Removes hastag in front of a word """
-    text = re.sub(r'#([^\s]+)', r'\1', text)
+    text = re.sub(r'#(\w+)', r'\1', text)
     return text
 
 
@@ -55,7 +55,7 @@ def segment_hashtag(text):
 
 def replace_hashtags(text):
     """ Removes hastag in front of a word and add hashtag segmentation """
-    text = re.sub(r'#([^\s]+)', segment_hashtag(r'\1'), text)
+    text = re.sub(r'#(\w+)', lambda x: segment_hashtag(x.group()), text)
     return text
 
 
