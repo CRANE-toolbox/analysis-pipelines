@@ -1,11 +1,20 @@
+import contextlib
 import io
 import tarfile
 import json
 import csv
 import os
+from enum import Enum
 from itertools import islice, chain
+import pickle
 
 MAX_BUFFER_SIZE = 10000
+
+
+class OutputFormat(Enum):
+    CSV = 0,
+    PKL = 1,
+    BOTH = 2
 
 
 # A simple class to handle ETL options
@@ -13,20 +22,22 @@ class TransformationOptions:
     filter_language: str
     include_retweet: bool
     max_in_memory_size: int
+    output_format: OutputFormat
 
-    def __init__(self, languagefilter: str, retweets: bool, max_in_mem: int):
+    def __init__(self, languagefilter: str, retweets: bool, max_in_mem: int, output_format: OutputFormat):
         self.filter_language = languagefilter
         self.include_retweet = retweets
         self.max_in_memory_size = max_in_mem
+        self.output_format = output_format
 
 
-def process_files(file_list: [str], opts: TransformationOptions, output_path: str) -> (int, int):
+def process_files(file_list: [str], opts: TransformationOptions, csv_output_path: str, pkl_output_path: str) -> (int, int):
     line_count = 0
     failure_count = 0
     for file in file_list:
         print("Processing file " + str(file))
         if tarfile.is_tarfile(file):
-            lines_written, failures = process_tar_file(file, opts, output_path)
+            lines_written, failures = process_tar_file(file, opts, csv_output_path, pkl_output_path)
             line_count += lines_written
             failure_count += failures
         else:
@@ -35,7 +46,7 @@ def process_files(file_list: [str], opts: TransformationOptions, output_path: st
                     if os.stat(file).st_size < opts.max_in_memory_size * 1000000:
                         # load the entire file into memory because it is small
                         full_file = f.readlines()
-                        lines_written, failures = write_tweets_by_chunk(full_file, output_path, opts)
+                        lines_written, failures = write_tweets_by_chunk(full_file, csv_output_path, pkl_output_path, opts)
                         line_count += lines_written
                         failure_count += failures
                     else:
@@ -45,7 +56,7 @@ def process_files(file_list: [str], opts: TransformationOptions, output_path: st
                             if not chunk:
                                 # End of file returns an empty list
                                 break
-                            lines_written, failures = write_tweets_by_chunk(chunk, output_path, opts)
+                            lines_written, failures = write_tweets_by_chunk(chunk, csv_output_path, pkl_output_path, opts)
                             line_count += lines_written
                             failure_count += failures
             except UnicodeDecodeError as e:
@@ -56,13 +67,24 @@ def process_files(file_list: [str], opts: TransformationOptions, output_path: st
 
 
 # Takes in an arbitrarily sized number of lines and writes them out in chunks to the filesystem
-def write_tweets_by_chunk(lines, output_path: str, opts: TransformationOptions) -> (int, int):
+def write_tweets_by_chunk(lines, csv_output_path: str, pkl_output_path: str, opts: TransformationOptions) -> (int, int):
     line_count = 0
     parse_failure_count = 0
-    with open(output_path, 'a+', newline='\n', encoding="utf-8") as output_file:
-        csv_writer = csv.writer(output_file, quoting=csv.QUOTE_MINIMAL)
+    # Supports
+    if opts.output_format is OutputFormat.BOTH:
+        csv_file = open(csv_output_path, 'a+', encoding='utf-8')
+        pkl_file = open(pkl_output_path, 'ab+')
+    elif opts.output_format is OutputFormat.CSV:
+        csv_file = open(csv_output_path, 'a+', encoding='utf-8')
+        pkl_file = contextlib.nullcontext()
+    elif opts.output_format is OutputFormat.PKL:
+        pkl_file = open(pkl_output_path, 'ab+')
+        csv_file = contextlib.nullcontext()
+    else:
+        csv_file = contextlib.nullcontext()
+        pkl_file = contextlib.nullcontext()
+    with pkl_file, csv_file:
         while True:
-            print(line_count)
             chunk = list(islice(lines, MAX_BUFFER_SIZE))
             if not chunk or chunk == []:
                 # End of iterable
@@ -70,7 +92,10 @@ def write_tweets_by_chunk(lines, output_path: str, opts: TransformationOptions) 
             filtered_chunk, failure_count = filter_lighten_chunk(chunk, opts)
             parse_failure_count += failure_count
             line_count += len(filtered_chunk)
-            csv_writer.writerows(filtered_chunk)
+            if not isinstance(pkl_file, contextlib.nullcontext):
+                pickle.dump(filtered_chunk, pkl_file)
+            if not isinstance(csv_file, contextlib.nullcontext):
+                csv.writer(csv_file, quoting=csv.QUOTE_MINIMAL).writerows(filtered_chunk)
     return line_count, parse_failure_count
 
 
@@ -89,7 +114,7 @@ def filter_lighten_chunk(chunk, opts: TransformationOptions) -> ([], int):
     return output_buffer, parse_failure_count
 
 
-def process_tar_file(file: str, opts: TransformationOptions, output_path: str) -> (int, int):
+def process_tar_file(file: str, opts: TransformationOptions, csv_output_path: str, pkl_output_path: str) -> (int, int):
     line_count = 0
     members = []
     failure_count = 0
@@ -99,7 +124,7 @@ def process_tar_file(file: str, opts: TransformationOptions, output_path: str) -
         for file in members:
             # Returns an io.buffer, should not load entire file into memory...?
             buffer = tf.extractfile(file)
-            lines_written, errors = write_tweets_by_chunk(buffer, output_path, opts)
+            lines_written, errors = write_tweets_by_chunk(buffer, csv_output_path, pkl_output_path, opts)
             line_count += lines_written
             failure_count += errors
     return line_count, failure_count
