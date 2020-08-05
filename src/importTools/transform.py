@@ -54,15 +54,9 @@ def process_files(file_list: List[str], opts: TransformationOptions, csv_output_
                         line_count += lines_written
                         failure_count += failures
                     else:
-                        # Iterate over lines in chunks
-                        while True:
-                            chunk = islice(f, MAX_BUFFER_SIZE)
-                            if not chunk:
-                                # End of file returns an empty list
-                                break
-                            lines_written, failures = write_tweets_by_chunk(chunk, csv_output_path, opts)
-                            line_count += lines_written
-                            failure_count += failures
+                        lines_written, failures = write_tweets_by_chunk(f, csv_output_path, opts)
+                        line_count += lines_written
+                        failure_count += failures
             except UnicodeDecodeError:
                 print("Could not open file " + str(file) + " but recovered and will continue")
                 continue
