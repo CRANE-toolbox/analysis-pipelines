@@ -6,7 +6,7 @@ from pathlib import PurePath
 
 def scan_folder(search_path: str) -> [str]:
     """
-    :param search_path: The path that represents the file or folder where the serach
+    :param search_path: The path that represents the file or folder where the search
     should be conducted
     :type search_path: A string representing a path
     :return: An array of strings, each representing a single file
