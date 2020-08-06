@@ -8,7 +8,7 @@ from datetime import datetime
 from os import listdir
 from os.path import isfile, join
 from os import environ as env
-from src.preprocessingTools import preprocessing
+from preprocessingTools import *
 
 
 def get_period_number(date_string, date_format, start_date, period_length_in_days):
