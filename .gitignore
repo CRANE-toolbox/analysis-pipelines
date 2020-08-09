@@ -3,7 +3,8 @@ __pycache__
 collected_streaming_data.csv
 access_credentials.txt
 *.tar.gz
-dist
+dist/*
+build/*
 
 #VS code specifics
 .vscode
@@ -158,3 +159,4 @@ smallset/
 *.pkl
 /venv/
 /venv/
+/CRANE_Toolbox.egg-info/
