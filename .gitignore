@@ -3,6 +3,7 @@ __pycache__
 collected_streaming_data.csv
 access_credentials.txt
 *.tar.gz
+dist
 
 #VS code specifics
 .vscode
