@@ -184,13 +184,11 @@ def is_retweet(tweet: dict) -> bool:
     has_retweeted_flag = tweet.get("retweeted", False)
     if has_retweeted_flag:
         return True
-    else:
-        # If the field does not exist that means it isn't a "modern" retweet
-        # Check for manual retweets
-        text = tweet.get("text", None)
-        if len(text) >= 2 and text[0:2] == "RT":
-            return True
-
+    # If the field does not exist that means it isn't a "modern" retweet
+    # Check for manual retweets
+    text = tweet.get("text", None)
+    if len(text) >= 2 and text[0:2] == "RT":
+        return True
     # If it got here, not a retweet.
     return False
 
