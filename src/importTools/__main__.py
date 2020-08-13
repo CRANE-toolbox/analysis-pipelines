@@ -2,7 +2,9 @@ from src.importTools import *
 import argparse
 
 def main():
-    parser = argparse.ArgumentParser(description="A tool to transform twitter data into a CSV or pickle format")
+
+    # Parse arguments
+    parser = argparse.ArgumentParser(description="A tool to transform twitter data into a CSV format")
     parser.add_argument('--source-folder', metavar='s', type=str, required=True, default=None,
                         help='source folder to scan for input '
                              'files')
@@ -16,12 +18,18 @@ def main():
     parser.add_argument('--output-name', type=str, default='filtered_data.csv',
                         help="Specify the output file name with extension")
     args = parser.parse_args()
+
+    # Extract options
     opts = TransformationOptions(args.tweet_language, args.retweets, args.max_file_size_memory)
+
+    # Scan source folder for files
     file_list = scan_folder(args.source_folder)
     print("Found the following files")
     print(file_list)
+
+    # Process the files and record stats
     line_count, failure_count = process_files(file_list, opts, path.join(args.output_folder, args.output_name))
-    print("wrote ", file_list, " lines", " failures ", failure_count)
+    print("wrote ", line_count, " lines", " failures ", failure_count)
 
 
 if __name__ == '__main__':
