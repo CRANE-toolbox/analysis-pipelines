@@ -180,16 +180,19 @@ def is_retweet(tweet: dict) -> bool:
     .. note:: Check for automated retweets with the *retweet* flag and for manual retweets of the form "RT [original tweet]"
     """
 
-    text = tweet.get("text", None)
-    if len(text) >= 2 and text[0:2] == "RT":
+    # Check for automated retweets
+    has_retweeted_flag = tweet.get("retweeted", False)
+    if has_retweeted_flag:
         return True
-    if not tweet.get("retweeted", False):
+    else:
         # If the field does not exist that means it isn't a "modern" retweet
-        # There are two types of retweets, those done by hitting the RT button
-        # and those done "manually" where someone uses the keyword RT: [Original Tweet]
-        return False
-    # If it got here, it must be a re-tweet.
-    return True
+        # Check for manual retweets
+        text = tweet.get("text", None)
+        if len(text) >= 2 and text[0:2] == "RT":
+            return True
+
+    # If it got here, not a retweet.
+    return False
 
 
 def parse_tweet(tweet: str) -> dict:
