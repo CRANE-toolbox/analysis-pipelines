@@ -5,12 +5,13 @@ from pathlib import PurePath
 
 
 def scan_folder(search_path: str) -> [str]:
-    """
+    """List all files in the file-system tree down from the search path.
+
     :param search_path: The path that represents the file or folder where the search
     should be conducted
-    :type search_path: A string representing a path
+    :type search_path: str
     :return: An array of strings, each representing a single file
-    :rtype: Array of strings
+    :rtype: list(str)
     """
 
     if not path.exists(search_path):
@@ -26,5 +27,3 @@ def scan_folder(search_path: str) -> [str]:
         for file in files:
             file_list.append(PurePath(search_path, file))
     return file_list
-
-

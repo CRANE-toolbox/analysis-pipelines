@@ -13,6 +13,7 @@ class TransformationOptions:
     """
     A simple class to handle ETL options as specified in the driver
     """
+
     filter_language: str
     include_retweet: bool
     max_in_memory_size: int
@@ -24,18 +25,18 @@ class TransformationOptions:
 
 
 def process_files(file_list: List[str], opts: TransformationOptions, csv_output_path: str) -> (int, int):
-    """
-    This the top level file function for combing files in the input set into a single output file.
-    Files are saved into a single CSV file with three columns as specified by the params.
+    """Top-level function to combine input set into a single CSV file.
+
     :param file_list: paths to files to be processed
-    :type file_list: List(str)
+    :type file_list: list(str)
     :param opts: An instance of the transformation options, used to control filtering and parsing of tweets
     :type opts: TransformationOptions
     :param csv_output_path: Full output path, folder, filename and extension
     :type csv_output_path: str
     :return: A tuple of (successes, failures) that represents the number of lines written to the file
-    :rtype: Tuple(int, int)
+    :rtype: tuple(int, int)
     """
+
     line_count = 0
     failure_count = 0
     for file in file_list:
@@ -65,17 +66,18 @@ def process_files(file_list: List[str], opts: TransformationOptions, csv_output_
 
 
 def write_tweets_by_chunk(lines, csv_output_path: str, opts: TransformationOptions) -> (int, int):
-    """
-    Takes in an arbitrarily sized number of lines and writes them out in chunks to the filesystem
+    """Process an arbitrary number of lines and save them to the CSV outfile
+
     :param lines: Lines of tweets to process and write to file
-    :type lines: List of strings or buffer
+    :type lines: list(str) or buffer
     :param csv_output_path: Full output path of CSV file, including filename and extension
     :type csv_output_path: str
     :param opts: Transformation options
     :type opts: TransformationOptions
     :return: Tuple of write pass/failures
-    :rtype: Tuple(int, int)
+    :rtype: tuple(int, int)
     """
+
     line_count = 0
     parse_failure_count = 0
     # Supports
@@ -93,15 +95,16 @@ def write_tweets_by_chunk(lines, csv_output_path: str, opts: TransformationOptio
 
 
 def filter_lighten_chunk(chunk, opts: TransformationOptions) -> (List[dict], int):
-    """
-    This takes a chunk of lines(some arbitrary number) and lightens them, selecting only the important keys
+    """Filter and lighten a given set of lines, keeping only important keys
+
     :param chunk: The chunk of lines to process
     :type chunk: list(str) or buffer of str
     :param opts: Transformation options
     :type opts: TransformationOptions
     :return: List of filtered tweets and parse failure count
-    :rtype: list[dict], int
+    :rtype: list(dict), int
     """
+
     output_buffer = []
     parse_failure_count = 0
     for line in chunk:
@@ -122,18 +125,20 @@ def filter_lighten_chunk(chunk, opts: TransformationOptions) -> (List[dict], int
 
 
 def process_tar_file(file: str, opts: TransformationOptions, csv_output_path: str) -> (int, int):
-    """
-    This handles a single tar file, processes any uncompressed nested files contained within the archive.
-    THis cannot handle nested compression, ie a tar inside a tar.
+    """Process any uncompressed nested files contained within a single tar file.
+
     :param file: Path to tar file
     :type file: str
     :param opts: Transformation options
     :type opts: TransformationOptions
     :param csv_output_path: Output path for the combined CSV file
     :type csv_output_path: str
-    :return: pass/fail counts
+    :return: Pass/fail counts
     :rtype: tuple(int, int)
+
+    .. warning:: This cannot handle nested compression, ie a tar inside a tar.
     """
+
     line_count = 0
     members = []
     failure_count = 0
@@ -150,8 +155,8 @@ def process_tar_file(file: str, opts: TransformationOptions, csv_output_path: st
 
 
 def matches_language_filter(tweet: dict, opts: TransformationOptions) -> bool:
-    """
-    Check if the passed tweet matches the language filter as specified in the TransformationOptions instance
+    """Check whether a tweet is in the desired language.
+
     :param tweet: A dictionary representing a full JSON tweet(with no data removed etc)
     :type tweet: dict
     :param opts: Transformation options
@@ -159,19 +164,22 @@ def matches_language_filter(tweet: dict, opts: TransformationOptions) -> bool:
     :return: True/False if the tweet matches the user specified language filter
     :rtype: bool
     """
+
     language = tweet.get("lang", None)
     return language == opts.filter_language
 
 
 def is_retweet(tweet: dict) -> bool:
-    """
-    Checks if the passed tweet is retweeted. Using the mechanism included in the tweet, a retweet flag. But also
-    checks for so called "manual" retweets where a user uses the form of "RT [original tweet]"
+    """Check whether a tweet is a retweet.
+
     :param tweet: A dictionary representing a single tweet
     :type tweet: dict
     :return: True/False if the tweet has been labeled as a retweet.
     :rtype: bool
+
+    .. note:: Check for automated retweets with the *retweet* flag and for manual retweets of the form "RT [original tweet]"
     """
+
     text = tweet.get("text", None)
     if len(text) >= 2 and text[0:2] == "RT":
         return True
@@ -185,8 +193,8 @@ def is_retweet(tweet: dict) -> bool:
 
 
 def parse_tweet(tweet: str) -> dict:
-    """
-    A simple function to parse the passed JSON format tweet from str to dictionary.
+    """Parse the passed JSON format tweet from str to dictionary.
+
     :param tweet: JSON tweet as a string
     :type tweet: str
     :return: Dictionary representing the JSON parse results of the passed tweet
@@ -196,14 +204,14 @@ def parse_tweet(tweet: str) -> dict:
 
 
 def lighten_tweet(tweet: dict) -> (str, str, str):
-    """
-    This lightens a single tweet, pulling out only the most important values for
-    processing and returning them as a tuple.
-    :param tweet: a parsed JSON tweet
+    """Lighten a tweet by returning only the fields required for analysis.
+
+    :param tweet: A parsed JSON tweet
     :type tweet: dict
-    :return: a tuple of the three values scraped from the passed tweet
+    :return: A tuple of the three values scraped from the passed tweet
     :rtype: tuple(str, str, str)
     """
+
     created_at = tweet.get("created_at", None)
     tweet_id = tweet.get("id", None)
     text = ""
