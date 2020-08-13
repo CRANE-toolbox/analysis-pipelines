@@ -8,7 +8,7 @@ def main():
                              'files')
     parser.add_argument('-retweets', type=bool, default=False, help='this flag will include retweets in final output')
     parser.add_argument('--max-file-size-memory', type=int, default=4096, help='the max file size that will be held in '
-                                                                               'memory, otherwise processes by chunks to '
+                                                                               'memory, in Mo, otherwise processes by chunks to '
                                                                                'avoid memory issues')
     parser.add_argument('--tweet-language', type=str, default='en', help='specifies the language of outputted tweets')
     parser.add_argument('--output_folder', type=str, default='./', help='specify the output directory for combined '
