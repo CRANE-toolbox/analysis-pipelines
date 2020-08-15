@@ -42,9 +42,14 @@ def process_files(file_list: List[str], opts: TransformationOptions, csv_output_
     for file in file_list:
         print("Processing file " + str(file))
         if tarfile.is_tarfile(file):
-            lines_written, failures = process_tar_file(file, opts, csv_output_path)
-            line_count += lines_written
-            failure_count += failures
+            try:
+                lines_written, failures = process_tar_file(file, opts, csv_output_path)
+                line_count += lines_written
+                failure_count += failures
+            except BaseException as e:
+                print("encountered error with " + str(file) + " but recovered and will continue")
+                print(e)
+                continue
         else:
             try:
                 with open(file, 'r') as f:
@@ -140,13 +145,19 @@ def process_tar_file(file: str, opts: TransformationOptions, csv_output_path: st
     """
 
     line_count = 0
-    members = []
     failure_count = 0
     with tarfile.open(file, 'r|*') as tf:
-        members = tf.getmembers()
-    with tarfile.open(file, 'r|*') as tf:
-        for file in members:
-            # Returns an io.buffer, should not load entire file into memory...?
+        while True:
+            file = tf.next()
+            if not file:
+                # None, end of members
+                break
+            if not file.isfile():
+                # The member is not a file(could be a malformed file, another tar
+                # a folder etc.
+                print("skipping tar member: ", file.name)
+                continue
+            print("processing tar member: ", file.name)
             buffer = tf.extractfile(file)
             lines_written, errors = write_tweets_by_chunk(buffer, csv_output_path, opts)
             line_count += lines_written

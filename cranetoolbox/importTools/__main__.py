@@ -1,8 +1,8 @@
-from src.importTools import *
+from cranetoolbox.importTools import *
 import argparse
 
-def main():
 
+def main():
     # Parse arguments
     parser = argparse.ArgumentParser(description="A tool to transform twitter data into a CSV format")
     parser.add_argument('--source-folder', metavar='s', type=str, required=True, default=None,

@@ -5,15 +5,15 @@ import setuptools
 HERE = pathlib.Path(__file__).parent
 README = (HERE / "README.md").read_text()
 setuptools.setup(
-    name="CRANE-Toolbox",
-    version="0.0.0.2",
+    name="cranetoolbox",
+    version="0.0.0.5",
     author="The CRANE Team",
     author_email="author@example.com",
     description="A package against racism around COVID-19",
     long_description=README,
     long_description_content_type="text/markdown",
     url="https://github.com/CRANE-toolbox/analysis-pipelines",
-    packages=setuptools.find_packages(),
+    packages=['cranetoolbox','cranetoolbox.importTools'],
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'License :: OSI Approved :: GNU Affero General Public License v3',
@@ -21,9 +21,10 @@ setuptools.setup(
     ],
     entry_points={
         "console_scripts": {
-            "import-transform=src.importTools.__main__:main"
+            "crane-import=cranetoolbox.importTools.__main__:main"
         }
     },
+
     install_requires=["nltk>=3.5",
                       "pandas>=1.1.0",
                       "requests>=2.24",
