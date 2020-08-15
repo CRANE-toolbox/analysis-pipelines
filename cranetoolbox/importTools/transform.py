@@ -5,9 +5,6 @@ import tarfile
 from itertools import islice
 from typing import List
 
-# The max number of lines that will be written and held in memory at any given point
-MAX_BUFFER_SIZE = 10000
-
 
 class TransformationOptions:
     """
@@ -53,16 +50,9 @@ def process_files(file_list: List[str], opts: TransformationOptions, csv_output_
         else:
             try:
                 with open(file, 'r') as f:
-                    if os.stat(file).st_size < opts.max_in_memory_size * 1000000:
-                        # load the entire file into memory because it is small
-                        full_file = f.readlines()
-                        lines_written, failures = write_tweets_by_chunk(full_file, csv_output_path, opts)
-                        line_count += lines_written
-                        failure_count += failures
-                    else:
-                        lines_written, failures = write_tweets_by_chunk(f, csv_output_path, opts)
-                        line_count += lines_written
-                        failure_count += failures
+                    lines_written, failures = write_tweets_by_chunk(f, csv_output_path, opts)
+                    line_count += lines_written
+                    failure_count += failures
             except UnicodeDecodeError:
                 print("Could not open file " + str(file) + " but recovered and will continue")
                 continue
@@ -88,7 +78,7 @@ def write_tweets_by_chunk(lines, csv_output_path: str, opts: TransformationOptio
     # Supports
     with open(csv_output_path, 'a+') as csv_file:
         while True:
-            chunk = list(islice(lines, MAX_BUFFER_SIZE))
+            chunk = list(islice(lines, opts.max_in_memory_size))
             if not chunk or chunk == []:
                 # End of iterable
                 break
@@ -166,7 +156,8 @@ def process_tar_file(file: str, opts: TransformationOptions, csv_output_path: st
 
 
 def matches_language_filter(tweet: dict, opts: TransformationOptions) -> bool:
-    """Check whether a tweet is in the desired language.
+    """Check whether a tweet is in the desired language. If JSON key does not
+    exist it assumes that the text matches the language filter(returns True)
 
     :param tweet: A dictionary representing a full JSON tweet(with no data removed etc)
     :type tweet: dict
@@ -177,6 +168,9 @@ def matches_language_filter(tweet: dict, opts: TransformationOptions) -> bool:
     """
 
     language = tweet.get("lang", None)
+    if language is None:
+        # Key missing, we assume it to be english
+        return True
     return language == opts.filter_language
 
 
@@ -197,7 +191,7 @@ def is_retweet(tweet: dict) -> bool:
         return True
     # If the field does not exist that means it isn't a "modern" retweet
     # Check for manual retweets
-    text = tweet.get("text", None)
+    text = tweet.get("text", "")
     if len(text) >= 2 and text[0:2] == "RT":
         return True
     # If it got here, not a retweet.

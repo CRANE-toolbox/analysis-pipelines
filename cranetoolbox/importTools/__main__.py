@@ -9,9 +9,8 @@ def main():
                         help='source folder to scan for input '
                              'files')
     parser.add_argument('-retweets', type=bool, default=False, help='this flag will include retweets in final output')
-    parser.add_argument('--max-file-size-memory', type=int, default=4096, help='the max file size that will be held in '
-                                                                               'memory, in Mo, otherwise processes by chunks to '
-                                                                               'avoid memory issues')
+    parser.add_argument('--max-lines-in-memory', type=int, default=50000, help='the max number of lines from the source'
+                                                                               'files that will be held in memory')
     parser.add_argument('--tweet-language', type=str, default='en', help='specifies the language of outputted tweets')
     parser.add_argument('--output_folder', type=str, default='./', help='specify the output directory for combined '
                                                                         'files')
@@ -20,7 +19,7 @@ def main():
     args = parser.parse_args()
 
     # Extract options
-    opts = TransformationOptions(args.tweet_language, args.retweets, args.max_file_size_memory)
+    opts = TransformationOptions(args.tweet_language, args.retweets, args.max_lines_in_memory)
 
     # Scan source folder for files
     file_list = scan_folder(args.source_folder)
