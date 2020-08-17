@@ -4,6 +4,7 @@
 
 ## Introduction
 This repository is the work of the [CRANE team](https://devpost.com/software/crane-dvkeuf) for the [Resiliency Challenge](https://theresiliencychallenge.devpost.com/?ref_content=default&ref_feature=challenge&ref_medium=discover), on **real-time monitoring of racist rhetoric linked to the Covid19 pandemic**.
+[CRANE's website](crane-toolbox.github.io)
 
 The project was proposed by Gianluca Stringhini, Boston University, following his [work on early emergence of online sinophobic behaviour during the Covid19 (SARS-Cov-2) pandemic](https://arxiv.org/pdf/2004.04046.pdf).
 
