@@ -1,17 +1,82 @@
 # Crisis Racism and Narrative Evaluation
 
+Project **CRANE** (Crisis Racism and Narrative Evaluation) aims to **support researchers and anti-racist organisations** that wish to use **state-of-the-art text analysis algorithms** to study how specific **events impact online hate speech and racist narratives**. CRANE Toolbox is a **Python package**: once installed, the tools in CRANE are available as functions that users can use in their Python programs or directly through their terminal. CRANE targets users with basic programming but **no machine learning skills**.
+
 ![CRANE thumbnail](https://github.com/CRANE-toolbox/analysis-pipelines/blob/master/thumbnail.jpg?raw=true)
 
+## Table of Contents
+
+<!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [Table of Contents](#table-of-contents)
+- [Introduction](#introduction)
+	- [Genesis](#genesis)
+	- [Project motivation](#project-motivation)
+	- [CRANE Toolbox: The Python package for data analysis](#crane-toolbox-the-python-package-for-data-analysis)
+- [Quick-start](#quick-start)
+- [Package documentation](#package-documentation)
+- [Contributing](#contributing)
+- [Frequently asked questions](#frequently-asked-questions)
+- [Architecture](#architecture)
+- [Setup](#setup)
+	- [Clone](#clone)
+	- [Environment](#environment)
+		- [.env and environment variables](#env-and-environment-variables)
+	- [A note on tmux](#a-note-on-tmux)
+- [Data](#data)
+	- [I don't have my own dataset, where can I find one?](#i-dont-have-my-own-dataset-where-can-i-find-one)
+- [Preprocessing](#preprocessing)
+- [Analysis](#analysis)
+	- [Frequency of known slurs](#frequency-of-known-slurs)
+	- [Classification of anti-black and anti-asian hate speech](#classification-of-anti-black-and-anti-asian-hate-speech)
+	- [Word embeddings](#word-embeddings)
+	- [Topic modelling with LDA](#topic-modelling-with-lda)
+
+<!-- /TOC -->
+
 ## Introduction
-This repository is the work of the [CRANE team](https://devpost.com/software/crane-dvkeuf) for the [Resiliency Challenge](https://theresiliencychallenge.devpost.com/?ref_content=default&ref_feature=challenge&ref_medium=discover), on **real-time monitoring of racist rhetoric linked to the Covid19 pandemic**.
 
-The project was proposed by Gianluca Stringhini, Boston University, following his [work on early emergence of online sinophobic behaviour during the Covid19 (SARS-Cov-2) pandemic](https://arxiv.org/pdf/2004.04046.pdf).
+### Genesis
 
-Using live Twitter data and historical Twitter data, filtered for sinophobic hate speech, we are looking for quantitative and qualitative trends in the vocabulary or stereotypes contained in sinophobic hate speech tweets.
+**Crisis Racism and Narrative Evaluation**, or **CRANE** for short, was born during the [Resiliency Challenge](https://theresiliencychallenge.devpost.com/?ref_content=default&ref_feature=challenge&ref_medium=discover), a COVID19-driven hackathon. During nine weeks, an interdisciplinary team composed of students and professional designers, programmers and computer science researchers developed a [prototype website](https://crane-toolbox.github.io/#/) for **real-time monitoring of racist rhetoric linked to the Covid19 pandemic**. The project was proposed by Gianluca Stringhini, Boston University, following his [work on early emergence of online sinophobic behaviour during the Covid19 (SARS-Cov-2) pandemic](https://arxiv.org/pdf/2004.04046.pdf). Readers may find more details on the approach taken for the Resiliency Challenge on the [corresponding Devpost page](https://devpost.com/software/crane-dvkeuf) and the [resiliency-challenge-legacy branch](https://github.com/CRANE-toolbox/analysis-pipelines/tree/resiliency_challenge-legacy) of this repository.
 
-We do not claim to conduct a full research project, but we aim to provide preliminary analyses that could be reused in research projects, and present our findings on a website to raise awareness. Our results could be useful both short-term, for anti-racist associations trying to debunk new stereotypes, and long-term, to expand on thesauruses used by hate speech detection algorithms.
+### Project motivation
 
-:information_source: Information framed by :information_source: are specific to our CRANE setup for the Resiliency Challenge and are not relevant to other people that might want to use our project. :information_source:
+**ONLY IDEAS**
+While doing literature review we noticed that few papers on online hate speech monitoring had both a sociology research approach and recent natural language processing tools. The literature seems to be divided mainly into methodological papers aiming to develop new machine learning tools to detect and characterise racism, and traditional (Emma's note: could that word be taken as a negative?) sociology research approaches, both qualitative and quantitative, that do not take full advantage of the available data and analysis methods.
+We are aware that this is due in part to the difficulty of gathering interdisciplinary teams from very different fields, and in part to the rather young and precarious nature of automated hate speech detection. Our experiences during the hackathon lead us to believe that these issues could be somewhat bridged/alleviated by providing social sciences researchers with user-friendly tools leveraging the more robust of the current hate speech detection and analysis methods.
+
+### CRANE Toolbox: The Python package for data analysis
+
+CRANE Toolbox is designed to **support researchers and anti-racist organisations** in studying **how specific events impact online hate speech and racist narratives**. State-of-the-art text analysis algorithms evolve quickly and their spread is often limited to the dedicated field of computer science research. CRANE Toolbox wraps some of those methods, that fit typical social sciences questions, into **user-friendly tools that require no machine learning skills**.
+
+:warning:In this first version, CRANE Toolbox will remain **specific to tweet analysis**.
+
+
+CRANE Toolbox is a **Python package**. Once [installed](link to install section), users can [call its functions in their Python scripts](link to use in script section) or use the tools it provides [directly through their terminal](link to command-line use section). Those tools are organised in several sub-packages called modules. Each module corresponds to a step in the general analysis pipeline.
+
+ The first version of CRANE Toolbox provides tools and documentation for users to filter and format the data they have extracted from Twitter (*import* module), prepare it for analysis (*preprocessing* module), carry out the analysis(es) of their choice (*analysis module*), and get a basic graphic representation of the results (*visualisation* module).
+
+
+:warning: As a Python package, CRANE Toolbox **does not provide the data to analyse**. It also does **not substitute for a research framework** in which its tools should be used.  The documentation contains advice on parameter choices and results interpretation, but they remain the responsibility of the user.
+
+
+## Quick-start
+
+:information_source: This section is for experienced programmers who want to dive head-first into the deep. If you have no idea what we are talking about in there, please don't run away screaming! Though the length of the [Package Documentation section](##Package-documentation) might make it a bit daunting, we wrote it with non-specialists in mind, so you should find all the instructions and advice you need to use the CRANE Toolbox.
+
+## Package documentation
+
+## Contributing
+
+With issues or by becoming a team member
+
+## Frequently asked questions
+
+What is Python? What is a Python package? What is a Python module? I have a question/a feature request/some feedback, how do I contact you? Can I help? Who is doing this?
+
+---
+---
 
 ## Architecture
 Architecture of the current branch:
