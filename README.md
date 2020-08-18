@@ -6,7 +6,7 @@ Project **CRANE** (Crisis Racism and Narrative Evaluation) aims to **support res
 
 ## Table of Contents
 
-<!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+<!-- TOC depthFrom:2 depthTo:5 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [Table of Contents](#table-of-contents)
 - [Introduction](#introduction)
@@ -15,6 +15,19 @@ Project **CRANE** (Crisis Racism and Narrative Evaluation) aims to **support res
 	- [CRANE Toolbox: The Python package for data analysis](#crane-toolbox-the-python-package-for-data-analysis)
 - [Quick-start](#quick-start)
 - [Package documentation](#package-documentation)
+	- [How to install and use CRANE Toolbox](#how-to-install-and-use-crane-toolbox)
+		- [Requirements](#requirements)
+			- [What is a terminal and where do I find one?](#what-is-a-terminal-and-where-do-i-find-one)
+			- [How do I install Python 3?](#how-do-i-install-python-3)
+		- [How do I install pip for Python 3?](#how-do-i-install-pip-for-python-3)
+		- [Install CRANE Toolbox](#install-crane-toolbox)
+		- [Command-line mode](#command-line-mode)
+		- [Function-call mode](#function-call-mode)
+	- [Modules](#modules)
+		- [Import module](#import-module)
+		- [Preprocessing module](#preprocessing-module)
+		- [Analysis module](#analysis-module)
+		- [Visualisation module](#visualisation-module)
 - [Contributing](#contributing)
 - [Frequently asked questions](#frequently-asked-questions)
 - [Architecture](#architecture)
@@ -53,7 +66,7 @@ CRANE Toolbox is designed to **support researchers and anti-racist organisations
 :warning:In this first version, CRANE Toolbox will remain **specific to tweet analysis**.
 
 
-CRANE Toolbox is a **Python package**. Once [installed](link to install section), users can [call its functions in their Python scripts](link to use in script section) or use the tools it provides [directly through their terminal](link to command-line use section). Those tools are organised in several sub-packages called modules. Each module corresponds to a step in the general analysis pipeline.
+CRANE Toolbox is a **Python package**. Once [installed](####Install-CRANE-Toolbox), users can [call its functions in their Python scripts](####Function-call-mode) or use the tools it provides [directly through their terminal](####Command-line-mode). Those tools are organised in several sub-packages called modules. Each module corresponds to a step in the general analysis pipeline.
 
  The first version of CRANE Toolbox provides tools and documentation for users to filter and format the data they have extracted from Twitter (*import* module), prepare it for analysis (*preprocessing* module), carry out the analysis(es) of their choice (*analysis module*), and get a basic graphic representation of the results (*visualisation* module).
 
@@ -65,7 +78,69 @@ CRANE Toolbox is a **Python package**. Once [installed](link to install section)
 
 :information_source: This section is for experienced programmers who want to dive head-first into the deep. If you have no idea what we are talking about in there, please don't run away screaming! Though the length of the [Package Documentation section](##Package-documentation) might make it a bit daunting, we wrote it with non-specialists in mind, so you should find all the instructions and advice you need to use the CRANE Toolbox.
 
+**TO BE FILLED WHEN THE PACKAGE DOCUMENTATION SECTION IS DONE**
+
 ## Package documentation
+
+This section is divided into two parts: a first one describing how to install CRANE Toolbox and run its tools, either in command-line mode in a terminal or through function calls in Python scripts; and a second one giving details on each module, in particular data format and parameter choice.
+
+Advanced users can find additional information on the content of each module in the [code documentation](link to Sphinx code doc).
+
+### How to install and use CRANE Toolbox
+
+#### Requirements
+
+In order to successfully install CRANE Toolbox, you will need:
+- A basic internet connection
+- A terminal
+- Python 3
+- pip for Python 3
+
+Some **basic knowledge in programming and command-lines is strongly recommanded**, but the brave and the studious may choose to proceed without.
+
+If the above list is clear for you, skip to the [installation instructions](####Install-CRANE-Toolbox). Else, read the following paragraphs to get your environment ready.
+
+:warning:If you choose not to follow the recommanded installation process, you will probably need to install additional packages or software.
+
+##### What is a terminal and where do I find one?
+
+The terminal is an interface in which you can type and execute text based commands. You may find a more detailed explanation [here](https://www.quora.com/In-coding-terms-what-is-a-terminal-and-what-is-it-used-for) and pictures of what a terminal looks like [here](https://vgkits.org/blog/what-is-a-terminal/).
+
+A terminal is already installed on your computer. If you are using a Unix-based operating system (either **MacOSX or a Linux distribution**), it is aptly named **Terminal** and lives with your other applications. If you are using a Windows operating system, it is named **Command Prompt** and can be found in your Start Menu. For Windows 8 and 10, it is located in the *Windows System* folder.
+
+To run a command in the terminal, simply type it in and press Enter.
+
+:warning: Copy-pasting shortcuts (Ctrl^C and Ctrl^V) are disabled by default in terminals, because Ctrl^C is used to abort programs instead. Use right-click to copy and paste.
+
+##### How do I install Python 3?
+
+**Python 3** is a programming language. :warning: It is very similar to Python 2 but the two are not interchangeable.
+
+The installation process depends on your operating system. Basic instructions can be found on [the official Python website](https://wiki.python.org/moin/BeginnersGuide/Download), but you will easily find more detailed guides on the internet.
+
+#### How do I install pip for Python 3?
+
+**pip** is a package manager: it helps you download Python packages and update them when necessary.
+
+Basic instructions for its installation can be found on [its official website](https://pip.pypa.io/en/stable/installing/). It is widely used so step-by-step guides and other resources are easily found on the internet.
+
+:warning: Because of the co-existence of Python 2.7 and Python 3, pip might be installed for both languages on your computer. In that case, use the `pip3` command instead. You can check which version of `pip` is used by running `pip --version` in your terminal (`python -m pip --version` for Windows users).
+
+#### Install CRANE Toolbox
+
+#### Command-line mode
+
+#### Function-call mode
+
+### Modules
+
+#### Import module
+
+#### Preprocessing module
+
+#### Analysis module
+
+#### Visualisation module
 
 ## Contributing
 
@@ -73,7 +148,7 @@ With issues or by becoming a team member
 
 ## Frequently asked questions
 
-What is Python? What is a Python package? What is a Python module? I have a question/a feature request/some feedback, how do I contact you? Can I help? Who is doing this?
+What is Python? What is a Python package? What is a Python module? I have a question/a feature request/some feedback, how do I contact you? Can I help? Who is doing this? Who is this for? Can I reuse your code for my project? How do I cite this toolbox in my paper?
 
 ---
 ---
