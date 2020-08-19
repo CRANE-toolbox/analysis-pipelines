@@ -182,7 +182,7 @@ def preprocess_csv_file(csv_reader, file_path, output_path, replace_or_remove_ur
 
     # Write to a CSV file, named from the input file with "_preprocessed.csv" appended
     input_file_name = splitext(basename(file_path))[0]
-    output_file_path = output_path + input_file_name + "_preprocessed.csv"
+    output_file_path = output_path + "/" + input_file_name + "_preprocessed.csv"
     with open(output_file_path, 'w') as output_file:
         csv_writer = csv.writer(output_file, quoting=csv.QUOTE_MINIMAL)
 
