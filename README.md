@@ -31,6 +31,8 @@ Project **CRANE** (Crisis Racism and Narrative Evaluation) aims to **support res
 - [Contributing](#contributing)
 	- [Join the team](#join-the-team)
 - [Frequently asked questions](#frequently-asked-questions)
+	- [On the CRANE project](#on-the-crane-project)
+	- [On using CRANE Toolbox](#on-using-crane-toolbox)
 - [Architecture](#architecture)
 - [Setup](#setup)
 	- [Clone](#clone)
@@ -151,7 +153,7 @@ CRANE Toolbox can also be installed manually from the source code available in t
 
 We welcome all contributions! If you have questions, a feature request or some feedback, please use the **issues** feature of GitHub.
 
-The Issues page work rather like your good old forum page, with many additional features specific to programming and git versioning. GitHub provides a [detailed guide](https://guides.github.com/features/issues/) to them, but here are the basics:
+The [Issues page](https://github.com/CRANE-toolbox/analysis-pipelines/issues) works rather like your good old forum page, with many additional features specific to programming and git versioning. GitHub provides a [detailed guide](https://guides.github.com/features/issues/) to them, but here are the basics:
 1. **Search the existing issues** for similar questions/feature requests/feedback
 2. If you find an issue similar enough, you can add to its discussion with your own details
 3. If you don't find an issue similar enough, create a new one
@@ -168,7 +170,56 @@ We have chosen to onboard people privately instead of sharing all our resources 
 
 ## Frequently asked questions
 
-What is Python? What is a Python package? What is a Python module? I have a question/a feature request/some feedback, how do I contact you? Can I help? Who is doing this? Who is this for? Can I reuse your code for my project? How do I cite this toolbox in my paper? Where do I find data? My data is not in your specific format, what do I do?
+### On the CRANE project
+
+###### What is this website linked to the repo?
+https://crane-toolbox.github.io/#/ is a prototype website build during the Resiliency Challenge hackathon, in an attempt to quantify and characterise the impact of the COVID19 pandemic on online sinophobic hate speech. We left it online as a very basic example of the type of data analysis that could be carried out with CRANE Toolbox.
+
+###### Are you going to continue working on real-time analysis of COVID19-related online hate speech?
+We do not plan to at the moment. Due to the composition of the team, we have decided to focus our efforts on CRANE Toolbox, where we believe we can make a difference.
+
+###### Who is doing this?
+Currently, the team is composed of two Computer Science students, two designers and a research engineer (Emma Barme, [Rachael Dier](http://rachaeldier.com/), Kelly Ly, [Svetlana Moldavskaya](https://www.behance.net/svetlanacheban), and Ian Saucy), supported by Boston University Spark! organisation and Assistant Professor Gianluca Stringhini.
+
+The list of hackathon contributors for the first phase of the project can be found on [CRANE Devpost page](https://devpost.com/software/crane-dvkeuf).
+
+###### Can I help?
+
+Yes! Check out the [Contributing](##Contributing) section.
+
+### On using CRANE Toolbox
+
+###### What is Python? What is a Python package? What is a Python module?
+Python is a very common programming language for data analysis tasks. Packages are installable add-ons to the basic Python language. Roughly speaking, a module is a file with Python code.
+
+That said, if you are entirely unfamiliar with Python, you might want to experiment with it some before using CRANE Toolbox.
+
+###### I have a question/a feature request/some feedback, how do I contact you?
+Please use the [**Issues** page](https://github.com/CRANE-toolbox/analysis-pipelines/issues) of this repo. Check out the [Contributing](##Contributing) section for more details.
+
+###### Can I copy your code for my project?
+CRANE Toolbox is distributed under [GNU Affero General Public License v3.0](https://github.com/CRANE-toolbox/analysis-pipelines/blob/master/LICENSE).
+
+You can use it however you want provided you respect the license requirements: include a license and copyright notice, state the changes you made, disclose your source (this repo), and distribute your code under the same license. Please note that we are not liable for whatever use you make of this code, and we provide no warranty.
+
+###### How do I cite CRANE Toolbox in my paper?
+**TO BE DISCUSSED WITH SPARK!**
+Please link to this repo.
+
+###### Where can I find Twitter data?
+Sharing of tweets datasets is restricted by [Twitter Developer Terms](https://developer.twitter.com/en/developer-terms/policy). You will not be able to find publicly available datasets with tweets content, but rather datasets of tweet ids. Those can by *hydrated*, using for example [Hydrator](https://github.com/DocNow/hydrator).
+
+From there it really depends on your research topic and questions.
+Some are very time-sensitive, some are less. If yours are not very time-sensitive, try your luck with a regular search engine.
+Some require a *naive* dataset, representative of the full information flow of Twitter. In this case, your best bet is to collaborate with a research team doing frequent analyses on Twitter content. They probably keep a stream running to collect 1% of the daily Twitter data.
+Others require a dataset that has already been filtered for specific keywords or users. If that's your case, try your luck with a regular search engine.
+If you don't need historical data, you could also start your own Twitter stream to collect exactly the data you desire.
+
+###### My data is not in your specific input format, what do I do?
+We are working to include several standard input format to our *import* module. If your data format is not supported, please [get in touch](##Contributing) and we will do our best to either include support for it in CRANE Toolbox or guide you to transform it into one of our supported format.
+
+###### Method X is very useful and should be included, why is it not there?
+Maybe we don't know about it, maybe we didn't have time to implement it yet, maybe we choose not to include it for a given reason. Please [get in touch](##Contributing) to tell us about it. (Unless it's a proprietary method with a use fee.)
 
 ---
 ---
