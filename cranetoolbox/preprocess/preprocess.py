@@ -178,34 +178,35 @@ def preprocess_csv_file(csv_reader, file_path, output_path, replace_or_remove_ur
     buffer_data = []
     date_dataframes = []
 
-    # Write to a CSV file, named from the input file with "_preprocessed" appended
+    # Write to a CSV file, named from the input file with "_preprocessed.csv" appended
     input_file_name = splitext(basename(file_path))[0]
-    output_file = output_path + input_file_name + "_preprocessed"
-    csv_writer = csv.writer(output_file, quoting=csv.QUOTE_MINIMAL)
+    output_file_path = output_path + input_file_name + "_preprocessed.csv"
+    with open(output_file_path, 'w') as output_file:
+        csv_writer = csv.writer(output_file, quoting=csv.QUOTE_MINIMAL)
 
-    # Catch errors, no specific exception handling for now
-    try:
-        # For each line
-        for row in csv_reader:
-            # Preprocess the text
-            clean_tweet = preprocessing_tweet(row, replace_or_remove_url, replace_or_remove_mentions,
-                                              remove_hashtag_or_segment, replace_or_remove_punctuation, replace_or_remove_numbers)
-            buffer_data.append(clean_tweet)
-            buffer_size += 1
-            # If the buffer is full, save to file
-            if buffer_size >= MAX_BUFFER_SIZE:
+        # Catch errors, no specific exception handling for now
+        try:
+            # For each line
+            for row in csv_reader:
+                # Preprocess the text
+                clean_tweet = preprocessing_tweet(row, replace_or_remove_url, replace_or_remove_mentions,
+                                                  remove_hashtag_or_segment, replace_or_remove_punctuation, replace_or_remove_numbers)
+                buffer_data.append(clean_tweet)
+                buffer_size += 1
+                # If the buffer is full, save to file
+                if buffer_size >= MAX_BUFFER_SIZE:
+                    csv_writer.writerows(buffer_data)
+                    date_dataframes.append(transform_to_date_counts_dataframe(buffer_data))
+                    buffer_data = []
+                    buffer_size = 0
+
+            # Saving incomplete buffer when end of file is reached
+            if buffer_size > 0:
                 csv_writer.writerows(buffer_data)
                 date_dataframes.append(transform_to_date_counts_dataframe(buffer_data))
-                buffer_data = []
-                buffer_size = 0
-
-        # Saving incomplete buffer when end of file is reached
-        if buffer_size > 0:
-            csv_writer.writerows(buffer_data)
-            date_dataframes.append(transform_to_date_counts_dataframe(buffer_data))
-    except Exception as e:
-        print(e)
-        return False
+        except Exception as e:
+            print(e)
+            return False
 
     date_dataframe = merge_counts_dataframe(date_dataframes)
     return date_dataframe
