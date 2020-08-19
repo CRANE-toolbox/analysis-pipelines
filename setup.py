@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="CRANE-Toolbox",
+    name="cranetoolbox",
     version="0.0.1",
     author="The CRANE Team",
     author_email="author@example.com",
