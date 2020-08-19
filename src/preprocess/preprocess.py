@@ -234,6 +234,54 @@ def list_files(input_path):
     return input_paths
 
 
+def preprocess_pipeline(args):
+    """Main function of the preprocessing module.
+
+    :param args: Script arguments.
+    :type args: Namespace
+
+    """
+
+    # Check whether the input_path correspond to a single file or a directory
+    if isfile(input_path):
+        # Single file
+        input_paths = [input_path]
+    else:
+        # Get the list of files from the directory
+        input_paths = list_files(input_path)
+        # If the directory did not contain any file with the right extension
+        if len(input_paths) == 0:
+            print("No appropriate file could be found in the provided directory.")
+            print("Please remember that the search is not recursive.")
+            return
+
+
+    failed_file_reading = 0
+    date_dataframes = []
+    # For each input file
+    for file_path in input_paths:
+        with open(file_path, 'r') as csv_input:
+            csv_reader = reader(csv_input)
+            # Check that the header has the proper columns
+            header = next(csv_reader)
+            if header != ["id", "original_text", "timestamp"]:
+                print("The CSV file header should be ['id', 'original_text', 'timestamp'].")
+                failed_file_reading += 1
+                continue
+            date_dataframe = preprocess_csv_file(csv_reader, file_path, args.output_path, args.remove_url, args.remove_mentions, args.segment_hashtags, args.remove_punctuation, args.remove_numbers)
+            if date_dataframe:
+                date_dataframes.append(date_dataframe)
+            else:
+                failed_file_reading += 1
+
+    if date_dataframes:
+        final_dataframe = merge_counts_dataframe(date_dataframes)
+        final_dataframe.to_csv('all_date_counts.csv')
+
+    print("Failed to read %d because of improper format or headers." %
+          failed_file_reading)
+
+
 def parse_arguments():
     """Parse script arguments.
 
@@ -274,45 +322,9 @@ def parse_arguments():
     return args
 
 
+
 if __name__ == '__main__':
 
     args = parse_arguments()
 
-    # Check whether the input_path correspond to a single file or a directory
-    if isfile(input_path):
-        # Single file
-        input_paths = [input_path]
-    else:
-        # Get the list of files from the directory
-        input_paths = list_files(input_path)
-        # If the directory did not contain any file with the right extension
-        if len(input_paths) == 0:
-            print("No appropriate file could be found in the provided directory.")
-            print("Please remember that the search is not recursive.")
-            return
-
-
-    failed_file_reading = 0
-    date_dataframes = []
-    # For each input file
-    for file_path in input_paths:
-        with open(file_path, 'r') as csv_input:
-            csv_reader = reader(csv_input)
-            # Check that the header has the proper columns
-            header = next(csv_reader)
-            if header != ["id", "original_text", "timestamp"]:
-                print("The CSV file header should be ['id', 'original_text', 'timestamp'].")
-                failed_file_reading += 1
-                continue
-            date_dataframe = preprocess_csv_file(csv_reader, file_path, args.output_path, args.remove_url, args.remove_mentions, args.segment_hashtags, args.remove_punctuation, args.remove_numbers)
-            if date_dataframe:
-                date_dataframes.append(date_dataframe)
-            else:
-                failed_file_reading += 1
-
-    if date_dataframes:
-        final_dataframe = merge_counts_dataframe(date_dataframes)
-        final_dataframe.to_csv('all_date_counts.csv')
-
-    print("Failed to read %d because of improper format or headers." %
-          failed_file_reading)
+    preprocess_pipeline(args)
