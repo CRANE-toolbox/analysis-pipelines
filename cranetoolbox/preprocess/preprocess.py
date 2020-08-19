@@ -5,7 +5,7 @@ import pandas as pd
 from csv import reader
 from os import listdir
 from os.path import isfile, join, splitext, basename
-import cranetoolbox.preprocessTools
+from cranetoolbox.preprocess import preprocessTools
 
 MAX_BUFFER_SIZE = 1000
 
