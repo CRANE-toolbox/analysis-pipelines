@@ -76,7 +76,7 @@ CRANE Toolbox is a **Python package**. Once [installed](####Install-CRANE-Toolbo
 
 ## Quick-start
 
-:information_source: This section is for experienced programmers who want to dive head-first into the deep. If you have no idea what we are talking about in there, please don't run away screaming! Though the length of the [Package Documentation section](##Package-documentation) might make it a bit daunting, we wrote it with non-specialists in mind, so you should find all the instructions and advice you need to use the CRANE Toolbox.
+:information_source: This section is for experienced programmers who want to dive head-first into the deep end. If you have no idea what we are talking about in there, please don't run away screaming! Though the length of the [Package Documentation section](##Package-documentation) might make it a bit daunting, we wrote it with non-specialists in mind, so you should find all the instructions and advice you need to use the CRANE Toolbox.
 
 **TO BE FILLED WHEN THE PACKAGE DOCUMENTATION SECTION IS DONE**
 
