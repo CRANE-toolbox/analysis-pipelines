@@ -6,7 +6,7 @@ Project **CRANE** (Crisis Racism and Narrative Evaluation) aims to **support res
 
 ## Table of Contents
 
-<!-- TOC depthFrom:2 depthTo:5 withLinks:1 updateOnSave:1 orderedList:0 -->
+<!-- TOC depthFrom:2 depthTo:4 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [Table of Contents](#table-of-contents)
 - [Introduction](#introduction)
@@ -17,9 +17,6 @@ Project **CRANE** (Crisis Racism and Narrative Evaluation) aims to **support res
 - [Package documentation](#package-documentation)
 	- [How to install and use CRANE Toolbox](#how-to-install-and-use-crane-toolbox)
 		- [Requirements](#requirements)
-			- [What is a terminal and where do I find one?](#what-is-a-terminal-and-where-do-i-find-one)
-			- [How do I install Python 3?](#how-do-i-install-python-3)
-		- [How do I install pip for Python 3?](#how-do-i-install-pip-for-python-3)
 		- [Install CRANE Toolbox](#install-crane-toolbox)
 		- [Command-line mode](#command-line-mode)
 		- [Function-call mode](#function-call-mode)
@@ -107,7 +104,7 @@ To run a command in the terminal, simply type it in and press Enter.
 
 The installation process depends on your operating system. Basic instructions can be found on [the official Python website](https://wiki.python.org/moin/BeginnersGuide/Download), but you will easily find more detailed guides on the internet.
 
-#### How do I install pip for Python 3?
+##### How do I install pip for Python 3?
 
 **pip** is a package manager: it helps you download Python packages and update them when necessary.
 
