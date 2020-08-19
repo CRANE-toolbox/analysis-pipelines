@@ -62,7 +62,7 @@ def main():
             else:
                 failed_file_reading += 1
 
-    if date_dataframes:
+    if date_dataframes is not None:
         final_dataframe = merge_counts_dataframe(date_dataframes)
         final_dataframe.to_csv('all_date_counts.csv')
 
