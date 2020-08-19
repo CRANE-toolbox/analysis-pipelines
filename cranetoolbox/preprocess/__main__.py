@@ -34,12 +34,12 @@ def main():
     args = parser.parse_args()
 
     # Check whether the input_path correspond to a single file or a directory
-    if isfile(input_path):
+    if isfile(args.input_path):
         # Single file
-        input_paths = [input_path]
+        input_paths = [args.input_path]
     else:
         # Get the list of files from the directory
-        input_paths = list_files(input_path)
+        input_paths = list_files(args.input_path)
         # If the directory did not contain any file with the right extension
         if len(input_paths) == 0:
             print("No appropriate file could be found in the provided directory.")
