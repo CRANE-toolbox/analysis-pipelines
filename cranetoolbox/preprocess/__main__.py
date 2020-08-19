@@ -53,12 +53,6 @@ def main():
     for file_path in input_paths:
         with open(file_path, 'r') as csv_input:
             csv_reader = reader(csv_input)
-            # Check that the header has the proper columns
-            header = next(csv_reader)
-            if header != ["id", "original_text", "timestamp"]:
-                print("The CSV file header should be ['id', 'original_text', 'timestamp'].")
-                failed_file_reading += 1
-                continue
             date_dataframe = preprocess_csv_file(csv_reader, file_path, args.output_path, args.remove_url, args.remove_mentions, args.segment_hashtags, args.remove_punctuation, args.remove_numbers)
             if date_dataframe:
                 date_dataframes.append(date_dataframe)

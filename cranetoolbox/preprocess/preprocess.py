@@ -184,9 +184,6 @@ def preprocess_csv_file(csv_reader, file_path, output_path, replace_or_remove_ur
     output_file = output_path + input_file_name + "_preprocessed"
     csv_writer = csv.writer(output_file, quoting=csv.QUOTE_MINIMAL)
 
-    # Write header
-    csv_writer.writerow(["id", "original_text", "clean_text", "timestamp"])
-
     # Catch errors, no specific exception handling for now
     try:
         # For each line
