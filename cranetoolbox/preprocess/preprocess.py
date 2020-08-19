@@ -152,7 +152,7 @@ def count_per_day(data):
 
 
 def preprocess_csv_file(csv_reader, file_path, output_path, replace_or_remove_url, replace_or_remove_mentions, remove_hashtag_or_segment, replace_or_remove_punctuation, replace_or_remove_numbers):
-    """Short summary.
+    """Preprocess a single CSV file.
 
     :param csv_reader: The reader for the input CSV file, without header.
     :type csv_reader: csv.reader
