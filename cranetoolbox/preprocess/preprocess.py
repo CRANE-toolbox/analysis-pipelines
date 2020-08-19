@@ -1,7 +1,7 @@
 # Main preprocessing module
 
+import csv
 import pandas as pd
-from csv import reader, writer
 from os import listdir
 from os.path import isfile, join, splitext, basename
 from cranetoolbox.preprocess import preprocessTools
@@ -181,7 +181,7 @@ def preprocess_csv_file(csv_reader, file_path, output_path, replace_or_remove_ur
     # Write to a CSV file, named from the input file with "_preprocessed" appended
     input_file_name = splitext(basename(file_path))[0]
     output_file = output_path + input_file_name + "_preprocessed"
-    csv_writer = writer(output_file, quoting=csv.QUOTE_MINIMAL)
+    csv_writer = csv.writer(output_file, quoting=csv.QUOTE_MINIMAL)
 
     # Catch errors, no specific exception handling for now
     try:

@@ -1,7 +1,7 @@
 from cranetoolbox.preprocess.preprocess import *
 import argparse
+import csv
 import pandas as pd
-from csv import reader
 from os.path import isfile
 
 
@@ -55,7 +55,7 @@ def main():
     # For each input file
     for file_path in input_paths:
         with open(file_path, 'r') as csv_input:
-            csv_reader = reader(csv_input)
+            csv_reader = csv.reader(csv_input)
             date_dataframe = preprocess_csv_file(csv_reader, file_path, args.output_path, args.remove_url, args.remove_mentions, args.segment_hashtags, args.remove_punctuation, args.remove_numbers)
             if date_dataframe:
                 date_dataframes.append(date_dataframe)
