@@ -198,14 +198,14 @@ def preprocess_csv_file(csv_reader, file_path, output_path, replace_or_remove_ur
                 # If the buffer is full, save to file
                 if buffer_size >= MAX_BUFFER_SIZE:
                     csv_writer.writerows(buffer_data)
-                    date_dataframes.append(transform_to_date_counts_dataframe(buffer_data))
+                    date_dataframes.append(count_per_day(buffer_data))
                     buffer_data = []
                     buffer_size = 0
 
             # Saving incomplete buffer when end of file is reached
             if buffer_size > 0:
                 csv_writer.writerows(buffer_data)
-                date_dataframes.append(transform_to_date_counts_dataframe(buffer_data))
+                date_dataframes.append(count_per_day(buffer_data))
         except Exception as e:
             print(e)
             return None
