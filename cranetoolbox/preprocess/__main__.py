@@ -66,7 +66,7 @@ def main():
         final_dataframe = merge_counts_dataframe(date_dataframes)
         final_dataframe.to_csv('all_date_counts.csv')
 
-    print("Failed to read %d because of improper format or headers." %
+    print("Failed to read %d files." %
           failed_file_reading)
 
 
