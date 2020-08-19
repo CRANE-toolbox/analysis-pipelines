@@ -5,7 +5,7 @@ import pandas as pd
 from csv import reader
 from os import listdir
 from os.path import isfile, join, splitext, basename
-import src.preprocess.preprocessTools
+import preprocessTools
 
 MAX_BUFFER_SIZE = 1000
 
@@ -118,6 +118,38 @@ def preprocessing_tweet(tweet, replace_or_remove_url, replace_or_remove_mentions
     return clean_tweet
 
 
+def merge_counts_dataframe(df_list):
+    df_final = pd.concat(df_all)
+    return df_final.groupby('date').agg({'counts': 'sum'})
+
+
+def transform_to_date_counts_dataframe(buffer_data):
+
+    df_counts = pd.DataFrame.from_records(buffer_data)
+
+    df_counts[3] = pd.to_datetime(df_counts[3])
+    df_counts[3] = df_counts[3].apply(lambda x: x.strftime('%Y-%m-%d'))
+
+    return df[3].value_counts().rename_axis('date').to_frame('counts')
+
+    '''
+    Goal: Table with the number of tweets in the database for each date
+
+    1/ takes an array of arrays
+    2/ transform it into a pandas DataFrame
+    3/ transform the timestamp in the last column into a date format (just year-month-day, no time info)
+    4/ do a groupby count of this date column
+    5/ returns this groupby DataFrame
+
+    Call that function just before/after csv_writer.writerows(buffer_data) (lines 168 and 174 at the moment) and append the result to an array of DataFrames
+
+    And when the loop is over, concatenate those DataFrames and do a groupby sum to add the totals
+
+    Testing - need to use it as a package function now, not a script function.
+    Also, check this https://docs.pytest.org/en/stable/goodpractices.html#goodpractices to install the package in editable mode
+    '''
+
+
 def preprocess_csv_file(csv_reader, file_path, output_path, replace_or_remove_url, replace_or_remove_mentions, remove_hashtag_or_segment, replace_or_remove_punctuation, replace_or_remove_numbers):
     """Short summary.
 
@@ -145,6 +177,7 @@ def preprocess_csv_file(csv_reader, file_path, output_path, replace_or_remove_ur
     # Reading and saving in chunks to avoid memory overload
     buffer_size = 0
     buffer_data = []
+    date_dataframes = []
 
     # Write to a CSV file, named from the input file with "_preprocessed" appended
     input_file_name = splitext(basename(file_path))[0]
@@ -166,17 +199,20 @@ def preprocess_csv_file(csv_reader, file_path, output_path, replace_or_remove_ur
             # If the buffer is full, save to file
             if buffer_size >= MAX_BUFFER_SIZE:
                 csv_writer.writerows(buffer_data)
+                date_dataframes.append(transform_to_date_counts_dataframe(buffer_data))
                 buffer_data = []
                 buffer_size = 0
 
         # Saving incomplete buffer when end of file is reached
         if buffer_size > 0:
             csv_writer.writerows(buffer_data)
+            date_dataframes.append(transform_to_date_counts_dataframe(buffer_data))
     except Exception as e:
         print(e)
         return False
 
-    return True
+    date_dataframe = merge_counts_dataframe(date_dataframes)
+    return date_dataframe
 
 
 def list_files(input_path, pickled_input=False):
@@ -270,6 +306,7 @@ if __name__ == '__main__':
         print("pickled input and output not yet supported")
         return
     failed_file_reading = 0
+    date_dataframes = []
     # For each input file
     for file_path in input_paths:
         with open(file_path, 'r') as csv_input:
@@ -277,12 +314,18 @@ if __name__ == '__main__':
             # Check that the header has the proper columns
             header = next(csv_reader)
             if header != ["id", "original_text", "timestamp"]:
-                print("The CSV file header should be ['id', 'original_text', 'timestamp'"].)
+                print("The CSV file header should be ['id', 'original_text', 'timestamp'].")
                 failed_file_reading += 1
                 continue
-            success= preprocess_csv_file(csv_reader, file_path, args.output_path, args.remove_url, args.remove_mentions, args.segment_hashtags, args.remove_punctuation, args.remove_numbers)
-            if not success:
+            date_dataframe = preprocess_csv_file(csv_reader, file_path, args.output_path, args.remove_url, args.remove_mentions, args.segment_hashtags, args.remove_punctuation, args.remove_numbers)
+            if date_dataframe:
+                date_dataframes.append(date_dataframe)
+            else:
                 failed_file_reading += 1
+
+    if date_dataframes:
+        final_dataframe = merge_counts_dataframe(date_dataframes)
+        final_dataframe.to_csv('all_date_counts.csv')
 
     print("Failed to read %d because of improper format or headers." %
           failed_file_reading)
