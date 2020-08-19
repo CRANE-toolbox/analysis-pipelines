@@ -66,8 +66,10 @@ def main():
         final_dataframe = merge_counts_dataframe(date_dataframes)
         final_dataframe.to_csv('all_date_counts.csv')
 
-    print("Failed to read %d files." %
-          failed_file_reading)
+    if failed_file_reading > 0:
+        print("Failed to read %d files." % failed_file_reading)
+    else:
+        print("Fully successful")
 
 
 if __name__ == '__main__':
