@@ -117,36 +117,38 @@ def preprocessing_tweet(tweet, replace_or_remove_url, replace_or_remove_mentions
     return clean_tweet
 
 
-def merge_counts_dataframe(df_list):
-    df_final = pd.concat(df_all)
-    return df_final.groupby('date').agg({'counts': 'sum'})
+def merge_counts_dataframe(counts_list):
+    """Get merged counts per day from a list of DataFrame
+
+    :param counts_list: List of DataFrame with the count of occurences per day.
+    :type counts_list: list(pandas.DataFrame)
+    :return: A DataFrame, sum of the info contained in the input list
+    :rtype: pandas.DataFrame
+
+    """
+
+    if len(counts_list) == 0:
+        return None
+    counts_merged = pd.concat(counts_list)
+    return counts_merged.groupby('date').agg({'counts': 'sum'})
 
 
-def transform_to_date_counts_dataframe(buffer_data):
+def count_per_day(data):
+    """Count occurences per day in a list of data records.
 
-    df_counts = pd.DataFrame.from_records(buffer_data)
+    :param data: List of data records, where the timestamp is the fourth column.
+    :type data: list(list())
+    :return: A DataFrame with the count of occurences per day.
+    :rtype: pandas.DataFrame
 
-    df_counts[3] = pd.to_datetime(df_counts[3])
-    df_counts[3] = df_counts[3].apply(lambda x: x.strftime('%Y-%m-%d'))
+    """
 
-    return df[3].value_counts().rename_axis('date').to_frame('counts')
+    counts = pd.DataFrame.from_records(data)
 
-    '''
-    Goal: Table with the number of tweets in the database for each date
+    counts[3] = pd.to_datetime(counts[3])
+    counts[3] = counts[3].apply(lambda x: x.strftime('%Y-%m-%d'))
 
-    1/ takes an array of arrays
-    2/ transform it into a pandas DataFrame
-    3/ transform the timestamp in the last column into a date format (just year-month-day, no time info)
-    4/ do a groupby count of this date column
-    5/ returns this groupby DataFrame
-
-    Call that function just before/after csv_writer.writerows(buffer_data) (lines 168 and 174 at the moment) and append the result to an array of DataFrames
-
-    And when the loop is over, concatenate those DataFrames and do a groupby sum to add the totals
-
-    Testing - need to use it as a package function now, not a script function.
-    Also, check this https://docs.pytest.org/en/stable/goodpractices.html#goodpractices to install the package in editable mode
-    '''
+    return counts[3].value_counts().rename_axis('date').to_frame('counts')
 
 
 def preprocess_csv_file(csv_reader, file_path, output_path, replace_or_remove_url, replace_or_remove_mentions, remove_hashtag_or_segment, replace_or_remove_punctuation, replace_or_remove_numbers):
@@ -206,7 +208,7 @@ def preprocess_csv_file(csv_reader, file_path, output_path, replace_or_remove_ur
                 date_dataframes.append(transform_to_date_counts_dataframe(buffer_data))
         except Exception as e:
             print(e)
-            return False
+            return None
 
     date_dataframe = merge_counts_dataframe(date_dataframes)
     return date_dataframe
