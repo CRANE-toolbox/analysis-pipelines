@@ -215,21 +215,17 @@ def preprocess_csv_file(csv_reader, file_path, output_path, replace_or_remove_ur
     return date_dataframe
 
 
-def list_files(input_path, pickled_input=False):
-    """ List all CSV (or pickled) files in the specified directory.
+def list_files(input_path):
+    """ List all CSV files in the specified directory.
 
     :param input_path: Path to the directory containing the files.
     :type input_path: str
-    :param pickled_input: True if the input is in pickled pandas DataFrame rather than CSV files.
-    :type pickled_input: bool
     :return: A list of the paths to the input files.
     :rtype: list(str)
 
     """
 
     extension = ".csv"
-    if pickled_input:
-        extension = ".pickle"
 
     # Iterates over the content of the directory and keep only files with the correct extension
     # The search is not recursive!
@@ -257,12 +253,6 @@ def parse_arguments():
         "output_path", help="Path to the folder where the preprocessed dataset should be saved.")
 
     # Optional arguments
-    parser.add_argument("-pi", "--pickled_input",
-                        help="The dataset to load is stored in pickled pandas DataFrame rather than CSV files.",
-                        action='store_true')
-    parser.add_argument("-po", "--pickled_output",
-                        help="The output dataset is saved in pickled pandas DataFrame rather than CSV files.",
-                        action='store_true')
     parser.add_argument("-url", "--remove_url",
                         help="Use this flag to remove URLs from the tweets instead of replacing them with 'url'",
                         action='store_false')
@@ -294,17 +284,14 @@ if __name__ == '__main__':
         input_paths = [input_path]
     else:
         # Get the list of files from the directory
-        input_paths = list_files(input_path, pickled_input)
+        input_paths = list_files(input_path)
         # If the directory did not contain any file with the right extension
         if len(input_paths) == 0:
             print("No appropriate file could be found in the provided directory.")
             print("Please remember that the search is not recursive.")
             return
 
-    # /!\ Only deals with CSV inputs and outputs right now
-    if pickled_input or pickled_output:
-        print("pickled input and output not yet supported")
-        return
+
     failed_file_reading = 0
     date_dataframes = []
     # For each input file
