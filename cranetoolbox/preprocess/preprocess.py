@@ -2,8 +2,8 @@
 
 import csv
 import pandas as pd
-from os import listdir
-from os.path import isfile, join, splitext, basename
+from os import listdir, makedirs
+from os.path import isfile, join, splitext, basename, exists
 from cranetoolbox.preprocess import preprocessTools
 
 MAX_BUFFER_SIZE = 1000
@@ -179,6 +179,10 @@ def preprocess_csv_file(csv_reader, file_path, output_path, replace_or_remove_ur
     buffer_size = 0
     buffer_data = []
     date_dataframes = []
+
+    # Create output folder if it does not exists
+    if not exists(output_path):
+        makedirs(output_path)
 
     # Write to a CSV file, named from the input file with "_preprocessed.csv" appended
     input_file_name = splitext(basename(file_path))[0]
