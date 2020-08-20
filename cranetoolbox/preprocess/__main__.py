@@ -8,11 +8,13 @@ from os.path import isfile
 def main():
     # Create argument parser
     parser = argparse.ArgumentParser(
-        description="Dataset preprocessing. Prepare the text of each tweet for analysis and count the number of tweets per day.")
+        description="Dataset preprocessing. Prepare the text of each tweet for analysis and count the number of "
+                    "tweets per day.")
 
     # Positional mandatory arguments
     parser.add_argument(
-        "input_path", help="Path to the folder containing the dataset formated with the *import* module, or a single file.")
+        "input_path", help="Path to the folder containing the dataset formated with the *import* module, or a single "
+                           "file.")
     parser.add_argument(
         "output_path", help="Path to the folder where the preprocessed dataset should be saved.")
 
@@ -21,16 +23,20 @@ def main():
                         help="Use this flag to remove URLs from the tweets instead of replacing them with 'url'",
                         action='store_false')
     parser.add_argument("-mention", "--remove_mentions",
-                        help="Use this flag to remove user mentions '@userHandle' from the tweets instead of replacing them with 'atUser'",
+                        help="Use this flag to remove user mentions '@userHandle' from the tweets instead of "
+                             "replacing them with 'atUser'",
                         action='store_false')
     parser.add_argument("-hashtag", "--segment_hashtags",
-                        help="Use this flag to segment hashtags instead of simply removing the preceding '#' character. See documentation for details on the segmentation.",
+                        help="Use this flag to segment hashtags instead of simply removing the preceding '#' "
+                             "character. See documentation for details on the segmentation.",
                         action='store_false')
     parser.add_argument("-punct", "--remove_punctuation",
-                        help="Use this flag to remove all punctuation expect hyphens, instead of replacing repeated symbols and newlines.",
+                        help="Use this flag to remove all punctuation expect hyphens, instead of replacing repeated "
+                             "symbols and newlines.",
                         action='store_false')
     parser.add_argument("-num", "--remove_numbers",
-                        help="Use this flag to remove all numbers from the tweets instead of replacing them with their text version",
+                        help="Use this flag to remove all numbers from the tweets instead of replacing them with "
+                             "their text version",
                         action='store_false')
 
     # Parse arguments

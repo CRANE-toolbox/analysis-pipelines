@@ -9,7 +9,8 @@ from cranetoolbox.preprocess import preprocessTools
 MAX_BUFFER_SIZE = 1000
 
 
-def preprocessing_text(text, replace_or_remove_url, replace_or_remove_mentions, remove_hashtag_or_segment, replace_or_remove_punctuation, replace_or_remove_numbers):
+def preprocessing_text(text, replace_or_remove_url, replace_or_remove_mentions, remove_hashtag_or_segment,
+                       replace_or_remove_punctuation, replace_or_remove_numbers):
     """Preprocess the text content of a tweet for analysis.
 
     :param text: Text content of a tweet.
@@ -90,7 +91,8 @@ def preprocessing_text(text, replace_or_remove_url, replace_or_remove_mentions, 
     return clean_text
 
 
-def preprocessing_tweet(tweet, replace_or_remove_url, replace_or_remove_mentions, remove_hashtag_or_segment, replace_or_remove_punctuation, replace_or_remove_numbers):
+def preprocessing_tweet(tweet, replace_or_remove_url, replace_or_remove_mentions, remove_hashtag_or_segment,
+                        replace_or_remove_punctuation, replace_or_remove_numbers):
     """Preprocess the text content of a tweet for analysis.
 
     :param text: An array with the tweet info, in format [id, original_text, timestamp].
@@ -151,7 +153,8 @@ def count_per_day(data):
     return counts[3].value_counts().rename_axis('date').to_frame('counts')
 
 
-def preprocess_csv_file(csv_reader, file_path, output_path, replace_or_remove_url, replace_or_remove_mentions, remove_hashtag_or_segment, replace_or_remove_punctuation, replace_or_remove_numbers):
+def preprocess_csv_file(csv_reader, file_path, output_path, replace_or_remove_url, replace_or_remove_mentions,
+                        remove_hashtag_or_segment, replace_or_remove_punctuation, replace_or_remove_numbers):
     """Preprocess a single CSV file.
 
     :param csv_reader: The reader for the input CSV file, without header.
@@ -196,7 +199,8 @@ def preprocess_csv_file(csv_reader, file_path, output_path, replace_or_remove_ur
             for row in csv_reader:
                 # Preprocess the text
                 clean_tweet = preprocessing_tweet(row, replace_or_remove_url, replace_or_remove_mentions,
-                                                  remove_hashtag_or_segment, replace_or_remove_punctuation, replace_or_remove_numbers)
+                                                  remove_hashtag_or_segment, replace_or_remove_punctuation,
+                                                  replace_or_remove_numbers)
                 buffer_data.append(clean_tweet)
                 buffer_size += 1
                 # If the buffer is full, save to file
