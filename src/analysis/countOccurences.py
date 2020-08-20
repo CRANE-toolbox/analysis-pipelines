@@ -151,7 +151,7 @@ def count_keywords(input_paths, keywords, date_format):
     """
 
     # List the main variants of the keywords (e.g. the keys of the keywords dict)
-    main_variants = keywords.keys()
+    main_variants = list(keywords.keys())
 
     # Create a list of intermediate DataFrames to store the day-aggregated counts for each chunk of the dataset
     chunks_counts = []
@@ -222,7 +222,7 @@ def counts_to_freq(keyword_counts, tweet_counts, keywords):
     """
 
     # List the main variants of the keywords (e.g. the keys of the keywords dict)
-    main_variants = keywords.keys()
+    main_variants = list(keywords.keys())
 
     # Divide by daily total to get frequency
     for keyword in main_variants:
