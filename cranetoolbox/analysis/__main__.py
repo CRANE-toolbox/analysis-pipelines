@@ -12,8 +12,6 @@ def main():
     parser.add_argument(
         "input_path", help="Path to the folder containing the dataset preprocessed with the *preprocess* module, or a single file.")
     parser.add_argument(
-        "daily_tweets_path", help="Path to the file with the number of tweets per day in the dataset, generated with the *preprocess* module.")
-    parser.add_argument(
         "keywords_path", help="Path to the JSON file containing the keywords and their variants. See main documentation for expected format.")
     parser.add_argument(
         "output_path", help="Path for the result file.")
@@ -26,9 +24,6 @@ def main():
 
     # Load the dictionary of keywords
     keywords = get_keywords(args.keywords_path)
-
-    # Load the tweets daily counts
-    tweet_counts = get_tweet_counts(args.daily_tweets_path)
 
     # Check whether the input_path correspond to a single file or a directory
     if isfile(args.input_path):
