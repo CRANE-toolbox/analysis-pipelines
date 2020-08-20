@@ -207,13 +207,11 @@ def count_keywords(input_paths, keywords, date_format):
     return daily_counts
 
 
-def counts_to_freq(keyword_counts, tweet_counts, keywords):
+def counts_to_freq(keyword_counts, keywords):
     """For each day, divide the count for each keyword by the daily total.
 
     :param keyword_counts: DataFrame with the number of occurences of each keyword for each day.
     :type keyword_counts: pandas.DataFrame
-    :param tweet_counts: DataFrame with the total number of tweets for each day.
-    :type tweet_counts: pandas.DataFrame
     :param keywords: The dictionary of keywords with their variants.
     :type keywords: dict(str, list(str))
     :return: A DataFrame with the count and frequency of each keyword for each day.
@@ -229,7 +227,7 @@ def counts_to_freq(keyword_counts, tweet_counts, keywords):
         keyword_count_col = keyword + "_count"
         keyword_freq_col = keyword + "_freq"
         keyword_counts[keyword_freq_col] = keyword_counts[keyword_count_col].map(
-            float) / tweet_counts["counts"]
+            float) / keyword_counts["total_count"]
 
     return keyword_counts
 
