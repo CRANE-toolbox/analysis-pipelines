@@ -181,7 +181,7 @@ def count_keywords(input_paths, keywords, date_format):
                             temp_counts = aggregate_counts(buffer_data, main_variants, date_format)
                             # Save aggregate DataFrame to list
                             chunks_counts.append(temp_counts)
-                            del temp_occurences, temp_counts
+                            del temp_counts
                             buffer_data = []
                             buffer_size = 0
 
