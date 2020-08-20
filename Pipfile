@@ -6,16 +6,12 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-nltk = "*"
-pandas = "*"
-requests = "*"
-progress= "*"
-num2words= "*"
-ratelimit = "*"
-gensim = "*"
-wordsegment = "*"
-yappi = "*"
-sphinx = ">=3.1.2"
+nltk = "==3.5"
+pandas = "==1.1.0"
+requests = "==2.24"
+num2words= "==0.5.10"
+ratelimit = "==2.2.1"
+gensim = "==3.8.3"
+wordsegment = "==1.3.1"
+sphinx = "==3.1.2"
 
-[requires]
-python_version = ">=3.6"

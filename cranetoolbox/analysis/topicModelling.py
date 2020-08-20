@@ -18,7 +18,7 @@ import pickle
 import pandas as pd
 from functools import partial
 from multiprocessing import Pool, cpu_count
-from src.analysis import NoDaemonPool
+from cranetoolbox.analysis import NoDaemonPool
 from os import path
 from time import time
 from pprint import pprint
@@ -31,7 +31,7 @@ from nltk.stem.wordnet import WordNetLemmatizer
 from os import environ as env
 from datetime import datetime as dt
 
-from src.preprocess.preprocessingTools import preprocessing
+from cranetoolbox.preprocess.preprocessingTools import preprocessing
 
 # Set logging level
 logging.basicConfig(
