@@ -1,6 +1,7 @@
 from cranetoolbox.analysis.countOccurences import *
 import argparse
-from os.path import isfile
+from os import makedirs
+from os.path import isfile, exists
 
 
 def main():
@@ -48,6 +49,9 @@ def main():
     # Compute daily frequencies
     keyword_counts_and_freqs = counts_to_freq(keyword_counts, tweet_counts, keywords)
 
+    # Create output folder if it does not exists
+    if not exists(args.output_path):
+        makedirs(args.output_path)
     # Save to file
     keyword_counts_and_freqs.to_csv(args.output_path, index=True)
 
