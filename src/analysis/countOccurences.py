@@ -161,11 +161,6 @@ def count_keywords(input_paths, keywords, date_format):
         try:
             with open(input_path, 'r') as csv_input:
                 csv_reader = reader(csv_input)
-                # Check that the header has the proper columns
-                header = next(csv_reader)
-                if header != ["id", "original_text", "clean_text", "timestamp"]:
-                    print("The CSV file header should be ['id', 'original_text', 'clean_text', 'timestamp'"].)
-                    raise ValueError
                 # Reading and saving in chunks to avoid memory overload
                 buffer_size = 0
                 buffer_data = []
