@@ -22,7 +22,7 @@ setuptools.setup(
     entry_points={
         "console_scripts": {
             "crane-import=cranetoolbox.importTools.__main__:main",
-            "crane-preprocess=cranetoolbox.preprocess.__main__:main"
+            "crane-analysis-quanti=cranetoolbox.analysis.__main__:main"
         }
     },
 
