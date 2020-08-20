@@ -42,7 +42,7 @@ def main():
     keyword_counts = count_keywords(input_paths, keywords, args.date_format)
 
     # Compute daily frequencies
-    keyword_counts_and_freqs = counts_to_freq(keyword_counts, tweet_counts, keywords)
+    keyword_counts_and_freqs = counts_to_freq(keyword_counts, keywords)
 
     # Create output folder if it does not exists
     makedirs(dirname(args.output_path), exist_ok=True)
