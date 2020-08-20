@@ -2,6 +2,7 @@
 __pycache__
 collected_streaming_data.csv
 access_credentials.txt
+./cranetoolbox/results
 
 #VS code specifics
 .vscode
@@ -155,3 +156,5 @@ smallset/
 
 *.pkl
 /venv/
+/cranetoolbox/results/
+/cranetoolbox/results/
