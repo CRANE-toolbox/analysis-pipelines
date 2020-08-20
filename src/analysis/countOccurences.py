@@ -82,17 +82,25 @@ def get_tweet_counts(path):
     return tweet_counts
 
 
-def detect_keywords(tweet, keywords):
+def detect_keywords(text, keywords):
     """Look for each keyword (with variants) in a tweet.
 
-    :param tweet: The preprocessed text of the tweet.
-    :type tweet: str
+    :param text: The preprocessed text of the tweet.
+    :type text: str
     :param keywords: The dictionary of keywords with their variants.
     :type keywords: dict(str, list(str))
     :return: A dictionary indicating the presence or absence of each keyword.
     :rtype: dict(str, bool)
 
     """
+
+    tweet_info = {}
+    for main_variant in keywords.keys():
+        # Detect if one of the variants of the keyword is present in the tweet
+        variants = keywords[main_variant]
+        tweet_info[main_variant] = any([variant in text for variant in variants])
+
+    return tweet_info
 
 
 def aggregate_counts(data, main_variants, date_format):
