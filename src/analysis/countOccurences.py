@@ -171,7 +171,7 @@ def count_keywords(input_paths, keywords, date_format):
                         # Detect keywords
                         clean_text = row[2]
                         has_keyword = detect_keywords(clean_text, keywords)
-                        has_keyword["timestamp"] = row[0]
+                        has_keyword["timestamp"] = row[3]
                         has_keyword["total"] = 1 # Easier group_by later
                         buffer_data.append(has_keyword)
                         buffer_size += 1
