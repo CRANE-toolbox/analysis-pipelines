@@ -50,7 +50,7 @@ def main():
     keyword_counts_and_freqs = counts_to_freq(keyword_counts, tweet_counts, keywords)
 
     # Create output folder if it does not exists
-    makedirs(dirname(filename), exist_ok=True)
+    makedirs(dirname(args.output_path), exist_ok=True)
     # Save to file
     keyword_counts_and_freqs.to_csv(args.output_path, index=True)
 
