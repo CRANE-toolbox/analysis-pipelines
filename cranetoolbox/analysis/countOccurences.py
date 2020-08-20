@@ -229,7 +229,7 @@ def counts_to_freq(keyword_counts, tweet_counts, keywords):
         keyword_count_col = keyword + "_count"
         keyword_freq_col = keyword + "_freq"
         keyword_counts[keyword_freq_col] = keyword_counts[keyword_count_col].map(
-            float) / tweet_counts["count"]
+            float) / tweet_counts["counts"]
 
     return keyword_counts
 
