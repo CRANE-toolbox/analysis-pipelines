@@ -2,6 +2,7 @@
 # Adapted from https://github.com/Deffro/text-preprocessing-techniques
 
 import re
+
 import wordsegment
 from num2words import num2words
 

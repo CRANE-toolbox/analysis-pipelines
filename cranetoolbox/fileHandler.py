@@ -29,7 +29,14 @@ def scan_folder(search_path: str) -> [str]:
     return file_list
 
 
-def scan_folder_csv(search_path: str) -> [str]:
+def scan_folder_csv(search_path: str) -> typing.List[str]:
+    """
+    Scans a given path and extracts all files that end with .csv
+    :param search_path: Any path on the machine
+    :type search_path: str
+    :return: List of CSV files
+    :rtype: list(PurePath)
+    """
     all_files = scan_folder(search_path)
     output_file_list = []
     for curr_path in all_files:

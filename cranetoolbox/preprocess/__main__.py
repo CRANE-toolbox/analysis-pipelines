@@ -1,8 +1,8 @@
-from cranetoolbox.fileHandler import scan_folder_csv
-from cranetoolbox.preprocess.preprocess import *
 import argparse
 import csv
-import pandas as pd
+
+from cranetoolbox.fileHandler import scan_folder_csv
+from cranetoolbox.preprocess.preprocess import *
 
 
 def main():
