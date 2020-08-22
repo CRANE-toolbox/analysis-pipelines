@@ -1,4 +1,3 @@
-from cranetoolbox.fileHandler import scan_folder
 from cranetoolbox.importTools import *
 import argparse
 
