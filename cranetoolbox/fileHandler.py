@@ -1,7 +1,7 @@
 import os
 import typing
 from os import path
-from pathlib import PurePath
+from pathlib import PurePath, Path
 
 
 def scan_folder(search_path: str) -> [str]:
@@ -27,3 +27,12 @@ def scan_folder(search_path: str) -> [str]:
         for file in files:
             file_list.append(PurePath(search_path, file))
     return file_list
+
+
+def scan_folder_csv(search_path: str) -> [str]:
+    all_files = scan_folder(search_path)
+    output_file_list = []
+    for curr_path in all_files:
+        if Path(curr_path).suffix == '.csv':
+            output_file_list.append(curr_path)
+    return output_file_list

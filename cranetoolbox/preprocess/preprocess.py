@@ -203,8 +203,11 @@ def preprocess_csv_file(csv_reader: csv.reader, file_path: str, output_path: str
 
         # Catch errors, no specific exception handling for now
         try:
+            row_num = 0
             # For each line
             for row in csv_reader:
+                print(f'\rProcessing line: {row_num}', end="")
+                row_num += 1
                 # Preprocess the text
                 clean_tweet = preprocessing_tweet(row, replace_or_remove_url, replace_or_remove_mentions,
                                                   remove_hashtag_or_segment, replace_or_remove_punctuation,
@@ -225,6 +228,9 @@ def preprocess_csv_file(csv_reader: csv.reader, file_path: str, output_path: str
         except Exception as e:
             print(e)
             return None
+        finally:
+            # Print newline to escape out of line used for status updates
+            print()
 
     date_dataframe = merge_counts_dataframe(date_dataframes)
     return date_dataframe
