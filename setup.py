@@ -13,7 +13,7 @@ setuptools.setup(
     long_description=README,
     long_description_content_type="text/markdown",
     url="https://github.com/CRANE-toolbox/analysis-pipelines",
-    packages=['cranetoolbox','cranetoolbox.importTools'],
+    packages=['cranetoolbox', 'cranetoolbox.importTools'],
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'License :: OSI Approved :: GNU Affero General Public License v3',
@@ -21,7 +21,8 @@ setuptools.setup(
     ],
     entry_points={
         "console_scripts": {
-            "crane-import=cranetoolbox.importTools.__main__:main"
+            "crane-import=cranetoolbox.importTools.__main__:main",
+            "crane-preprocess=cranetoolbox.preprocess.__main__:main"
         }
     },
 
