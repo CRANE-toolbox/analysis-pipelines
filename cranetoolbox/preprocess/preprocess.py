@@ -1,16 +1,21 @@
 # Main preprocessing module
 
 import csv
+import os
+from os import makedirs
+from os.path import splitext, basename, exists
+from typing import List, Optional
+
 import pandas as pd
-from os import listdir, makedirs
-from os.path import isfile, join, splitext, basename, exists
+
 from cranetoolbox.preprocess import preprocessTools
 
 MAX_BUFFER_SIZE = 1000
 
 
-def preprocessing_text(text, replace_or_remove_url, replace_or_remove_mentions, remove_hashtag_or_segment,
-                       replace_or_remove_punctuation, replace_or_remove_numbers):
+def preprocessing_text(text: str, replace_or_remove_url: bool, replace_or_remove_mentions: bool,
+                       remove_hashtag_or_segment: bool,
+                       replace_or_remove_punctuation: bool, replace_or_remove_numbers: bool) -> str:
     """Preprocess the text content of a tweet for analysis.
 
     :param text: Text content of a tweet.
@@ -91,12 +96,13 @@ def preprocessing_text(text, replace_or_remove_url, replace_or_remove_mentions, 
     return clean_text
 
 
-def preprocessing_tweet(tweet, replace_or_remove_url, replace_or_remove_mentions, remove_hashtag_or_segment,
-                        replace_or_remove_punctuation, replace_or_remove_numbers):
+def preprocessing_tweet(tweet: [str, str, str], replace_or_remove_url: bool, replace_or_remove_mentions: bool,
+                        remove_hashtag_or_segment: bool,
+                        replace_or_remove_punctuation: bool, replace_or_remove_numbers: bool) -> [str, str, str, str]:
     """Preprocess the text content of a tweet for analysis.
 
-    :param text: An array with the tweet info, in format [id, original_text, timestamp].
-    :type text: list()
+    :param tweet: An array with the tweet info, in format [id, original_text, timestamp].
+    :type tweet: list()
     :param replace_or_remove_url: True to replace URLs, False to remove them.
     :type replace_or_remove_url: bool
     :param replace_or_remove_mentions: True to replace mentions, False to remove them.
@@ -119,7 +125,7 @@ def preprocessing_tweet(tweet, replace_or_remove_url, replace_or_remove_mentions
     return clean_tweet
 
 
-def merge_counts_dataframe(counts_list):
+def merge_counts_dataframe(counts_list: List[pd.DataFrame]) -> Optional[pd.DataFrame]:
     """Get merged counts per day from a list of DataFrame
 
     :param counts_list: List of DataFrame with the count of occurences per day.
@@ -135,7 +141,7 @@ def merge_counts_dataframe(counts_list):
     return counts_merged.groupby('date').agg({'counts': 'sum'})
 
 
-def count_per_day(data):
+def count_per_day(data: [str, str, str, str]) -> pd.DataFrame:
     """Count occurences per day in a list of data records.
 
     :param data: List of data records, where the timestamp is the fourth column.
@@ -153,8 +159,10 @@ def count_per_day(data):
     return counts[3].value_counts().rename_axis('date').to_frame('counts')
 
 
-def preprocess_csv_file(csv_reader, file_path, output_path, replace_or_remove_url, replace_or_remove_mentions,
-                        remove_hashtag_or_segment, replace_or_remove_punctuation, replace_or_remove_numbers):
+def preprocess_csv_file(csv_reader: csv.reader, file_path: str, output_path: str, replace_or_remove_url: bool,
+                        replace_or_remove_mentions: bool,
+                        remove_hashtag_or_segment: bool, replace_or_remove_punctuation: bool,
+                        replace_or_remove_numbers: bool) -> Optional[pd.DataFrame]:
     """Preprocess a single CSV file.
 
     :param csv_reader: The reader for the input CSV file, without header.
@@ -173,8 +181,8 @@ def preprocess_csv_file(csv_reader, file_path, output_path, replace_or_remove_ur
     :type replace_or_remove_punctuation: bool
     :param replace_or_remove_numbers: True to replace numbers by their text version, False to remove them.
     :type replace_or_remove_numbers: bool
-    :return: True if the file was properly preprocessed.
-    :rtype: bool
+    :return: Dataframe of processed CSV file
+    :rtype: pd.DataFrame
 
     """
 
@@ -189,8 +197,8 @@ def preprocess_csv_file(csv_reader, file_path, output_path, replace_or_remove_ur
 
     # Write to a CSV file, named from the input file with "_preprocessed.csv" appended
     input_file_name = splitext(basename(file_path))[0]
-    output_file_path = output_path + "/" + input_file_name + "_preprocessed.csv"
-    with open(output_file_path, 'w') as output_file:
+    output_file_path = os.path.join(output_path + "/", (input_file_name + "_preprocessed.csv"))
+    with open(output_file_path, 'w+') as output_file:
         csv_writer = csv.writer(output_file, quoting=csv.QUOTE_MINIMAL)
 
         # Catch errors, no specific exception handling for now
@@ -220,22 +228,3 @@ def preprocess_csv_file(csv_reader, file_path, output_path, replace_or_remove_ur
 
     date_dataframe = merge_counts_dataframe(date_dataframes)
     return date_dataframe
-
-
-def list_files(input_path):
-    """ List all CSV files in the specified directory.
-
-    :param input_path: Path to the directory containing the files.
-    :type input_path: str
-    :return: A list of the paths to the input files.
-    :rtype: list(str)
-
-    """
-
-    extension = ".csv"
-
-    # Iterates over the content of the directory and keep only files with the correct extension
-    # The search is not recursive!
-    input_paths = [join(input_path, f) for f in listdir(
-        input_path) if (isfile(join(input_path, f)) and splitext(f)[-1].lower() == extension)]
-    return input_paths
