@@ -1,6 +1,6 @@
 import argparse
-from os import makedirs
-from os.path import isfile, dirname
+from os.path import dirname
+from pathlib import Path
 
 from cranetoolbox.analysis.countOccurences import *
 from cranetoolbox.fileHandler import scan_folder_csv
@@ -35,14 +35,17 @@ def main():
         print("No appropriate file could be found in the provided directory.")
         return
 
+    # Create output folder if it does not exists
+    if not dirname(args.output_path) == '':
+        # If the input path does not contain a folder then we don't run the directory check
+        Path(dirname(args.output_path)).mkdir(exist_ok=True, parents=True)
+
     # Count the keywords' occurrences
     keyword_counts = count_keywords(input_paths, keywords, args.date_format)
 
     # Compute daily frequencies
     keyword_counts_and_freqs = counts_to_freq(keyword_counts, keywords)
 
-    # Create output folder if it does not exists
-    makedirs(dirname(args.output_path), exist_ok=True)
     # Save to file
     keyword_counts_and_freqs.to_csv(args.output_path, index=True)
 

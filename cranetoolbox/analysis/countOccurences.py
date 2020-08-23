@@ -52,7 +52,7 @@ def get_keywords(path: str) -> Dict[str, List[str]]:
         print("Unknown error while reading keywords")
         print(e)
         raise e
-    return keywords
+    return keywords 
 
 
 def get_tweet_counts(path: str) -> pd.DataFrame:
