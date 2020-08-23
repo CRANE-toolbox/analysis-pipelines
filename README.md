@@ -129,6 +129,41 @@ CRANE Toolbox can also be installed manually from the source code available in t
 #### Preprocessing module
 
 #### Analysis module
+Currently the analysis module only offers some simple quantitative analysis pipeline to compute the daily frequency of given keywords.
+
+##### Simple quantitative analysis
+
+This analysis pipeline is accessible from the `crane-analysis-quanti` command-line entry point.
+
+It computes the daily frequency of given keywords in a dataset. It allows for variants of keywords. For example, occurences of "boys" and "boyz" can be counted together.
+
+The pipeline has three mandatory positional arguments and one optional argument:
+- Position 1: Path to the folder containing the dataset preprocessed with the *preprocess* module, or a single dataset file.
+- Position 2: Path to the JSON file containing the keywords and their variants. See below for the expected format.
+- Position 3: Path for the result file.
+- Optional, -d or --date-format: String defining the format of dates in the dataset. The default is %a %b %d %H:%M:%S %z %Y".
+
+The keywords are defined in a JSON dictionary where the keys are the main variant for each keyword and the values are lists of variants. All keywords should be lower-case strings. For example:
+```JSON
+{
+	"color" : [
+		"colour",
+		"color"
+	],
+	"chinese" : [
+		"chinese",
+		"chineze",
+		"chines"
+	]
+}
+```
+
+A complete example for the command-line entry-point:
+
+```bash
+crane-analysis-quanti mydataset/preprocessedData keywords.json quanti_results.csv -d %d %b %a %h:%M:%S %z %Y"
+```
+
 
 #### Visualisation module
 
