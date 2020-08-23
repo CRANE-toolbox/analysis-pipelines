@@ -143,6 +143,8 @@ The pipeline has three mandatory positional arguments and one optional argument:
 - Position 3: Path for the result file.
 - Optional, -d or --date-format: String defining the format of dates in the dataset. The default is %a %b %d %H:%M:%S %z %Y".
 
+The dataset given as the first positional argument can be either a folder of CSV files or a single CSV file. Each CSV file should contain **4 columns** (ID of input, should be unique, int; Original text of the tweet, string; Preprocessed text of the tweet, string; timestamp: Timestamp string), **no headers**, comma separators, and optional double quotes for text. The preprocessed text is assumed to be lower-case.
+
 The keywords are defined in a JSON dictionary where the keys are the main variant for each keyword and the values are lists of variants. All keywords should be lower-case strings. For example:
 ```JSON
 {
@@ -161,8 +163,10 @@ The keywords are defined in a JSON dictionary where the keys are the main varian
 A complete example for the command-line entry-point:
 
 ```bash
-crane-analysis-quanti mydataset/preprocessedData keywords.json quanti_results.csv -d %d %b %a %h:%M:%S %z %Y"
+crane-analysis-quanti mydataset/preprocessedData keywords.json quanti_results.csv -d "%d %b %a %h:%M:%S %z %Y"
 ```
+
+The output is a CSV file with a *day* date column (format "%Y-%m-%d"), a *total_count* column with the daily total number of tweets in the dataset, a *[keyword]_count* column for each keyword (its main variant is used to name the column) with the daily number of tweets containing at least one variant of the keyword and a *[keyword]_freq* column for each keyword (its main variant is used to name the column) with the daily frequency of tweets containing at least one variant of the keyword. For example, for the keywords set given above, the columns would be: day, total_count, color_count, chinese_count, color_freq, chinese_freq. Counts are given as integers and frequencies as floats.
 
 
 #### Visualisation module
