@@ -1,19 +1,16 @@
 # Take a list of keywords (with spelling variants) and compute their daily frequency in the entire dataset
 
 import json
-import time
-import argparse
-import pandas as pd
 from csv import reader
 from datetime import datetime
-from os import listdir
-from os.path import isfile, join
+from typing import Dict, List
 
+import pandas as pd
 
 MAX_BUFFER_SIZE = 1000
 
 
-def transform_date_format(df):
+def transform_date_format(df: pd.DataFrame) -> pd.DataFrame:
     """Add the date of the "timestamp" column of a DataFrame to a "day" column.
 
     :param df: A DataFrame with a "timestamp" column containing pandas datetime objects.
@@ -29,7 +26,7 @@ def transform_date_format(df):
     return df
 
 
-def get_keywords(path):
+def get_keywords(path: str) -> Dict[str, List[str]]:
     """Load the keywords and their variants.
 
     :param path: Path to the JSON file with the keywords.
@@ -51,14 +48,14 @@ def get_keywords(path):
         print("Specified keywords file does not contain a valid JSON.")
         print(e)
         raise e
-    except e:
-        print("Unexpected error while reading the keywords file.")
+    except Exception as e:
+        print("Unknown error while reading keywords")
         print(e)
         raise e
     return keywords
 
 
-def get_tweet_counts(path):
+def get_tweet_counts(path: str) -> pd.DataFrame:
     """Load the DataFrame with the daily tweet counts.
 
     :param path: Path to the file with the number of tweets per day.
@@ -69,7 +66,7 @@ def get_tweet_counts(path):
     """
 
     try:
-        tweet_counts = pd.read_csv(path, parse_dates = [0], infer_datetime_format = True)
+        tweet_counts = pd.read_csv(path, parse_dates=[0], infer_datetime_format=True)
     except FileNotFoundError as e:
         print("Could not find specified tweet counts file.")
         print(e)
@@ -82,7 +79,7 @@ def get_tweet_counts(path):
     return tweet_counts
 
 
-def detect_keywords(text, keywords):
+def detect_keywords(text: str, keywords: Dict[str, List[str]]) -> Dict[str, bool]:
     """Look for each keyword (with variants) in a tweet.
 
     :param text: The preprocessed text of the tweet.
@@ -103,7 +100,7 @@ def detect_keywords(text, keywords):
     return tweet_info
 
 
-def aggregate_counts(data, main_variants, date_format):
+def aggregate_counts(data, main_variants: List[str], date_format: str) -> pd.DataFrame:
     """Create a DataFrame with keywords daily counts.
 
     :param data: List of dictionaries, each dictionary with a date, boolean indicators for the presence of each keyword, and a 1-valued 'total' column.
@@ -136,7 +133,7 @@ def aggregate_counts(data, main_variants, date_format):
     return counts
 
 
-def count_keywords(input_paths, keywords, date_format):
+def count_keywords(input_paths: List[str], keywords: Dict[str, List[str]], date_format: str) -> pd.DataFrame:
     """Search all tweets for keywords and count their occurences per day.
 
     :param input_paths: The list of the paths to the input files.
@@ -172,7 +169,7 @@ def count_keywords(input_paths, keywords, date_format):
                         clean_text = row[2]
                         has_keyword = detect_keywords(clean_text, keywords)
                         has_keyword["timestamp"] = row[3]
-                        has_keyword["total"] = 1 # Easier group_by later
+                        has_keyword["total"] = 1  # Easier group_by later
                         buffer_data.append(has_keyword)
                         buffer_size += 1
 
@@ -207,7 +204,7 @@ def count_keywords(input_paths, keywords, date_format):
     return daily_counts
 
 
-def counts_to_freq(keyword_counts, keywords):
+def counts_to_freq(keyword_counts: pd.DataFrame, keywords: Dict[str, List[str]]) -> pd.DataFrame:
     """For each day, divide the count for each keyword by the daily total.
 
     :param keyword_counts: DataFrame with the number of occurences of each keyword for each day.
@@ -230,21 +227,3 @@ def counts_to_freq(keyword_counts, keywords):
             float) / keyword_counts["total_count"]
 
     return keyword_counts
-
-
-
-def list_files(input_path):
-    """ List all CSV files in the specified directory.
-    :param input_path: Path to the directory containing the files.
-    :type input_path: str
-    :return: A list of the paths to the input files.
-    :rtype: list(str)
-    """
-
-    extension = ".csv"
-
-    # Iterates over the content of the directory and keep only files with the correct extension
-    # The search is not recursive!
-    input_paths = [join(input_path, f) for f in listdir(
-        input_path) if (isfile(join(input_path, f)) and splitext(f)[-1].lower() == extension)]
-    return input_paths
