@@ -128,6 +128,52 @@ CRANE Toolbox can also be installed manually from the source code available in t
 
 #### Import module
 
+The import module is accessible from the `crane-import` command-line entry point.
+
+The goal of this modules is to transform raw twitter JSON data into something more manageable and lightweight for use by the rest of the pipeline.
+This is not a required step and could be performed manually by the user or have already been done via some other tool since data 
+is passed between modules as files. 
+
+A major part of this package is the ability to process a large number of large(multi gigabyte) files without requiring lots of swap or memory
+usage. This is accomplished by reading files by chunks(optionally the user can specify the number of lines) as well as writing in chunks.
+This ensures that only a certain amount of data is held in memory at any given moment. 
+
+In addition, it removes extra data that is not required for the analysis pipeline, reducing file size and increasing the performance of
+later steps in this package. 
+
+#### Expected input format
+The package will attempt to read any file, regardless of extension or name etc. It supports but uncompressed file formats such as JSON
+CSV or just plaint text files. In addition, it can handle compressed archives stored in `tar` archives. 
+
+Regardless of the exact file type, data should be in the format of one JSON object tweet per line in the document with a `/n` character at the
+end of each line. For information on what a tweet in JSON Object format looks like check the [official documentation](https://developer.twitter.com/en/docs/twitter-api/v1/data-dictionary/overview/intro-to-tweet-json).
+
+#### Output Format
+
+The package will concatenate all files into a single CSV file with the following columns:
+
+| id                 | created_at         | text            |
+|--------------------|--------------------|-----------------|
+| unique id of tweet | timestamp of tweet | full tweet text |
+
+The text column is dynamically selected depending on if the tweet is over 140 characters or not, for more information about extended
+tweets see the [official documentation on extended tweets](https://developer.twitter.com/en/docs/twitter-api/v1/data-dictionary/overview/intro-to-tweet-json#extendedtweet)
+
+If the output file already exists, it will append to the existing file. In the case that it does not exist it will create a new one
+using the default or specified name. 
+
+#### CLI Commands
+
+The import package can be used as a command-line tool and supports a couple different options. 
+
+- (Required) `--source-folder` the source folder or file to scan for files/archives to process. 
+- (Optional) `--output-folder` the folder to save the output(must exist) defaults to `./`
+- (Optional) `--output-name` the name, including extension of the output file defaults to `output.csv`
+- (Optional) `--tweet-language` the language of tweets saved to the file. Based on the language field in the 
+JSON object. Defaults to `en`
+- (Optional) `--max-lines-in-memory` the maximum number of lines that will be held in memory, this can be adjusted to 
+to optimize for performance or on machines that have limited memory. Defaults to `50000`
+
 #### Preprocessing module
 
 The preprocessing pipeline is accessible from the `crane-preprocess` command-line entry point.
