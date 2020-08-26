@@ -122,6 +122,11 @@ CRANE Toolbox can also be installed manually from the source code available in t
 
 #### Command-line mode
 
+The command line mode is the easiest method of using this package, it enables the user to quickly run all
+parts of the package and produce usable statistics in a very short period of time. 
+
+#### General flow of the CLI mode
+
 #### Function-call mode
 
 ### Modules
@@ -143,7 +148,9 @@ later steps in this package.
 
 #### Expected input format
 The package will attempt to read any file, regardless of extension or name etc. It supports but uncompressed file formats such as JSON
-CSV or just plaint text files. In addition, it can handle compressed archives stored in `tar` archives. 
+CSV or just plaint text files and compressed tar archives. As of right now, it only supports singly compressed tar
+archives -- thus no `tar.gz` or similar formats are supported. It also also handle multiple files or folders in a given tar 
+archive.
 
 Regardless of the exact file type, data should be in the format of one JSON object tweet per line in the document with a `/n` character at the
 end of each line. For information on what a tweet in JSON Object format looks like check the [official documentation](https://developer.twitter.com/en/docs/twitter-api/v1/data-dictionary/overview/intro-to-tweet-json).
@@ -181,13 +188,13 @@ The preprocessing pipeline is accessible from the `crane-preprocess` command-lin
 The proposed preprocessing is adapted from [Effrosynidis et al. (2017)](https://github.com/Deffro/text-preprocessing-techniques#0-remove-unicode-strings-and-noise), using techniques 9, 0, 1, 3, 5 and 7, and 4.
 
 The pipeline has two mandatory positional arguments and five optional arguments:
-- Position 1: Path to the folder containing the dataset formatted with the *import* module, or a single dataset file.
-- Position 2: Path to the folder to save the preprocessed dataset in. If it does not exist, the folder will be created.
-- Optional, -url or --remove-url: Use this flag to remove URLs from the tweets instead of replacing them with 'url'.
-- Optional, -mention or --remove-mentions: Use this flag to remove user mentions '@userHandle' from the tweets instead of replacing them with 'atUser'.
-- Optional, -hashtag or --segment-hashtags: Use this flag to segment hashtags instead of simply removing the preceding '#' character. See documentation for details on the segmentation.
-- Optional, -punct or --remove-punctuation: Use this flag to remove all punctuation expect hyphens, instead of replacing repeated symbols and newlines.
-- Optional, -num or --remove-numbers: Use this flag to remove all numbers from the tweets instead of replacing them with their text version.
+- (Required) Position 1: Path to the folder containing the dataset formatted with the *import* module, or a single dataset file.
+- (Required)Position 2: Path to the folder to save the preprocessed dataset in. If it does not exist, the folder will be created.
+- (Optional) `-url` or `--remove-url`: Use this flag to remove URLs from the tweets instead of replacing them with 'url'.
+- (Optional) `-mention` or `--remove-mentions`: Use this flag to remove user mentions '@userHandle' from the tweets instead of replacing them with 'atUser'.
+- (Optional) `-hashtag` or `--segment-hashtags`: Use this flag to segment hashtags instead of simply removing the preceding '#' character. See documentation for details on the segmentation.
+- (Optional) `-punct` or `--remove-punctuation`: Use this flag to remove all punctuation expect hyphens, instead of replacing repeated symbols and newlines.
+- (Optional) `-num` or `--remove-numbers`: Use this flag to remove all numbers from the tweets instead of replacing them with their text version.
 
 The dataset given as the first positional argument can be either a folder of CSV files or a single CSV file. Each CSV file should contain **3 columns** (ID of input, should be unique, int; Text of the tweet, string; timestamp: Timestamp string), **no headers**, comma separators, and optional double quotes for text.
 
@@ -207,6 +214,8 @@ Hashtags are segmented, *i.e.* seperated into words, using the [wordsegment](`ht
 
 :warning: Ordinal numbers are not yet supported.
 
+:warning: English is the only language supported by the hash tag segmenting feature
+
 A complete example for the command-line entry-point:
 
 ```bash
@@ -225,10 +234,10 @@ This analysis pipeline is accessible from the `crane-analysis-quanti` command-li
 It computes the daily frequency of given keywords in a dataset. It allows for variants of keywords. For example, occurences of "boys" and "boyz" can be counted together.
 
 The pipeline has three mandatory positional arguments and one optional argument:
-- Position 1: Path to the folder containing the dataset preprocessed with the *preprocess* module, or a single dataset file.
-- Position 2: Path to the JSON file containing the keywords and their variants. See below for the expected format.
-- Position 3: Path for the result file.
-- Optional, -d or --date-format: String defining the format of dates in the dataset. The default is %a %b %d %H:%M:%S %z %Y".
+- (Required) Position 1: Path to the folder containing the dataset preprocessed with the *preprocess* module, or a single dataset file.
+- (Required) Position 2: Path to the JSON file containing the keywords and their variants. See below for the expected format.
+- (Required) Position 3: Path for the result file.
+- (Optional) `-d` or `--date-format`: String defining the format of dates in the dataset. The default is `%a %b %d %H:%M:%S %z %Y`.
 
 The dataset given as the first positional argument can be either a folder of CSV files or a single CSV file. Each CSV file should contain **4 columns** (ID of input, should be unique, int; Original text of the tweet, string; Preprocessed text of the tweet, string; timestamp: Timestamp string), **no headers**, comma separators, and optional double quotes for text. The preprocessed text is assumed to be lower-case.
 
