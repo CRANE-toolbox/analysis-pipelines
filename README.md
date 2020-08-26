@@ -122,6 +122,11 @@ CRANE Toolbox can also be installed manually from the source code available in t
 
 #### Command-line mode
 
+The command line mode is the easiest method of using this package, it enables the user to quickly run all
+parts of the package and produce usable statistics in a very short period of time.
+
+#### General flow of the CLI mode
+
 #### Function-call mode
 
 ### Modules
@@ -139,7 +144,7 @@ This ensures that only a certain amount of data is held in memory at any given m
 In addition, it removes extra tweet data that is not required for the analysis pipeline, reducing file size and increasing the performance of later steps in this package.
 
 #### Expected input format
-The module will attempt to read any file in the specified folder, regardless of extension, name, etc. It supports any text-based file format (.json, .csv, .txt). In addition, it can handle compressed `tar` archives.
+The module will attempt to read any file in the specified folder, regardless of extension, name, etc. It supports any text-based file format (.json, .csv, .txt). In addition, it can handle compressed `tar` archives and treat multiple files or folders in a given tar archive. :warning: Currently, it only supports singly compressed tar archives -- thus no `tar.gz` or similar formats are supported.
 
 Regardless of the exact file type, data **should always be stored with one [JSON object tweet](https://developer.twitter.com/en/docs/twitter-api/v1/data-dictionary/overview/intro-to-tweet-json) per line**, using `/n` as the end-of-line character.
 
@@ -218,11 +223,11 @@ The processed dataset is saved in the folder given as the second positional argu
 #### CLI Commands
 
 The pipeline has two mandatory positional arguments and five optional arguments:
-- (Required) In first position. Path to the folder containing the dataset formatted with the *import* module, or a single dataset file.
-- (Required) In second position. Path to the folder to save the preprocessed dataset in. If it does not exist, the folder will be created.
+- (Required) Position 1. Path to the folder containing the dataset formatted with the *import* module, or a single dataset file.
+- (Required) Position 2. Path to the folder to save the preprocessed dataset in. If it does not exist, the folder will be created.
 - (Optional) `-url` or `--remove-url` Use this flag to remove URLs from the tweets instead of replacing them with 'url'.
 - (Optional) `-mention` or `--remove-mentions` Use this flag to remove user mentions '@userHandle' from the tweets instead of replacing them with 'atUser'.
-- (Optional) `-hashtag` or `--segment-hashtags` Use this flag to segment hashtags instead of simply removing the preceding '#' character. See documentation for details on the segmentation.
+- (Optional) `-hashtag` or `--segment-hashtags` Use this flag to segment hashtags instead of simply removing the preceding '#' character.
 - (Optional) `-punct` or `--remove-punctuation` Use this flag to remove all punctuation expect hyphens, instead of replacing repeated symbols and newlines.
 - (Optional) `-num` or `--remove-numbers` Use this flag to remove all numbers from the tweets instead of replacing them with their text version.
 
@@ -279,9 +284,9 @@ For example, for the keywords set given above:
 #### CLI Commands
 
 The pipeline has three mandatory positional arguments and one optional argument:
-- (Required) In first position. Path to the folder containing the dataset preprocessed with the *preprocess* module, or a single dataset file.
-- (Required) In second position. Path to the JSON file containing the keywords and their variants. See below for the expected format.
-- (Required) In third position. Path for the result file.
+- (Required) Position 1. Path to the folder containing the dataset preprocessed with the *preprocess* module, or a single dataset file.
+- (Required) Position 2. Path to the JSON file containing the keywords and their variants. See below for the expected format.
+- (Required) Position 3. Path for the result file.
 - (Optional) `-d` or `--date-format` String defining the format of dates in the dataset. The default is %a %b %d %H:%M:%S %z %Y".
 
 A complete example for the command-line entry-point:
