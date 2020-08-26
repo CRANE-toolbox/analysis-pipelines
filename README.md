@@ -130,49 +130,50 @@ CRANE Toolbox can also be installed manually from the source code available in t
 
 The import module is accessible from the `crane-import` command-line entry point.
 
-The goal of this modules is to transform raw twitter JSON data into something more manageable and lightweight for use by the rest of the pipeline.
-This is not a required step and could be performed manually by the user or have already been done via some other tool since data 
-is passed between modules as files. 
+The goal of this module is to **transform raw twitter JSON data into something more manageable and lightweight** for use by the rest of the pipeline.
+**This is not a required step** and could be performed manually by the user or have already been done via some other tool since data is passed between modules as files.
 
-A major part of this package is the ability to process a large number of large(multi gigabyte) files without requiring lots of swap or memory
-usage. This is accomplished by reading files by chunks(optionally the user can specify the number of lines) as well as writing in chunks.
-This ensures that only a certain amount of data is held in memory at any given moment. 
+This module can **process a large number of large (multiple gigabyte) files** without relying heavily on swap or memory usage. This is accomplished by reading files by chunks (the user can specify the number of lines in the options) as well as writing in chunks.
+This ensures that only a certain amount of data is held in memory at any given moment.
 
-In addition, it removes extra data that is not required for the analysis pipeline, reducing file size and increasing the performance of
-later steps in this package. 
+In addition, it removes extra tweet data that is not required for the analysis pipeline, reducing file size and increasing the performance of later steps in this package.
 
 #### Expected input format
-The package will attempt to read any file, regardless of extension or name etc. It supports but uncompressed file formats such as JSON
-CSV or just plaint text files. In addition, it can handle compressed archives stored in `tar` archives. 
+The module will attempt to read any file in the specified folder, regardless of extension, name, etc. It supports any text-based file format (.json, .csv, .txt). In addition, it can handle compressed `tar` archives.
 
-Regardless of the exact file type, data should be in the format of one JSON object tweet per line in the document with a `/n` character at the
-end of each line. For information on what a tweet in JSON Object format looks like check the [official documentation](https://developer.twitter.com/en/docs/twitter-api/v1/data-dictionary/overview/intro-to-tweet-json).
+Regardless of the exact file type, data **should always be stored with one [JSON object tweet](https://developer.twitter.com/en/docs/twitter-api/v1/data-dictionary/overview/intro-to-tweet-json) per line**, using `/n` as the end-of-line character.
 
 #### Output Format
 
-The package will concatenate all files into a single CSV file with the following columns:
+The module will concatenate all files into a single CSV file with the following columns:
 
-| id                 | created_at         | text            |
-|--------------------|--------------------|-----------------|
-| unique id of tweet | timestamp of tweet | full tweet text |
+| id                 | text            | created_at         |
+|--------------------|-----------------|--------------------|
+| unique id of tweet | full text tweet | timestamp of tweet |
 
-The text column is dynamically selected depending on if the tweet is over 140 characters or not, for more information about extended
-tweets see the [official documentation on extended tweets](https://developer.twitter.com/en/docs/twitter-api/v1/data-dictionary/overview/intro-to-tweet-json#extendedtweet)
+The CSV file has **no headers**, comma separators, and optional double quotes for text.
 
-If the output file already exists, it will append to the existing file. In the case that it does not exist it will create a new one
-using the default or specified name. 
+The text column is dynamically selected depending on if the tweet is over 140 characters or not, for more information about extended tweets see the [official documentation on extended tweets](https://developer.twitter.com/en/docs/twitter-api/v1/data-dictionary/overview/intro-to-tweet-json#extendedtweet)
+
+If the output file already exists, it will append to the existing file. In the case that it does not exist it will create a new one, using the default path ("./filtered_data.csv") if none is specified.
 
 #### CLI Commands
 
-The import package can be used as a command-line tool and supports a couple different options. 
+The import package can be used as a command-line tool and supports a several different options.
 
-- (Required) `--source-folder` the source folder or file to scan for files/archives to process. 
-- (Optional) `--output-folder` the folder to save the output(must exist) defaults to `./`
-- (Optional) `--output-name` the name, including extension of the output file defaults to `output.csv`
-- (Optional) `--tweet-language` the language of tweets saved to the file. Based on the language field in the 
-JSON object. Defaults to `en`
-- (Optional) `--max-lines-in-memory` the maximum number of lines that will be held in memory, this can be adjusted to 
-to optimize for performance or on machines that have limited memory. Defaults to `50000`
+- (Required) `--source-folder` The source folder or file to scan for files/archives to process.
+- (Optional) `--output-folder` The folder to save the output. The specified folder must exists. Defaults to `./`.
+- (Optional) `--output-name` The name, including extension, of the output file. Defaults to `output.csv`.
+- (Optional) `--tweet-language` The language of tweets saved to the file. Based on the language field in the
+JSON object. Defaults to `en`.
+- (Optional) `--max-lines-in-memory` The maximum number of lines that will be held in memory. This can be adjusted to
+to optimize for performance or on machines that have limited memory. Defaults to `50000`.
+
+A complete example for the command-line entry-point:
+
+```bash
+crane-import --source-folder tweets/november --output-folder mydataset/data --max-lines-in-memory 2000 --output-name dataset.csv
+```
 
 #### Preprocessing module
 
@@ -180,16 +181,15 @@ The preprocessing pipeline is accessible from the `crane-preprocess` command-lin
 
 The proposed preprocessing is adapted from [Effrosynidis et al. (2017)](https://github.com/Deffro/text-preprocessing-techniques#0-remove-unicode-strings-and-noise), using techniques 9, 0, 1, 3, 5 and 7, and 4.
 
-The pipeline has two mandatory positional arguments and five optional arguments:
-- Position 1: Path to the folder containing the dataset formatted with the *import* module, or a single dataset file.
-- Position 2: Path to the folder to save the preprocessed dataset in. If it does not exist, the folder will be created.
-- Optional, -url or --remove-url: Use this flag to remove URLs from the tweets instead of replacing them with 'url'.
-- Optional, -mention or --remove-mentions: Use this flag to remove user mentions '@userHandle' from the tweets instead of replacing them with 'atUser'.
-- Optional, -hashtag or --segment-hashtags: Use this flag to segment hashtags instead of simply removing the preceding '#' character. See documentation for details on the segmentation.
-- Optional, -punct or --remove-punctuation: Use this flag to remove all punctuation expect hyphens, instead of replacing repeated symbols and newlines.
-- Optional, -num or --remove-numbers: Use this flag to remove all numbers from the tweets instead of replacing them with their text version.
+#### Expected input format
 
 The dataset given as the first positional argument can be either a folder of CSV files or a single CSV file. Each CSV file should contain **3 columns** (ID of input, should be unique, int; Text of the tweet, string; timestamp: Timestamp string), **no headers**, comma separators, and optional double quotes for text.
+
+| id                 | text            | created_at         |
+|--------------------|-----------------|--------------------|
+| unique id of tweet | full text tweet | timestamp of tweet |
+
+#### Preprocessing steps
 
 In order and for a given string, it will:
 - Transform uppercase characters to lowercase,
@@ -199,21 +199,38 @@ In order and for a given string, it will:
 - Remove the hash symbol in front of hashtags (e.g. "#spreadTheLove", and segment the hashtags if `-hashtag` is specified,
 - Replace contractions with their full spelling (e.g. "I'm" becomes "I am"),
 - Replace repeated punctuation signs with a textual equivalent (e.g. "!!!" becomes "multiExclamation") and newlines with spaces, or remove all punctuation except underscore characters if `punct` is specified,
-- Replace numbers with their text version, or remove them if `-num` is specified.
+- Replace numbers with their English text version, or remove them if `-num` is specified.
 
-Hashtags are segmented, *i.e.* seperated into words, using the [wordsegment](`https://pypi.org/project/wordsegment/`) package. :warning::warning::warning::warning:Word segmentation runs in polynomial time and increase the preprocessing time by several orders of magnitude.
+Hashtags are segmented, *i.e.* seperated into words, using the [wordsegment](`https://pypi.org/project/wordsegment/`) package. :warning: Only supported for English language. :warning::warning::warning::warning:Word segmentation runs in polynomial time and increase the preprocessing time by several orders of magnitude.
 
 :warning: The algorithm to unpack contractions is currently rather basic. It will for example mistakenly interpret the possessive "'s" as a verb contraction.
 
 :warning: Ordinal numbers are not yet supported.
+
+#### Output Format
+
+The processed dataset is saved in the folder given as the second positional argument. If it does not exist, the folder will be created. For each input file a processed file is generated. Files names are generated by appending "_preprocessed" to the name of the corresponding input file. Each CSV file contains **4 columns** (ID of input, should be unique, int; Original text of the tweet, string; **Preprocessed text of the tweet, string**; timestamp: Timestamp string), **no headers**, comma separators, and optional double quotes for text.
+
+| id                 | original_text   | clean_text                 | created_at         |
+|--------------------|-----------------|----------------------------|--------------------|
+| unique id of tweet | full text tweet | preprocessed text of tweet | timestamp of tweet |
+
+#### CLI Commands
+
+The pipeline has two mandatory positional arguments and five optional arguments:
+- (Required) In first position. Path to the folder containing the dataset formatted with the *import* module, or a single dataset file.
+- (Required) In second position. Path to the folder to save the preprocessed dataset in. If it does not exist, the folder will be created.
+- (Optional) `-url` or `--remove-url` Use this flag to remove URLs from the tweets instead of replacing them with 'url'.
+- (Optional) `-mention` or `--remove-mentions` Use this flag to remove user mentions '@userHandle' from the tweets instead of replacing them with 'atUser'.
+- (Optional) `-hashtag` or `--segment-hashtags` Use this flag to segment hashtags instead of simply removing the preceding '#' character. See documentation for details on the segmentation.
+- (Optional) `-punct` or `--remove-punctuation` Use this flag to remove all punctuation expect hyphens, instead of replacing repeated symbols and newlines.
+- (Optional) `-num` or `--remove-numbers` Use this flag to remove all numbers from the tweets instead of replacing them with their text version.
 
 A complete example for the command-line entry-point:
 
 ```bash
 crane-preprocess mydataset/data mydataset/preprocessedData -punct
 ```
-
-The processed dataset is saved in the folder given as the second positional argument. If it does not exist, the folder will be created. For each input file a processed file is generated. Files names are generated by appending "_preprocessed" to the name of the corresponding input file. Each CSV file contains **4 columns** (ID of input, should be unique, int; Original text of the tweet, string; **Preprocessed text of the tweet, string**; timestamp: Timestamp string), **no headers**, comma separators, and optional double quotes for text.
 
 #### Analysis module
 Currently the analysis module only offers some simple quantitative analysis pipeline to compute the daily frequency of given keywords.
@@ -224,13 +241,14 @@ This analysis pipeline is accessible from the `crane-analysis-quanti` command-li
 
 It computes the daily frequency of given keywords in a dataset. It allows for variants of keywords. For example, occurences of "boys" and "boyz" can be counted together.
 
-The pipeline has three mandatory positional arguments and one optional argument:
-- Position 1: Path to the folder containing the dataset preprocessed with the *preprocess* module, or a single dataset file.
-- Position 2: Path to the JSON file containing the keywords and their variants. See below for the expected format.
-- Position 3: Path for the result file.
-- Optional, -d or --date-format: String defining the format of dates in the dataset. The default is %a %b %d %H:%M:%S %z %Y".
+#### Expected input format
 
 The dataset given as the first positional argument can be either a folder of CSV files or a single CSV file. Each CSV file should contain **4 columns** (ID of input, should be unique, int; Original text of the tweet, string; Preprocessed text of the tweet, string; timestamp: Timestamp string), **no headers**, comma separators, and optional double quotes for text. The preprocessed text is assumed to be lower-case.
+
+| id                 | original_text   | clean_text                 | created_at         |
+|--------------------|-----------------|----------------------------|--------------------|
+| unique id of tweet | full text tweet | preprocessed text of tweet | timestamp of tweet |
+
 
 The keywords are defined in a JSON dictionary where the keys are the main variant for each keyword and the values are lists of variants. All keywords should be lower-case strings. For example:
 ```JSON
@@ -247,16 +265,34 @@ The keywords are defined in a JSON dictionary where the keys are the main varian
 }
 ```
 
+#### Output format
+
+The output is a CSV file with a *day* date column (format "%Y-%m-%d"), a *total_count* column with the daily total number of tweets in the dataset, a *[keyword]_count* column for each keyword (its main variant is used to name the column) with the daily number of tweets containing at least one variant of the keyword and a *[keyword]_freq* column for each keyword (its main variant is used to name the column) with the daily frequency of tweets containing at least one variant of the keyword.
+
+For example, for the keywords set given above:
+
+| day  | total_count            | color_count                                      | chinese_count | color_freq | chinese_freq |
+|------|------------------------|--------------------------------------------------|---------------|------------|--------------|
+| date | daily number of tweets | daily number of tweets with "color" or a variant | daily number of tweets with "chinese" or a variant | daily frequency of tweets with "color" or a variant | daily frequency of tweets with "chinese" or a variant |
+
+
+#### CLI Commands
+
+The pipeline has three mandatory positional arguments and one optional argument:
+- (Required) In first position. Path to the folder containing the dataset preprocessed with the *preprocess* module, or a single dataset file.
+- (Required) In second position. Path to the JSON file containing the keywords and their variants. See below for the expected format.
+- (Required) In third position. Path for the result file.
+- (Optional) `-d` or `--date-format` String defining the format of dates in the dataset. The default is %a %b %d %H:%M:%S %z %Y".
+
 A complete example for the command-line entry-point:
 
 ```bash
 crane-analysis-quanti mydataset/preprocessedData keywords.json quanti_results.csv -d "%d %b %a %h:%M:%S %z %Y"
 ```
 
-The output is a CSV file with a *day* date column (format "%Y-%m-%d"), a *total_count* column with the daily total number of tweets in the dataset, a *[keyword]_count* column for each keyword (its main variant is used to name the column) with the daily number of tweets containing at least one variant of the keyword and a *[keyword]_freq* column for each keyword (its main variant is used to name the column) with the daily frequency of tweets containing at least one variant of the keyword. For example, for the keywords set given above, the columns would be: day, total_count, color_count, chinese_count, color_freq, chinese_freq. Counts are given as integers and frequencies as floats.
-
-
 #### Visualisation module
+
+**Not implemented yet**
 
 ## Contributing
 
