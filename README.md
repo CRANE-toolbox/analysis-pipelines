@@ -64,32 +64,37 @@ CRANE Toolbox is a **Python package**. Once [installed](####Install-CRANE-Toolbo
 
 ## Quick-start
 
-:information_source: This section is for experienced programmers who want to dive head-first into the deep end. If you have no idea what we are talking about in there, please don't run away screaming! 
-Though the length of the [Package Documentation section](##Package-documentation) might make it a bit daunting, 
-we wrote it with non-specialists in mind, so you should find all the instructions and advice you need to use the CRANE Toolbox.
+:information_source: This section is for experienced programmers who want to dive head-first into the deep end. If you have no idea what we are talking about in there, please don't run away screaming!
+Though the length of the [Package Documentation section](##Package-documentation) might make it a bit daunting, we wrote it with non-specialists in mind, so you should find all the instructions and advice you need to use the CRANE Toolbox.
 
 ### Install
 
-```pip install cranetoolbox```
+```bash
+pip install cranetoolbox
+```
 
 ### Transform Data
-The first step is to transform your data into our command data exchange format, a three column CSV file. 
-We use the `crane-import` module to perform this step. It takes source files that contain a single JSON tweet object
-per line and transforms them into a lightweight CSV file. 
+The first step is to transform your data into our common data exchange format, a three column CSV file.
+We use the `crane-import` module to perform this step. It takes source files that contain a single JSON tweet object per line and transforms them into a lightweight CSV file. The available parameters are detailed in the [Import Module](####Import-module) section.
 
-`crane-import --source-folder ./my_source --output-folder ./my_output`
+```bash
+crane-import --source-folder ./my_source --output-folder ./my_output
+```
 
 ### Preprocess Data
-It is important to cleanup data before data analysis, we provide a CLI tool to perform this step that offers several options.
+It is important to clean-up text data before data analysis. We provide a CLI tool to perform this step, with several preprocessing options. The available parameters are detailed in the [Preprocessing Module](####Preprocessing-module) section.
 
-```crane-preprocess ./my_output ./my_preproc_output```
+```bash
+crane-preprocess ./my_output ./my_preproc_output
+```
 
 ### Run analysis
 
-We currently provide a single statistical analysis tool that performs basic frequency analaysis on the data set
-using a provided set of keywords. 
+We currently provide a single statistical analysis tool that performs basic frequency analysis on the data set using a provided set of keywords. The required input formats and available parameters are detailed in the [Analysis Module](####Analysis-module) section.
 
-```crane-analysis-quanti ./my_preproc_output keywords.json quanti_results.csv```
+```bash
+crane-analysis-quanti ./my_preproc_output keywords.json quanti_results.csv
+```
 
 
 ## Package documentation
@@ -140,30 +145,25 @@ Basic instructions for its installation can be found on [its official website](h
 
 #### Install CRANE Toolbox
 
-We strongly recommend installing CRANE Toolbox using `pip`. Run `pip install cranetoolbox` in a terminal. 
+We strongly recommend installing CRANE Toolbox using `pip`. Run `pip install cranetoolbox` in a terminal.
 The command might take some time because `pip` will also automatically install all the
- Python packages required for CRANE Toolbox to run. 
+ Python packages required for CRANE Toolbox to run.
  You can check the list of dependencies on the [PyPi page of CRANE Toolbox](link to Pypi page).
 
 CRANE Toolbox can also be installed manually from the source code available in this repository.
 
 #### Command-line mode
 
-The command line mode is the easiest method of using this package, it enables the user to quickly run all
-parts of the package and produce usable statistics in a very short period of time.
+The command line mode is the easiest method of using this package, it enables the user to quickly run all parts of the package and produce usable statistics in a very short period of time.
 
-There are four different CLI commands available in the toolbox, they are `crane-import`, `crane-process` and 
-`crane-analysis-quanti`. In order, they handle importing/transforming raw data into a standard CSV format, 
-preprocessing that data into a usable format and finally performing the desired analysis. 
+There are three different CLI commands available in the toolbox, they are `crane-import`, `crane-preprocess` and `crane-analysis-quanti`. In order, they handle importing/transforming raw data into a standard CSV format, preprocessing that data into a usable format and finally computing the daily frequencies of given keywords.
 
-For specifics on the parameters provided under each CLI tool please check the detailed documentation below. 
+For specifics on the parameters provided under each CLI tool please check the detailed documentation below.
 
 #### Function-call mode
 
-This package has been written with reuse in mind. Although the easier way to use the code is through the CLI
-tools it can also be used within another python project. All functions are available to the user just like any 
-other package. In addition, most packages provide a single high level function that enables the user to 
-interact with the package in a similar method to the CLI tools but directly in Python. 
+This package has been written with reuse in mind. While the CLI tools are easier to use as standalone tools, CRANE Toolbox can be imported and used within another python project. All functions are available to the user through standard Python package usage. In addition, a single high level function corresponds to each CLI tool so users can easily call their desired pipeline directly from Python.
+
 ### Modules
 
 #### Import module
@@ -208,7 +208,7 @@ The import package can be used as a command-line tool and supports a several dif
 JSON object. Defaults to `en`.
 - (Optional) `--max-lines-in-memory` The maximum number of lines that will be held in memory. This can be adjusted to
 to optimize for performance or on machines that have limited memory. Defaults to `50000`.
-- (Optioanl) `--retweets` Use this flag to _include_ retweets in the output set. Defaults to `false`
+- (Optional) `--retweets` Use this flag to _include_ retweets in the output set. Defaults to `false`
 
 A complete example for the command-line entry-point:
 
