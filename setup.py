@@ -6,7 +6,7 @@ HERE = pathlib.Path(__file__).parent
 README = (HERE / "README.md").read_text()
 setuptools.setup(
     name="cranetoolbox",
-    version="0.0.0.6",
+    version="0.0.0.7",
     author="The CRANE Team",
     author_email="author@example.com",
     description="A package against racism around COVID-19",
@@ -22,7 +22,8 @@ setuptools.setup(
     entry_points={
         "console_scripts": {
             "crane-import=cranetoolbox.importTools.__main__:main",
-            "crane-analysis-quanti=cranetoolbox.analysis.__main__:main"
+            "crane-analysis-quanti=cranetoolbox.analysis.__main__:main",
+            "crane-preprocess=cranetoolbox.preprocess.__main__:main"
         }
     },
     python_requires='>=3.6',
