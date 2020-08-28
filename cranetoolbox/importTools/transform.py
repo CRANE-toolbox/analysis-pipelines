@@ -1,6 +1,5 @@
 import csv
 import json
-import os
 import tarfile
 from itertools import islice
 from typing import List
@@ -108,14 +107,27 @@ def filter_lighten_chunk(chunk, opts: TransformationOptions) -> (List[dict], int
         except json.JSONDecodeError as e:
             parse_failure_count += 1
             continue
-        if matches_language_filter(tweet, opts) and not is_retweet(tweet):
-            try:
-                light_tweet = lighten_tweet(tweet)
-            except ValueError:
-                # Issue parsing JSON tweet, raise this as a failure and continue
-                parse_failure_count += 1
-                continue
-            output_buffer.append(light_tweet)
+        if matches_language_filter(tweet, opts):
+            # This is dirty and redudant but I don't know of a better method.
+            # We need to check if it's a retweet, and if it's the case that it is
+            # a retweet only include it if the flag has been specified
+            if is_retweet(tweet):
+                if opts.include_retweet:
+                    try:
+                        light_tweet = lighten_tweet(tweet)
+                    except ValueError:
+                        # Issue parsing JSON tweet, raise this as a failure and continue
+                        parse_failure_count += 1
+                        continue
+                    output_buffer.append(light_tweet)
+            else:
+                try:
+                    light_tweet = lighten_tweet(tweet)
+                except ValueError:
+                    # Issue parsing JSON tweet, raise this as a failure and continue
+                    parse_failure_count += 1
+                    continue
+                output_buffer.append(light_tweet)
     return output_buffer, parse_failure_count
 
 
