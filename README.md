@@ -183,7 +183,7 @@ In addition, it removes extra tweet data that is not required for the analysis p
 #### Expected input format
 The module will attempt to read any file in the specified folder, regardless of extension, name, etc. It supports any text-based file format (.json, .csv, .txt). In addition, it can handle compressed `tar` archives and treat multiple files or folders in a given tar archive. :warning: Currently, it only supports singly compressed tar archives -- thus no `tar.gz` or similar formats are supported.
 
-Regardless of the exact file type, data **should always be stored with one [JSON object tweet](https://developer.twitter.com/en/docs/twitter-api/v1/data-dictionary/overview/intro-to-tweet-json) per line**, using `/n` as the end-of-line character.
+Regardless of the exact file type, data **should always be stored with one [JSON object tweet](https://developer.twitter.com/en/docs/twitter-api/v1/data-dictionary/overview/intro-to-tweet-json) per line**, using `\n` as the end-of-line character.
 
 #### Output Format
 
