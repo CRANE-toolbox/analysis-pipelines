@@ -391,7 +391,6 @@ CRANE Toolbox is distributed under [GNU Affero General Public License v3.0](http
 You can use it however you want provided you respect the license requirements: include a license and copyright notice, state the changes you made, disclose your source (this repo), and distribute your code under the same license. Please note that we are not liable for whatever use you make of this code, and we provide no warranty.
 
 ###### How do I cite CRANE Toolbox in my paper?
-**TO BE DISCUSSED WITH SPARK!**
 Please link to this repo.
 
 ###### Where can I find Twitter data?
