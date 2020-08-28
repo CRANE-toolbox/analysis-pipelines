@@ -56,7 +56,7 @@ CRANE Toolbox is designed to **support researchers and anti-racist organisations
 :warning:In this first version, CRANE Toolbox will remain **specific to tweet analysis**.
 
 
-CRANE Toolbox is a **Python package**. Once [installed](####Install-CRANE-Toolbox), users can [call its functions in their Python scripts](####Function-call-mode) or use the tools it provides [directly through their terminal](####Command-line-mode). Those tools are organised in several sub-packages called modules. Each module corresponds to a step in the general analysis pipeline.
+CRANE Toolbox is a **Python package**. Once [installed](#install-crane-toolbox), users can [call its functions in their Python scripts](#function-call-mode) or use the tools it provides [directly through their terminal](#command-line-mode). Those tools are organised in several sub-packages called modules. Each module corresponds to a step in the general analysis pipeline.
 
  The first version of CRANE Toolbox provides tools and documentation for users to filter and format the data they have extracted from Twitter (*import* module), prepare it for analysis (*preprocessing* module), carry out the analysis(es) of their choice (*analysis module*), and get a basic graphic representation of the results (*visualisation* module).
 
@@ -77,14 +77,14 @@ pip install cranetoolbox
 
 ### Transform Data
 The first step is to transform your data into our common data exchange format, a three column CSV file.
-We use the `crane-import` module to perform this step. It takes source files that contain a single JSON tweet object per line and transforms them into a lightweight CSV file. The available parameters are detailed in the [Import Module](####Import-module) section.
+We use the `crane-import` module to perform this step. It takes source files that contain a single JSON tweet object per line and transforms them into a lightweight CSV file. The available parameters are detailed in the [Import Module](#import-module) section.
 
 ```bash
 crane-import --source-folder ./my_source --output-folder ./my_output
 ```
 
 ### Preprocess Data
-It is important to clean-up text data before data analysis. We provide a CLI tool to perform this step, with several preprocessing options. The available parameters are detailed in the [Preprocessing Module](####Preprocessing-module) section.
+It is important to clean-up text data before data analysis. We provide a CLI tool to perform this step, with several preprocessing options. The available parameters are detailed in the [Preprocessing Module](#preprocessing-module) section.
 
 ```bash
 crane-preprocess ./my_output ./my_preproc_output
@@ -92,7 +92,7 @@ crane-preprocess ./my_output ./my_preproc_output
 
 ### Run analysis
 
-We currently provide a single statistical analysis tool that performs basic frequency analysis on the data set using a provided set of keywords. The required input formats and available parameters are detailed in the [Analysis Module](####Analysis-module) section.
+We currently provide a single statistical analysis tool that performs basic frequency analysis on the data set using a provided set of keywords. The required input formats and available parameters are detailed in the [Analysis Module](#analysis-module) section.
 
 ```bash
 crane-analysis-quanti ./my_preproc_output keywords.json quanti_results.csv
@@ -117,7 +117,7 @@ In order to successfully install CRANE Toolbox, you will need:
 
 Some **basic knowledge in programming and command-lines is strongly recommanded**, but the brave and the studious may choose to proceed without.
 
-If the above list is clear for you, skip to the [installation instructions](####Install-CRANE-Toolbox). Else, read the following paragraphs to get your environment ready.
+If the above list is clear for you, skip to the [installation instructions](#install-crane-toolbox). Else, read the following paragraphs to get your environment ready.
 
 :warning:If you choose not to follow the recommanded installation process, you will probably need to install additional packages or software.
 
