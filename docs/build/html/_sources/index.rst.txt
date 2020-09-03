@@ -6,6 +6,17 @@
 Welcome to CRANE Toolbox's documentation!
 =========================================
 
+.. automodule:: cranetoolbox.analysis.countOccurences
+    :members:
+.. automodule:: cranetoolbox.importTools.transform
+    :members:
+.. automodule:: cranetoolbox.preprocess.preprocess
+    :members:
+.. automodule:: cranetoolbox.preprocess.preprocessTools
+    :members:
+.. automodule:: cranetoolbox.fileHandler
+    :members:
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
