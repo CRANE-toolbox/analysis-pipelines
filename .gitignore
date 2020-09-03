@@ -82,3 +82,10 @@ smallset/
 /venv/
 /cranetoolbox/results/
 /CRANE_Toolbox.egg-info/
+
+
+# Sphinx
+
+_build
+_static
+_templates
