@@ -6,6 +6,9 @@
 Welcome to CRANE Toolbox's documentation!
 =========================================
 
+This is the developer documentation for the cranetoolbox package.
+For information on the package and how to use it, please visit our `repo <https://github.com/CRANE-toolbox/analysis-pipelines>`_.
+
 .. toctree::
     :maxdepth: 2
     :caption: Contents:
