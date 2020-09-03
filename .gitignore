@@ -86,6 +86,6 @@ smallset/
 
 # Sphinx
 
-_build
+docs/build
 _static
 _templates
