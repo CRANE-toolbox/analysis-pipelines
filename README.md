@@ -1,95 +1,399 @@
 # Crisis Racism and Narrative Evaluation
 
+Project **CRANE** (Crisis Racism and Narrative Evaluation) aims to **support researchers and anti-racist organisations** that wish to use **state-of-the-art text analysis algorithms** to study how specific **events impact online hate speech and racist narratives**. CRANE Toolbox is a **Python package**: once installed, the tools in CRANE are available as functions that users can use in their Python programs or directly through their terminal. CRANE targets users with basic programming but **no machine learning skills**.
+
+[Skip to Quick-start](###Quick-start)
+
 ![CRANE thumbnail](https://github.com/CRANE-toolbox/analysis-pipelines/blob/master/thumbnail.jpg?raw=true)
 
+## Table of Contents
+
+<!-- TOC depthFrom:2 depthTo:4 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [Table of Contents](#table-of-contents)
+- [Introduction](#introduction)
+	- [Genesis](#genesis)
+	- [Project motivation](#project-motivation)
+	- [CRANE Toolbox: The Python package for data analysis](#crane-toolbox-the-python-package-for-data-analysis)
+- [Quick-start](#quick-start)
+- [Package documentation](#package-documentation)
+	- [How to install and use CRANE Toolbox](#how-to-install-and-use-crane-toolbox)
+		- [Requirements](#requirements)
+		- [Install CRANE Toolbox](#install-crane-toolbox)
+		- [Command-line mode](#command-line-mode)
+		- [Function-call mode](#function-call-mode)
+	- [Modules](#modules)
+		- [Import module](#import-module)
+		- [Preprocessing module](#preprocessing-module)
+		- [Analysis module](#analysis-module)
+		- [Visualisation module](#visualisation-module)
+- [Contributing](#contributing)
+	- [Join the team](#join-the-team)
+- [Frequently asked questions](#frequently-asked-questions)
+	- [On the CRANE project](#on-the-crane-project)
+	- [On using CRANE Toolbox](#on-using-crane-toolbox)
+
+<!-- /TOC -->
+
 ## Introduction
-This repository is the work of the [CRANE team](https://devpost.com/software/crane-dvkeuf) for the [Resiliency Challenge](https://theresiliencychallenge.devpost.com/?ref_content=default&ref_feature=challenge&ref_medium=discover), on **real-time monitoring of racist rhetoric linked to the Covid19 pandemic**.
 
-The project was proposed by Gianluca Stringhini, Boston University, following his [work on early emergence of online sinophobic behaviour during the Covid19 (SARS-Cov-2) pandemic](https://arxiv.org/pdf/2004.04046.pdf).
+### Genesis
 
-Using live Twitter data and historical Twitter data, filtered for sinophobic hate speech, we are looking for quantitative and qualitative trends in the vocabulary or stereotypes contained in sinophobic hate speech tweets.
+**Crisis Racism and Narrative Evaluation**, or **CRANE** for short, was born during the [Resiliency Challenge](https://theresiliencychallenge.devpost.com/?ref_content=default&ref_feature=challenge&ref_medium=discover), a COVID19-driven hackathon. During nine weeks, an interdisciplinary team composed of students and professional designers, programmers and computer science researchers developed a [prototype website](https://crane-toolbox.github.io/#/) for **real-time monitoring of racist rhetoric linked to the Covid19 pandemic**. The project was proposed by Gianluca Stringhini, Boston University, following his [work on early emergence of online sinophobic behaviour during the Covid19 (SARS-Cov-2) pandemic](https://arxiv.org/pdf/2004.04046.pdf). Readers may find more details on the approach taken for the Resiliency Challenge on the [corresponding Devpost page](https://devpost.com/software/crane-dvkeuf) and the [resiliency-challenge-legacy branch](https://github.com/CRANE-toolbox/analysis-pipelines/tree/resiliency_challenge-legacy) of this repository.
 
-We do not claim to conduct a full research project, but we aim to provide preliminary analyses that could be reused in research projects, and present our findings on a website to raise awareness. Our results could be useful both short-term, for anti-racist associations trying to debunk new stereotypes, and long-term, to expand on thesauruses used by hate speech detection algorithms.
+### Project motivation
 
-:information_source: Information framed by :information_source: are specific to our CRANE setup for the Resiliency Challenge and are not relevant to other people that might want to use our project. :information_source:
+While doing literature review we noticed that few papers on online hate speech monitoring had both a sociology research approach and recent natural language processing tools. The literature seems to be divided mainly into methodological papers aiming to develop new machine learning tools to detect and characterise racism, and traditional sociology research approaches, both qualitative and quantitative, that do not take full advantage of the available data and analysis methods.
 
-## Architecture
-Architecture of the current branch:
-* **hatebaseAccess** Scripts and hard-coded datasets to compile a list of racist slurs from papers, hatebase.org and Wikipedia
-* **src** Main directory for the preprocessing and analysis
-  * **results** :information_source: Main directory for the results of analysis scripts :information_source:
-    * **classification** :information_source: Results of the classification pipeline :information_source:
-    * **slurFreq** :information_source: Results of the pipeline to compute the frequency of known slurs :information_source:
-    * **topicModelling** :information_source: Results of the LDA topic modelling pipeline :information_source:
-    * **wordEmbedding** :information_source: Results of the word2vec pipeline :information_source:
-* **word2vec** [Submodule](https://github.com/tmikolov/word2vec)
-**.envTemplate** Template for `.env`, see Setup->Environment
-**Pipfile** `pipenv` environment description
-**README.md** The current file, presentation and usage of the repository
+We are aware that this is due in part to the difficulty of gathering interdisciplinary teams from very different fields, and in part to the rather young and precarious nature of automated hate speech detection.
 
-All scripts are documented following the [reStructuredText syntax](https://docutils.sourceforge.io/rst.html).
+Our experiences during the hackathon lead us to believe that these issues could be somewhat alleviated by providing social sciences researchers with user-friendly tools leveraging the more robust of the current hate speech detection and analysis methods.
 
-## Setup
-### Clone
-Clone the repository on your system:
-- Using HTTPS ` git clone https://github.com/IanSaucy/CoBRa.git`
-- Using SSH (recommended) `git clone git@github.com:IanSaucy/CoBRa.git`
-- Using a desktop client like [Github Desktop](https://desktop.github.com)
+### CRANE Toolbox: The Python package for data analysis
 
-If you are unfamiliar with git version-controlling, many [resources](https://try.github.io) are available to learn basic commands. Desktop clients let you perform most frequent actions using a visual interface but it is safer to understand the main underlying principles before contributing to a repository.
+CRANE Toolbox is designed to **support researchers and anti-racist organisations** in studying **how specific events impact online hate speech and racist narratives**. State-of-the-art text analysis algorithms evolve quickly and their spread is often limited to the dedicated field of computer science research. CRANE Toolbox wraps some of those methods, that fit typical social sciences questions, into **user-friendly tools that require no machine learning skills**.
 
-This repo includes a submodule: the word2vec repository. It needs to be initialised by running `git submodule init` followed by `git submodule update` from the root of the CoBRa folder. If word2vec is updated (unlikely considering how long it has been since the last commit), you will need to [update the submodule](https://chrisjean.com/git-submodules-adding-using-removing-and-updating/).
+:warning:In this first version, CRANE Toolbox will remain **specific to tweet analysis**.
 
-### Environment
-The project uses a [pipenv environment](https://realpython.com/pipenv-guide/) for dependency management and requires Python 3.6+.
 
-If you don't have `pipenv`, install it using `pip install pipenv` (or `pip3 install pipenv` depending on your system). You might need to [install pip](https://packaging.python.org) if you've never used it before.
+CRANE Toolbox is a **Python package**. Once [installed](#install-crane-toolbox), users can [call its functions in their Python scripts](#function-call-mode) or use the tools it provides [directly through their terminal](#command-line-mode). Those tools are organised in several sub-packages called modules. Each module corresponds to a step in the general analysis pipeline.
 
-In the repo root directory:
-- Before anything else, run `pipenv install --dev` to download all dependencies requires for development work. You should only need to do this once.
-- If you ever add a package to **Pipfile**, run `pipenv update`
-- Before running any python script, run `pipenv shell` to enter the virtual shell. In this shell, you can use python as you normally would -- except in this case it's a virtual environment. Check out [this link](https://realpython.com/pipenv-guide/) for an intro on how to use `pipenv`.
+ The first version of CRANE Toolbox provides tools and documentation for users to filter and format the data they have extracted from Twitter (*import* module), prepare it for analysis (*preprocessing* module), carry out the analysis(es) of their choice (*analysis module*), and get a basic graphic representation of the results (*visualisation* module).
 
-#### .env and environment variables
-`pipenv` provides a file to store environment variables: `.env`. This file is not included in the repository because it contains private information such as API keys. **Never share your API keys in a public space.**
 
-Create a `.env` by running `cp .envTemplate .env` in the repo root directory. It will be automatically ignored by git.
+:warning: As a Python package, CRANE Toolbox **does not provide the data to analyse**. It also does **not substitute for a research framework** in which its tools should be used.  The documentation contains advice on parameter choices and results interpretation, but they remain the responsibility of the user.
 
-Fill in the values of the variables in .env using your preferred text editor. *Note: As their name begins with a dot, the .env and .envTemplate files are hidden by default.*
 
-Currently, `.env` holds the following variables:
-- HATEBASE_KEY= *Your API key for hatebase.org. Can be left blank if you do not wish to update the slurs list.*
-- PERSPECTIVE_KEY= *Your API key for Google Perspective API. Can be left blank if you do not wish to run the classification pipeline. See [Perspective support](https://support.perspectiveapi.com/s/article/Generating-an-API-key) for instruction to create your API key.*
-- PERSPECTIVE_QPS= *Your Query-Per-Second limit for Perspective. Unless you send a request for more, this should be 1*
-- SLURS_LIST_PATH= *Path to the JSON-encoded file holding the slurs for the classification pipeline.*
-- DATASET_PATH= *Path to the folder containing the raw dataset. For information on the expected format of this dataset, see the Data section below*
-- INTERMEDIATE_PATH= *Path to the folder containing the prepared dataset.*
-- RESULTS_PATH= *Path to the folder containing the result folders for the various analysis pipelines.*
-**Path variables should use the repo root directory as their root. The paths can point to folders outside the repo.**
+## Quick-start
 
-Let us say it again: **Never share your API keys in a public space.**
+:information_source: This section is for experienced programmers who want to dive head-first into the deep end. If you have no idea what we are talking about in there, please don't run away screaming!
+Though the length of the [Package Documentation section](##Package-documentation) might make it a bit daunting, we wrote it with non-specialists in mind, so you should find all the instructions and advice you need to use the CRANE Toolbox.
 
-### A note on tmux
-Depending on the size of the dataset, many scripts in this repo take several hours, even several days, to run. As such, we recommend the use of `tmux` because it lets you *detach* from a terminal session.
-Let's imagine you are running a script on a server you are connected to via `ssh` and your internet connection dies. With a naive setup, your script will fail and might become a zombie. With tmux you will be able to disconnect safely and come back to your running script later.
-And it's [not even that difficult to learn](https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/), promise!
+### Install
 
-## Data
-All the analysis scripts take files with one-JSON encoded tweet per line. They iterate over all files in the INTERMEDIATE_PATH folder.
-The following fields must be present in the description of each tweet: `created_at`, `id`, `text`.
+```bash
+pip install cranetoolbox
+```
 
-`src/prepareDataset.py` can populate INTERMEDIATE_PATH from a raw dataset.
-The raw dataset needs to be in the following format: a `tar.gz` archive in DATASET_PATH, with files containing one JSON-encoded tweet per line. Others files can be present in the archive, but the data files to read must be identified by a common string in their name, passed to `src/prepareDataset.py`.
-The following fields must be present in the description of each tweet: `created_at`, `id`, `text`.
-`src/prepareDataset.py` filters the dataset to select only English original tweets (removing retweets and tweets beginning by “RT”) and drop all unused fields from the tweet description.
+### Transform Data
+The first step is to transform your data into our common data exchange format, a three column CSV file.
+We use the `crane-import` module to perform this step. It takes source files that contain a single JSON tweet object per line and transforms them into a lightweight CSV file. The available parameters are detailed in the [Import Module](#import-module) section.
 
-If you have several `tar.gz` archives to prepare, it can be a good idea to use a [Bash loop](https://www.cyberciti.biz/faq/bash-loop-over-file/).
+```bash
+crane-import --source-folder ./my_source --output-folder ./my_output
+```
 
-:information_source:
-For the Resiliency Challenge, we are working on streaming data collected by Gianluca Stringhini. The marker for the data files in the archives is "Spritzer". The data in INTERMEDIATE_PATH contains only English original tweets.
-:information_source:
+### Preprocess Data
+It is important to clean-up text data before data analysis. We provide a CLI tool to perform this step, with several preprocessing options. The available parameters are detailed in the [Preprocessing Module](#preprocessing-module) section.
 
-### I don't have my own dataset, where can I find one?
+```bash
+crane-preprocess ./my_output ./my_preproc_output
+```
+
+### Run analysis
+
+We currently provide a single statistical analysis tool that performs basic frequency analysis on the data set using a provided set of keywords. The required input formats and available parameters are detailed in the [Analysis Module](#analysis-module) section.
+
+```bash
+crane-analysis-quanti ./my_preproc_output keywords.json quanti_results.csv
+```
+
+
+## Package documentation
+
+This section is divided into two parts: a first one describing how to install CRANE Toolbox and run its tools, either in command-line mode in a terminal or through function calls in Python scripts; and a second one giving details on each module, in particular data format and parameter choice.
+
+Advanced users can find additional information on the content of each module in the [code documentation](link to Sphinx code doc).
+
+### How to install and use CRANE Toolbox
+
+#### Requirements
+
+In order to successfully install CRANE Toolbox, you will need:
+- A basic internet connection
+- A terminal
+- Python 3
+- pip for Python 3
+
+Some **basic knowledge in programming and command-lines is strongly recommanded**, but the brave and the studious may choose to proceed without.
+
+If the above list is clear for you, skip to the [installation instructions](#install-crane-toolbox). Else, read the following paragraphs to get your environment ready.
+
+:warning:If you choose not to follow the recommanded installation process, you will probably need to install additional packages or software.
+
+##### What is a terminal and where do I find one?
+
+The terminal is an interface in which you can type and execute text based commands. You may find a more detailed explanation [here](https://www.quora.com/In-coding-terms-what-is-a-terminal-and-what-is-it-used-for) and pictures of what a terminal looks like [here](https://vgkits.org/blog/what-is-a-terminal/).
+
+A terminal is already installed on your computer. If you are using a Unix-based operating system (either **MacOSX or a Linux distribution**), it is aptly named **Terminal** and lives with your other applications. If you are using a Windows operating system, it is named **Command Prompt** and can be found in your Start Menu. For Windows 8 and 10, it is located in the *Windows System* folder.
+
+To run a command in the terminal, simply type it in and press Enter.
+
+:warning: Copy-pasting shortcuts (Ctrl^C and Ctrl^V) are disabled by default in terminals, because Ctrl^C is used to abort programs instead. Use right-click to copy and paste.
+
+##### How do I install Python 3?
+
+**Python 3** is a programming language. :warning: It is very similar to Python 2 but the two are not interchangeable.
+
+The installation process depends on your operating system. Basic instructions can be found on [the official Python website](https://wiki.python.org/moin/BeginnersGuide/Download), but you will easily find more detailed guides on the internet.
+
+##### How do I install pip for Python 3?
+
+**pip** is a package manager: it helps you download Python packages and update them when necessary.
+
+Basic instructions for its installation can be found on [its official website](https://pip.pypa.io/en/stable/installing/). It is widely used so step-by-step guides and other resources are easily found on the internet.
+
+:warning: Because of the co-existence of Python 2.7 and Python 3, pip might be installed for both languages on your computer. In that case, use the `pip3` command instead. You can check which version of `pip` is used by running `pip --version` in your terminal (`python -m pip --version` for Windows users).
+
+#### Install CRANE Toolbox
+
+We strongly recommend installing CRANE Toolbox using `pip`. Run `pip install cranetoolbox` in a terminal.
+The command might take some time because `pip` will also automatically install all the
+ Python packages required for CRANE Toolbox to run.
+ You can check the list of dependencies on the [PyPi page of CRANE Toolbox](link to Pypi page).
+
+CRANE Toolbox can also be installed manually from the source code available in this repository.
+
+#### Command-line mode
+
+The command line mode is the easiest method of using this package, it enables the user to quickly run all parts of the package and produce usable statistics in a very short period of time.
+
+There are three different CLI commands available in the toolbox, they are `crane-import`, `crane-preprocess` and `crane-analysis-quanti`. In order, they handle importing/transforming raw data into a standard CSV format, preprocessing that data into a usable format and finally computing the daily frequencies of given keywords.
+
+For specifics on the parameters provided under each CLI tool please check the detailed documentation below.
+
+#### Function-call mode
+
+This package has been written with reuse in mind. While the CLI tools are easier to use as standalone tools, CRANE Toolbox can be imported and used within another python project. All functions are available to the user through standard Python package usage. In addition, a single high level function corresponds to each CLI tool so users can easily call their desired pipeline directly from Python.
+
+### Modules
+
+#### Import module
+
+The import module is accessible from the `crane-import` command-line entry point.
+
+The goal of this module is to **transform raw twitter JSON data into something more manageable and lightweight** for use by the rest of the pipeline.
+**This is not a required step** and could be performed manually by the user or have already been done via some other tool since data is passed between modules as files.
+
+This module can **process a large number of large (multiple gigabyte) files** without relying heavily on swap or memory usage. This is accomplished by reading files by chunks (the user can specify the number of lines in the options) as well as writing in chunks.
+This ensures that only a certain amount of data is held in memory at any given moment.
+
+In addition, it removes extra tweet data that is not required for the analysis pipeline, reducing file size and increasing the performance of later steps in this package.
+
+#### Expected input format
+The module will attempt to read any file in the specified folder, regardless of extension, name, etc. It supports any text-based file format (.json, .csv, .txt). In addition, it can handle compressed `tar` archives and treat multiple files or folders in a given tar archive. :warning: Currently, it only supports singly compressed tar archives -- thus no `tar.gz` or similar formats are supported.
+
+Regardless of the exact file type, data **should always be stored with one [JSON object tweet](https://developer.twitter.com/en/docs/twitter-api/v1/data-dictionary/overview/intro-to-tweet-json) per line**, using `\n` as the end-of-line character.
+
+#### Output Format
+
+The module will concatenate all files into a single CSV file with the following columns:
+
+| id                 | text            | created_at         |
+|--------------------|-----------------|--------------------|
+| unique id of tweet | full text tweet | timestamp of tweet |
+
+The CSV file has **no headers**, comma separators, and optional double quotes for text.
+
+The text column is dynamically selected depending on if the tweet is over 140 characters or not, for more information about extended tweets see the [official documentation on extended tweets](https://developer.twitter.com/en/docs/twitter-api/v1/data-dictionary/overview/intro-to-tweet-json#extendedtweet)
+
+If the output file already exists, it will append to the existing file. In the case that it does not exist it will create a new one, using the default path ("./filtered_data.csv") if none is specified.
+
+#### CLI Commands
+
+The import package can be used as a command-line tool and supports a several different options.
+
+- (Required) `--source-folder` The source folder or file to scan for files/archives to process.
+- (Optional) `--output-folder` The folder to save the output. The specified folder must exists. Defaults to `./`.
+- (Optional) `--output-name` The name, including extension, of the output file. Defaults to `output.csv`.
+- (Optional) `--tweet-language` The language of tweets saved to the file. Based on the language field in the
+JSON object. Defaults to `en`.
+- (Optional) `--max-lines-in-memory` The maximum number of lines that will be held in memory. This can be adjusted to
+to optimize for performance or on machines that have limited memory. Defaults to `50000`.
+- (Optional) `--retweets` Use this flag to _include_ retweets in the output set. Defaults to `false`
+
+A complete example for the command-line entry-point:
+
+```bash
+crane-import --source-folder tweets/november --output-folder mydataset/data --max-lines-in-memory 2000 --output-name dataset.csv
+```
+
+#### Preprocessing module
+
+The preprocessing pipeline is accessible from the `crane-preprocess` command-line entry point.
+
+The proposed preprocessing is adapted from [Effrosynidis et al. (2017)](https://github.com/Deffro/text-preprocessing-techniques#0-remove-unicode-strings-and-noise), using techniques 9, 0, 1, 3, 5 and 7, and 4.
+
+#### Expected input format
+
+The dataset given as the first positional argument can be either a folder of CSV files or a single CSV file. Each CSV file should contain **3 columns** (ID of input, should be unique, int; Text of the tweet, string; timestamp: Timestamp string), **no headers**, comma separators, and optional double quotes for text.
+
+| id                 | text            | created_at         |
+|--------------------|-----------------|--------------------|
+| unique id of tweet | full text tweet | timestamp of tweet |
+
+#### Preprocessing steps
+
+In order and for a given string, it will:
+- Transform uppercase characters to lowercase,
+- Remove unicode strings (e.g. `\u002c`),
+- Replace urls with "url", or remove them if `-url` is specified,
+- Replace mentions (e.g. "@BobTheSurfer") with "atUser", or remove them if `-mention` is specified,
+- Remove the hash symbol in front of hashtags (e.g. "#spreadTheLove", and segment the hashtags if `-hashtag` is specified,
+- Replace contractions with their full spelling (e.g. "I'm" becomes "I am"),
+- Replace repeated punctuation signs with a textual equivalent (e.g. "!!!" becomes "multiExclamation") and newlines with spaces, or remove all punctuation except underscore characters if `punct` is specified,
+- Replace numbers with their English text version, or remove them if `-num` is specified.
+
+Hashtags are segmented, *i.e.* seperated into words, using the [wordsegment](`https://pypi.org/project/wordsegment/`) package. :warning: Only supported for English language. :warning::warning::warning::warning:Word segmentation runs in polynomial time and increase the preprocessing time by several orders of magnitude.
+
+:warning: The algorithm to unpack contractions is currently rather basic. It will for example mistakenly interpret the possessive "'s" as a verb contraction.
+
+:warning: Ordinal numbers are not yet supported.
+
+#### Output Format
+
+The processed dataset is saved in the folder given as the second positional argument. If it does not exist, the folder will be created. For each input file a processed file is generated. Files names are generated by appending "_preprocessed" to the name of the corresponding input file. Each CSV file contains **4 columns** (ID of input, should be unique, int; Original text of the tweet, string; **Preprocessed text of the tweet, string**; timestamp: Timestamp string), **no headers**, comma separators, and optional double quotes for text.
+
+| id                 | original_text   | clean_text                 | created_at         |
+|--------------------|-----------------|----------------------------|--------------------|
+| unique id of tweet | full text tweet | preprocessed text of tweet | timestamp of tweet |
+
+#### CLI Commands
+
+The pipeline has two mandatory positional arguments and five optional arguments:
+- (Required) Position 1. Path to the folder containing the dataset formatted with the *import* module, or a single dataset file.
+- (Required) Position 2. Path to the folder to save the preprocessed dataset in. If it does not exist, the folder will be created.
+- (Optional) `-url` or `--remove-url` Use this flag to remove URLs from the tweets instead of replacing them with 'url'.
+- (Optional) `-mention` or `--remove-mentions` Use this flag to remove user mentions '@userHandle' from the tweets instead of replacing them with 'atUser'.
+- (Optional) `-hashtag` or `--segment-hashtags` Use this flag to segment hashtags instead of simply removing the preceding '#' character.
+- (Optional) `-punct` or `--remove-punctuation` Use this flag to remove all punctuation expect hyphens, instead of replacing repeated symbols and newlines.
+- (Optional) `-num` or `--remove-numbers` Use this flag to remove all numbers from the tweets instead of replacing them with their text version.
+
+A complete example for the command-line entry-point:
+
+```bash
+crane-preprocess mydataset/data mydataset/preprocessedData -punct
+```
+
+#### Analysis module
+Currently the analysis module only offers some simple quantitative analysis pipeline to compute the daily frequency of given keywords.
+
+##### Simple quantitative analysis
+
+This analysis pipeline is accessible from the `crane-analysis-quanti` command-line entry point.
+
+It computes the daily frequency of given keywords in a dataset. It allows for variants of keywords. For example, occurences of "boys" and "boyz" can be counted together.
+
+#### Expected input format
+
+The dataset given as the first positional argument can be either a folder of CSV files or a single CSV file. Each CSV file should contain **4 columns** (ID of input, should be unique, int; Original text of the tweet, string; Preprocessed text of the tweet, string; timestamp: Timestamp string), **no headers**, comma separators, and optional double quotes for text. The preprocessed text is assumed to be lower-case.
+
+| id                 | original_text   | clean_text                 | created_at         |
+|--------------------|-----------------|----------------------------|--------------------|
+| unique id of tweet | full text tweet | preprocessed text of tweet | timestamp of tweet |
+
+
+The keywords are defined in a JSON dictionary where the keys are the main variant for each keyword and the values are lists of variants. All keywords should be lower-case strings. For example:
+```JSON
+{
+	"color" : [
+		"colour",
+		"color"
+	],
+	"chinese" : [
+		"chinese",
+		"chineze",
+		"chines"
+	]
+}
+```
+
+#### Output format
+
+The output is a CSV file with a *day* date column (format "%Y-%m-%d"), a *total_count* column with the daily total number of tweets in the dataset, a *[keyword]_count* column for each keyword (its main variant is used to name the column) with the daily number of tweets containing at least one variant of the keyword and a *[keyword]_freq* column for each keyword (its main variant is used to name the column) with the daily frequency of tweets containing at least one variant of the keyword.
+
+For example, for the keywords set given above:
+
+| day  | total_count            | color_count                                      | chinese_count | color_freq | chinese_freq |
+|------|------------------------|--------------------------------------------------|---------------|------------|--------------|
+| date | daily number of tweets | daily number of tweets with "color" or a variant | daily number of tweets with "chinese" or a variant | daily frequency of tweets with "color" or a variant | daily frequency of tweets with "chinese" or a variant |
+
+
+#### CLI Commands
+
+The pipeline has three mandatory positional arguments and one optional argument:
+- (Required) Position 1. Path to the folder containing the dataset preprocessed with the *preprocess* module, or a single dataset file.
+- (Required) Position 2. Path to the JSON file containing the keywords and their variants. See below for the expected format.
+- (Required) Position 3. Path for the result file.
+- (Optional) `-d` or `--date-format` String defining the format of dates in the dataset. The default is %a %b %d %H:%M:%S %z %Y".
+
+A complete example for the command-line entry-point:
+
+```bash
+crane-analysis-quanti mydataset/preprocessedData keywords.json quanti_results.csv -d "%d %b %a %h:%M:%S %z %Y"
+```
+
+#### Visualisation module
+
+**Not implemented yet**
+
+## Contributing
+
+We welcome all contributions! If you have questions, a feature request or some feedback, please use the **issues** feature of GitHub.
+
+The [Issues page](https://github.com/CRANE-toolbox/analysis-pipelines/issues) works rather like your good old forum page, with many additional features specific to programming and git versioning. GitHub provides a [detailed guide](https://guides.github.com/features/issues/) to them, but here are the basics:
+1. **Search the existing issues** for similar questions/feature requests/feedback
+2. If you find an issue similar enough, you can add to its discussion with your own details
+3. If you don't find an issue similar enough, create a new one
+4. **Give as much relevant information as possible**. For example, if you want to report a bug or get help with an error, provide both your code/command-line and the error message. If possible, link to the data.
+5. Always keep in mind that this is a volunteer project, and contributors do their best to help. **Be nice and patient**.
+
+### Join the team
+
+You are welcome to submit Pull Requests for open issues. In that case, please comment on the issue to notify everyone of your intention to do so to make sure no one else is working on the same problem.
+
+If you wish to join the team, please email **ADD EMAIL** to get onboarded. We welcome developers, of course, but also designers, researchers from all academic fields, technical writers...
+
+We have chosen to onboard people privately instead of sharing all our resources in the repo for two reasons. First, we wanted to make it easier for users not used to open source projects to find what they need. Second, some of our resources contain private information from user research.
+
+## Frequently asked questions
+
+### On the CRANE project
+
+###### What is this website linked to the repo?
+https://crane-toolbox.github.io/#/ is a prototype website build during the Resiliency Challenge hackathon, in an attempt to quantify and characterise the impact of the COVID19 pandemic on online sinophobic hate speech. We left it online as a very basic example of the type of data analysis that could be carried out with CRANE Toolbox.
+
+###### Are you going to continue working on real-time analysis of COVID19-related online hate speech?
+We do not plan to at the moment. Due to the composition of the team, we have decided to focus our efforts on CRANE Toolbox, where we believe we can make a difference.
+
+###### Who is doing this?
+Currently, the team is composed of two Computer Science students, two designers and a research engineer (Emma Barme, [Rachael Dier](http://rachaeldier.com/), Kelly Ly, [Svetlana Moldavskaya](https://www.behance.net/svetlanacheban), and Ian Saucy), supported by Boston University Spark! organisation and Assistant Professor Gianluca Stringhini.
+
+The list of hackathon contributors for the first phase of the project can be found on [CRANE Devpost page](https://devpost.com/software/crane-dvkeuf).
+
+###### Can I help?
+
+Yes! Check out the [Contributing](##Contributing) section.
+
+### On using CRANE Toolbox
+
+###### What is Python? What is a Python package? What is a Python module?
+Python is a very common programming language for data analysis tasks. Packages are installable add-ons to the basic Python language. Roughly speaking, a module is a file with Python code.
+
+That said, if you are entirely unfamiliar with Python, you might want to experiment with it some before using CRANE Toolbox.
+
+###### I have a question/a feature request/some feedback, how do I contact you?
+Please use the [**Issues** page](https://github.com/CRANE-toolbox/analysis-pipelines/issues) of this repo. Check out the [Contributing](##Contributing) section for more details.
+
+###### Can I copy your code for my project?
+CRANE Toolbox is distributed under [GNU Affero General Public License v3.0](https://github.com/CRANE-toolbox/analysis-pipelines/blob/master/LICENSE).
+
+You can use it however you want provided you respect the license requirements: include a license and copyright notice, state the changes you made, disclose your source (this repo), and distribute your code under the same license. Please note that we are not liable for whatever use you make of this code, and we provide no warranty.
+
+###### How do I cite CRANE Toolbox in my paper?
+Please link to this repo.
+
+###### Where can I find Twitter data?
 Sharing of tweets datasets is restricted by [Twitter Developer Terms](https://developer.twitter.com/en/developer-terms/policy). You will not be able to find publicly available datasets with tweets content, but rather datasets of tweet ids. Those can by *hydrated*, using for example [Hydrator](https://github.com/DocNow/hydrator).
 
 From there it really depends on your research topic and questions.
@@ -98,72 +402,8 @@ Some require a *naive* dataset, representative of the full information flow of T
 Others require a dataset that has already been filtered for specific keywords or users. If that's your case, try your luck with a regular search engine.
 If you don't need historical data, you could also start your own Twitter stream to collect exactly the data you desire.
 
-## Preprocessing
-The preprocessing function is located in `src/preprocessingTools.py`. It is called directly by the analysis pipelines with the most suitable arguments.
+###### My data is not in your specific input format, what do I do?
+We are working to include several standard input format to our *import* module. If your data format is not supported, please [get in touch](##Contributing) and we will do our best to either include support for it in CRANE Toolbox or guide you to transform it into one of our supported format.
 
-Our preprocessing was adapted from [Effrosynidis et al. (2017)](https://github.com/Deffro/text-preprocessing-techniques#0-remove-unicode-strings-and-noise).
-It deals with unicode, URLs, mentions, hashtags, punctuation, contractions, numbers and newlines. We have added variants as options for URLs, mentions, hashtags, punctuation and numbers. In particular, the preprocessing function can segment hashtags and replace numbers by their text version.
-
-## Analysis
-
-*A note on the selection of slurs: The "Frequency of known slurs" and the "Classification of anti-black and anti-asian hate speech" pipelines require list of slurs. The selection of those slurs is not trivial. For example, when including slurs that have been reclaimed by their original targets, like the "n-word", one should be aware that they might introduce a [racist bias in their analysis](https://arxiv.org/abs/1905.12516).*
-
-### Frequency of known slurs
-This pipeline performs a simple quantitative analysis over the dataset. Given a list of slurs (with variants), it computes the daily and weekly frequency of these slurs in the dataset.
-
-It iterates over the files in INTERMEDIATE_PATH and saves its results to `RESULTS_PATH/slurFreq` in two different formats: an ubiquitous CSV file and the JSON-encoded file formatted for the [nivo](https://nivo.rocks/line/) library.
-
-### Classification of anti-black and anti-asian hate speech
-This pipeline performs a [classification](https://en.wikipedia.org/wiki/Statistical_classification) task to detect anti-asian hate speech tweets (`src/classifier.py`), then computes the daily frequency of the thus classified tweets in the dataset (`src/statsForClassifier.py`).
-
-:warning: :warning: :warning: **The accuracy of this classifier has not been tested yet, we are working on obtaining a test set.**
-
-It iterates over the files in INTERMEDIATE_PATH and saves its results to `RESULTS_PATH/classification` in two different formats: an ubiquitous CSV file and the JSON-encoded file formatted for the [nivo](https://nivo.rocks/line/) library.
-Intermediates CSV files with the results of the classifier are always saved to `RESULTS_PATH/classification`.
-
-The classifier (`src/classifier.py`) relies on a two-steps approach: it flags tweets containing slurs against different ethnicities then evaluate the toxicity of those tweets using [Google Perspective API](https://support.perspectiveapi.com)
-
-The list of slurs to detect was compiled from a survey of hate-speech detection papers, hatebase.org and Wikipedia slurs list (:information_source: see Trello for details :information_source:). For each ethnicity, the first detected slur is saved. Tweets with a detected slur for at least one ethnicity are flagged and passed to the scoring step, as well as saved to a CSV file.
-**For now only anti-black and anti-asian slurs are saved and flagged for the scoring step.**
-
-The text of the flagged tweets is sent to [Google Perspective API](https://support.perspectiveapi.com) for scoring. Default score type is SEVERE_TOXICITY, but it can be replaced by TOXICITY. By default, tweets scoring at or higher than 0.6 will be classified as hate speech. This threshold can be replaced if a visual inspection of the results show it to be necessary.
-:warning:*Known performance issue: to go over 10 QPS a multithread implementation would be required.*
-
-Daily frequencies of hate-speech tweets are then computed (`src/statsForClassifier.py`) and saved to `RESULTS_PATH/classification` in two different formats: an ubiquitous CSV file and the JSON-encoded file formatted for the [nivo](https://nivo.rocks/line/) library.
-:warning:*Known performance issue: to compute frequencies the script has to compute the daily counts of the entire dataset. This needs to be moved to the dataset preparation step.*
-
-:information_source: Not used for the website :information_source:
-
-### Word embeddings
-The word embedding analysis pipeline is based on [Gianluca Stringhini’s paper](https://arxiv.org/pdf/2004.04046.pdf), it makes use of the [word2vec package](https://github.com/tmikolov/word2vec) which is a submodule of our repo.
-
-An additional preprocessing step is required to transform the content of INTERMEDIATE_PATH into something that `word2vec` can process.
-prepareForWord2Vec.py iterates over the files in INTERMEDIATE_PATH, preprocesses the text and split it according to its date. Two period modes are available: periods defined by their length (in days) and the beginning date of the first period; or periods defined by calendar month+year.
-
-The main script, to train the model, is `word2vec`. Don’t forget to run `make` in the `word2vec` directory to be able to run the executable the first time. The hyperparameters were chosen with the advice in the (very short) package doc.
-Run from the repo root directory: `word2vec/word2vec -train <inputFile> -output <outputFile> -window 10 -hs 1 -cbow 0 -min-count 20 -threads 6 -binary 1`
-This gives a binary-encoded file where each line is a word followed by the distance value to each other word (= a matrix).
-
-This result can then be interpreted by running `word2vec/distance <file>`. The terminal will prompt you to enter a word and output the 40 words closest to the given word as well as the cosine distance. The bigger the cosine value, the more similar the words are. It works on a loop that allows you to input words until you enter the `EXIT` keyword.
-To save the results from the `distance` script into a file for easier post-analysis, run instead `word2vec/distance <inputFile> >> <outputFile>`. **In this case, the prompt will not appear so you will have to enter the words, one per line, without being asked to, finishing by the `EXIT` keyword.**
-
-:information_source: Our current keyword list is: [virus, corona, coronavirus, covid, kungflu, kung, wuflu, infection, infecting, disease, bat, bats, pangolin, pangolins, quarantine, china, chinese, asian, asia, chingchong, wuhan, chink, chinaman, jap, slant, immigration, immigrant, immigrants, country, disgusting, alien] :information_source:
-
-:information_source: The binary files result from word2vec have not been uploaded to this repo because they go over the file size limit. :information_source:
-
-Depending on your research question, these results can be used and interpreted in different ways, for example [detecting new words](https://arxiv.org/pdf/2004.04046.pdf) or [tracking trends in topics](https://docs.google.com/spreadsheets/d/1O0N9Yho32oa_P1cCEj89LR0dU2EBi6I39Y9MzPzGcVc/edit?usp=sharing).
-
-### Topic modelling with LDA
-This pipeline performs a rather standard [Latent Dirichlet Allocation](https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation) analysis for [topic modelling](https://en.wikipedia.org/wiki/Topic_model), using [gensim's implementation](https://radimrehurek.com/gensim/auto_examples/tutorials/run_lda.html).
-
-To allow for multithreading, it is used as a module: e.g. `python -m genericDatasetAnalysis.topicModelling 1 empty output.txt`.
-
-For now this pipeline remains highly specific to our Resiliency Challenge use-case: it is able to run either on the results of the classifier pipeline or on the full dataset filtered for Covid19-related tweets.
-
-The dataset is split into two periods around 1st Feb 2020 (*this will soon become an argument*) and the corpora are prepared by preprocessing the text (using hashtag segmentation), [tokenising](https://en.wikipedia.org/wiki/Lexical_analysis#Tokenization), removing tokens of less than 3 characters, [lemmatising](https://en.wikipedia.org/wiki/Lemmatisation) with a [POS-tag](https://en.wikipedia.org/wiki/Part-of-speech_tagging) filter (keeping only nouns or nouns and adjectives), removing [stop words](https://en.wikipedia.org/wiki/Stop_words), adding bigrams and trigrams, and turning the tokens into a [bag-of-words](https://en.wikipedia.org/wiki/Bag-of-words_model).
-
-A specificity of unsupervised topic modelling is that the number of topics to be generated by the model needs to be provided by the user. Here, we try to detect 3, 6 and 9 topics (*this will soon become an argument*). The multiple models are trained in parallel.
-
-:warning:It appears that standard LDA under-performs on short texts like tweets, as evidenced by the omnipresence of `beer` in our results for Covid19-related tweets. This pipeline will be reworked with known adaptations of LDA for Twitter analysis.
-
-:information_source: Not used for the website :information_source:
+###### Method X is very useful and should be included, why is it not there?
+Maybe we don't know about it, maybe we didn't have time to implement it yet, maybe we choose not to include it for a given reason. Please [get in touch](##Contributing) to tell us about it. (Unless it's a proprietary method with a use fee.)
