@@ -103,7 +103,7 @@ crane-analysis-quanti ./my_preproc_output keywords.json quanti_results.csv
 
 This section is divided into two parts: a first one describing how to install CRANE Toolbox and run its tools, either in command-line mode in a terminal or through function calls in Python scripts; and a second one giving details on each module, in particular data format and parameter choice.
 
-Advanced users can find additional information on the content of each module in the [code documentation](link to Sphinx code doc).
+Advanced users can find additional information on the content of each module in the [code documentation](https://crane-toolbox.github.io/analysis-pipelines/).
 
 ### How to install and use CRANE Toolbox
 
