@@ -15,7 +15,7 @@ def main():
     parser.add_argument('--max-lines-in-memory', type=int, default=50000, help='the max number of lines from the source'
                                                                                'files that will be held in memory')
     parser.add_argument('--tweet-language', type=str, default='en', help='specifies the language of outputted tweets')
-    parser.add_argument('--output_folder', type=str, default='./', help='specify the output directory for combined '
+    parser.add_argument('--output-folder', type=str, default='./', help='specify the output directory for combined '
                                                                         'files')
     parser.add_argument('--output-name', type=str, default='filtered_data.csv',
                         help="Specify the output file name with extension")
