@@ -78,5 +78,8 @@ def test_remove_numbers():
 
 def test_replace_numbers():
     assert replace_numbers("bob is 27.") == "bob is twenty-seven."
-    # Enhancement needed: deal with ordinal numbers
-    # assert replace_numbers("bob is 27 but my 2nd uncle.") == "bob is twenty-seven but my second uncle."
+    assert replace_numbers("bob is 27 but my 2nd uncle.") == "bob is twenty-seven but my second uncle."
+    assert replace_numbers("today is the 31st of december.") == "today is the thirty-first of december."
+    assert replace_numbers("it is the 1st time i have been here.") == "it is the first time i have been here."
+    assert replace_numbers("i am born on september 29th and i am 29 years old.") == "i am born on september twenty-ninth and i am twenty-nine years old."
+    assert replace_numbers("bob finished 3rd in the 2010 edition of the new york marathon.") == "bob finished third in the two thousand and ten edition of the new york marathon."

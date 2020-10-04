@@ -112,5 +112,7 @@ def remove_numbers(text: str) -> str:
 
 def replace_numbers(text: str) -> str:
     """Replaces numbers with their text version"""
-    text = re.sub(r"(\d+)", lambda x: num2words(int(x.group(0))), text)
+    text = re.sub(r"(\d+)(st|nd|rd|th)?",
+                  lambda x: num2words(int(x.group(1)), x.group(2) is not None),
+                  text)
     return text
