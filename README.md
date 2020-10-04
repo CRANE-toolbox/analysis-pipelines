@@ -379,7 +379,7 @@ The list of hackathon contributors for the first phase of the project can be fou
 
 ###### Can I help?
 
-Yes! Check out the [Contributing](##Contributing) section.
+Yes! Check out the [Contributing](#contributing) section.
 
 ### On using CRANE Toolbox
 
@@ -389,7 +389,7 @@ Python is a very common programming language for data analysis tasks. Packages a
 That said, if you are entirely unfamiliar with Python, you might want to experiment with it some before using CRANE Toolbox.
 
 ###### I have a question/a feature request/some feedback, how do I contact you?
-Please use the [**Issues** page](https://github.com/CRANE-toolbox/analysis-pipelines/issues) of this repo. Check out the [Contributing](##Contributing) section for more details.
+Please use the [**Issues** page](https://github.com/CRANE-toolbox/analysis-pipelines/issues) of this repo. Check out the [Contributing](#contributing) section for more details.
 
 ###### Can I copy your code for my project?
 CRANE Toolbox is distributed under [GNU Affero General Public License v3.0](https://github.com/CRANE-toolbox/analysis-pipelines/blob/master/LICENSE).
@@ -409,7 +409,7 @@ Others require a dataset that has already been filtered for specific keywords or
 If you don't need historical data, you could also start your own Twitter stream to collect exactly the data you desire.
 
 ###### My data is not in your specific input format, what do I do?
-We are working to include several standard input format to our *import* module. If your data format is not supported, please [get in touch](##Contributing) and we will do our best to either include support for it in CRANE Toolbox or guide you to transform it into one of our supported format.
+We are working to include several standard input format to our *import* module. If your data format is not supported, please [get in touch](#contributing) and we will do our best to either include support for it in CRANE Toolbox or guide you to transform it into one of our supported format.
 
 ###### Method X is very useful and should be included, why is it not there?
-Maybe we don't know about it, maybe we didn't have time to implement it yet, maybe we choose not to include it for a given reason. Please [get in touch](##Contributing) to tell us about it. (Unless it's a proprietary method with a use fee.)
+Maybe we don't know about it, maybe we didn't have time to implement it yet, maybe we choose not to include it for a given reason. Please [get in touch](#contributing) to tell us about it. (Unless it's a proprietary method with a use fee.)
