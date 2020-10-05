@@ -20,7 +20,20 @@
       ]
     },
     {
-      "login": "IanSaucy",
+      "login": "SvetlanaMoldavskaya",
+      "name": "SvetlanaMd",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/9784356?v=4",
+      "profile": "https://github.com/SvetlanaMoldavskaya",
+      "contributions": [
+        "content",
+        "doc",
+        "design",
+        "userTesting",
+        "ideas"
+      ]
+    },
+    {
+    "login": "IanSaucy",
       "name": "Ian",
       "avatar_url": "https://avatars2.githubusercontent.com/u/30986157?v=4",
       "profile": "https://github.com/IanSaucy",
