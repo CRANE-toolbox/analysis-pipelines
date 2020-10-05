@@ -18,6 +18,19 @@
         "maintenance",
         "projectManagement"
       ]
+    },
+    {
+      "login": "SvetlanaMoldavskaya",
+      "name": "SvetlanaMd",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/9784356?v=4",
+      "profile": "https://github.com/SvetlanaMoldavskaya",
+      "contributions": [
+        "content",
+        "doc",
+        "design",
+        "userTesting",
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7,
