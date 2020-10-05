@@ -18,6 +18,16 @@
         "maintenance",
         "projectManagement"
       ]
+    },
+    {
+      "login": "ccatterina",
+      "name": "Claudio Catterina",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/9085116?v=4",
+      "profile": "https://github.com/ccatterina",
+      "contributions": [
+        "code",
+        "test"
+      ]
     }
   ],
   "contributorsPerLine": 7,
