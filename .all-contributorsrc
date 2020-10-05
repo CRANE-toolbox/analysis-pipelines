@@ -18,6 +18,15 @@
         "maintenance",
         "projectManagement"
       ]
+    },
+    {
+      "login": "paulmhan",
+      "name": "Paul Han",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/58451541?v=4",
+      "profile": "http://paulmhan.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
