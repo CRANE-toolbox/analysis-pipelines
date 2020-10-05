@@ -376,7 +376,23 @@ https://crane-toolbox.github.io/#/ is a prototype website build during the Resil
 We do not plan to at the moment. Due to the composition of the team, we have decided to focus our efforts on CRANE Toolbox, where we believe we can make a difference.
 
 ###### Who is doing this?
-Currently, the team is composed of two Computer Science students, two designers and a research engineer (Emma Barme, [Rachael Dier](http://rachaeldier.com/), Kelly Ly, [Svetlana Moldavskaya](https://www.behance.net/svetlanacheban), and Ian Saucy), supported by Boston University Spark! organisation and Assistant Professor Gianluca Stringhini.
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/LaChapeliere"><img src="https://avatars2.githubusercontent.com/u/7062546?v=4" width="100px;" alt=""/><br /><sub><b>LaChapeliere</b></sub></a><br /><a href="https://github.com/CRANE-toolbox/analysis-pipelines/commits?author=LaChapeliere" title="Code">💻</a> <a href="https://github.com/CRANE-toolbox/analysis-pipelines/commits?author=LaChapeliere" title="Tests">⚠️</a> <a href="https://github.com/CRANE-toolbox/analysis-pipelines/commits?author=LaChapeliere" title="Documentation">📖</a> <a href="#ideas-LaChapeliere" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-LaChapeliere" title="Maintenance">🚧</a> <a href="#projectManagement-LaChapeliere" title="Project Management">📆</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+[Emoji key](https://allcontributors.org/docs/en/emoji-key)
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
 
 The list of hackathon contributors for the first phase of the project can be found on [CRANE Devpost page](https://devpost.com/software/crane-dvkeuf).
 
@@ -416,22 +432,3 @@ We are working to include several standard input format to our *import* module. 
 
 ###### Method X is very useful and should be included, why is it not there?
 Maybe we don't know about it, maybe we didn't have time to implement it yet, maybe we choose not to include it for a given reason. Please [get in touch](#contributing) to tell us about it. (Unless it's a proprietary method with a use fee.)
-
-## Contributors ✨
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/LaChapeliere"><img src="https://avatars2.githubusercontent.com/u/7062546?v=4" width="100px;" alt=""/><br /><sub><b>LaChapeliere</b></sub></a><br /><a href="https://github.com/CRANE-toolbox/analysis-pipelines/commits?author=LaChapeliere" title="Code">💻</a> <a href="https://github.com/CRANE-toolbox/analysis-pipelines/commits?author=LaChapeliere" title="Tests">⚠️</a> <a href="https://github.com/CRANE-toolbox/analysis-pipelines/commits?author=LaChapeliere" title="Documentation">📖</a> <a href="#ideas-LaChapeliere" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-LaChapeliere" title="Maintenance">🚧</a> <a href="#projectManagement-LaChapeliere" title="Project Management">📆</a></td>
-  </tr>
-</table>
-
-<!-- markdownlint-enable -->
-<!-- prettier-ignore-end -->
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
