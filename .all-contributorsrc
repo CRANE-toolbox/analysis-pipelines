@@ -18,6 +18,15 @@
         "maintenance",
         "projectManagement"
       ]
+    },
+    {
+      "login": "gianlucasb",
+      "name": "Gianluca Stringhini",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3453311?v=4",
+      "profile": "https://github.com/gianlucasb",
+      "contributions": [
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7,
