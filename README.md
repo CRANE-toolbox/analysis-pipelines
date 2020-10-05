@@ -1,4 +1,7 @@
 # Crisis Racism and Narrative Evaluation
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Project **CRANE** (Crisis Racism and Narrative Evaluation) aims to **support researchers and anti-racist organisations** that wish to use **state-of-the-art text analysis algorithms** to study how specific **events impact online hate speech and racist narratives**. CRANE Toolbox is a **Python package**: once installed, the tools in CRANE are available as functions that users can use in their Python programs or directly through their terminal. CRANE targets users with basic programming but **no machine learning skills**.
 
@@ -373,7 +376,23 @@ https://crane-toolbox.github.io/#/ is a prototype website build during the Resil
 We do not plan to at the moment. Due to the composition of the team, we have decided to focus our efforts on CRANE Toolbox, where we believe we can make a difference.
 
 ###### Who is doing this?
-Currently, the team is composed of two Computer Science students, two designers and a research engineer (Emma Barme, [Rachael Dier](http://rachaeldier.com/), Kelly Ly, [Svetlana Moldavskaya](https://www.behance.net/svetlanacheban), and Ian Saucy), supported by Boston University Spark! organisation and Assistant Professor Gianluca Stringhini.
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/LaChapeliere"><img src="https://avatars2.githubusercontent.com/u/7062546?v=4" width="100px;" alt=""/><br /><sub><b>LaChapeliere</b></sub></a><br /><a href="https://github.com/CRANE-toolbox/analysis-pipelines/commits?author=LaChapeliere" title="Code">💻</a> <a href="https://github.com/CRANE-toolbox/analysis-pipelines/commits?author=LaChapeliere" title="Tests">⚠️</a> <a href="https://github.com/CRANE-toolbox/analysis-pipelines/commits?author=LaChapeliere" title="Documentation">📖</a> <a href="#ideas-LaChapeliere" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-LaChapeliere" title="Maintenance">🚧</a> <a href="#projectManagement-LaChapeliere" title="Project Management">📆</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+[Emoji key](https://allcontributors.org/docs/en/emoji-key)
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
 
 The list of hackathon contributors for the first phase of the project can be found on [CRANE Devpost page](https://devpost.com/software/crane-dvkeuf).
 
