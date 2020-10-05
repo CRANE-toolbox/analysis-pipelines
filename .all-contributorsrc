@@ -20,6 +20,21 @@
       ]
     },
     {
+      "login": "IanSaucy",
+      "name": "Ian",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/30986157?v=4",
+      "profile": "https://github.com/IanSaucy",
+      "contributions": [
+        "code",
+        "test",
+        "doc",
+        "ideas",
+        "infra",
+        "projectManagement",
+        "review"
+      ]
+    },
+    {
       "login": "paulmhan",
       "name": "Paul Han",
       "avatar_url": "https://avatars3.githubusercontent.com/u/58451541?v=4",
