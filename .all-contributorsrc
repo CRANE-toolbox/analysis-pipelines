@@ -18,6 +18,18 @@
         "maintenance",
         "projectManagement"
       ]
+    },
+    {
+      "login": "Rachael",
+      "name": "Rachael Passov",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1661336?v=4",
+      "profile": "https://rachael.io",
+      "contributions": [
+        "design",
+        "content",
+        "userTesting",
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7,
