@@ -1,0 +1,29 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "LaChapeliere",
+      "name": "LaChapeliere",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/7062546?v=4",
+      "profile": "https://github.com/LaChapeliere",
+      "contributions": [
+        "code",
+        "test",
+        "doc",
+        "ideas",
+        "maintenance",
+        "projectManagement"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "analysis-pipelines",
+  "projectOwner": "CRANE-toolbox",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
