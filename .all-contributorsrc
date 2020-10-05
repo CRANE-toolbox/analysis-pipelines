@@ -18,6 +18,15 @@
         "maintenance",
         "projectManagement"
       ]
+    },
+    {
+      "login": "MarkoShiva",
+      "name": "Marko Shiva Pavlovic",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/993923?v=4",
+      "profile": "http://shiva.codes",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
