@@ -55,7 +55,7 @@ Our experiences during the hackathon lead us to believe that these issues could 
 
 ### CRANE Toolbox: The Python package for data analysis
 
-CRANE Toolbox is designed to **support researchers and anti-racist organisations** in studying **how specific events impact online hate speech and racist narratives**. State-of-the-art text analysis algorithms evolve quickly and their spread is often limited to the dedicated field of computer science research. CRANE Toolbox wraps some of those methods, that fit typical social sciences questions, into **user-friendly tools that require no machine learning skills**.
+CRANE Toolbox is designed to **support researchers and anti-racist organisations** in studying **how specific events impact online hate speech and racist narratives**. State-of-the-art text analysis algorithms evolve quickly, and their spread is often limited to the dedicated field of computer science research. CRANE Toolbox wraps some of those methods, that fit typical social sciences questions, into **user-friendly tools that require no machine learning skills**.
 
 :warning:In this first version, CRANE Toolbox will remain **specific to tweet analysis**.
 
