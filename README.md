@@ -1,6 +1,6 @@
 # Crisis Racism and Narrative Evaluation
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Project **CRANE** (Crisis Racism and Narrative Evaluation) aims to **support researchers and anti-racist organisations** that wish to use **state-of-the-art text analysis algorithms** to study how specific **events impact online hate speech and racist narratives**. CRANE Toolbox is a **Python package**: once installed, the tools in CRANE are available as functions that users can use in their Python programs or directly through their terminal. CRANE targets users with basic programming but **no machine learning skills**.
@@ -402,6 +402,7 @@ We do not plan to at the moment. Due to the composition of the team, we have dec
   <tr>
     <td align="center"><a href="https://devpost.com/lykelly19"><img src="https://avatars2.githubusercontent.com/u/40868256?v=4" width="100px;" alt=""/><br /><sub><b>Kelly</b></sub></a><br /><a href="https://github.com/CRANE-toolbox/analysis-pipelines/commits?author=lykelly19" title="Code">💻</a> <a href="#ideas-lykelly19" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/CRANE-toolbox/analysis-pipelines/issues?q=author%3Alykelly19" title="Bug reports">🐛</a></td>
     <td align="center"><a href="http://www.linkedin.com/in/riibeirogabriel/"><img src="https://avatars0.githubusercontent.com/u/33736256?v=4" width="100px;" alt=""/><br /><sub><b>Gabriel Ribeiro</b></sub></a><br /><a href="https://github.com/CRANE-toolbox/analysis-pipelines/commits?author=riibeirogabriel" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/WorkInProgress-Development"><img src="https://avatars2.githubusercontent.com/u/38821590?v=4" width="100px;" alt=""/><br /><sub><b>Isaac</b></sub></a><br /><a href="https://github.com/CRANE-toolbox/analysis-pipelines/commits?author=WorkInProgress-Development" title="Documentation">📖</a></td>
   </tr>
 </table>
 
