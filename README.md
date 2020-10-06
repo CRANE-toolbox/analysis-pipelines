@@ -47,7 +47,7 @@ Project **CRANE** (Crisis Racism and Narrative Evaluation) aims to **support res
 
 ### Project motivation
 
-While doing literature review we noticed that few papers on online hate speech monitoring had both a sociology research approach and recent natural language processing tools. The literature seems to be divided mainly into methodological papers aiming to develop new machine learning tools to detect and characterise racism, and traditional sociology research approaches, both qualitative and quantitative, that do not take full advantage of the available data and analysis methods.
+While doing literature review, we noticed that few papers on online hate speech monitoring had both a sociology research approach and recent natural language processing tools. The literature seems to be divided mainly into methodological papers aiming to develop new machine learning tools to detect and characterise racism, and traditional sociology research approaches, both qualitative and quantitative, that do not take full advantage of the available data and analysis methods.
 
 We are aware that this is due in part to the difficulty of gathering interdisciplinary teams from very different fields, and in part to the rather young and precarious nature of automated hate speech detection.
 
