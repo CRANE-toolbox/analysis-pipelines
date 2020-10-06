@@ -291,7 +291,7 @@ Currently the analysis module only offers some simple quantitative analysis pipe
 
 This analysis pipeline is accessible from the `crane-analysis-quanti` command-line entry point.
 
-It computes the daily frequency of given keywords in a dataset. It allows for variants of keywords. For example, occurences of "boys" and "boyz" can be counted together.
+It computes the daily frequency of given keywords in a dataset. It allows for variants of keywords. For example, occurrences of "boys" and "boyz" can be counted together.
 
 #### Expected input format
 
