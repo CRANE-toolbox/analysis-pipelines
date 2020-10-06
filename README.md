@@ -121,11 +121,11 @@ In order to successfully install CRANE Toolbox, you will need:
 - Python 3
 - pip for Python 3
 
-Some **basic knowledge in programming and command-lines is strongly recommanded**, but the brave and the studious may choose to proceed without.
+Some **basic knowledge in programming and command-lines is strongly recommended**, but the brave and the studious may choose to proceed without.
 
 If the above list is clear for you, skip to the [installation instructions](#install-crane-toolbox). Else, read the following paragraphs to get your environment ready.
 
-:warning:If you choose not to follow the recommanded installation process, you will probably need to install additional packages or software.
+:warning:If you choose not to follow the recommended installation process, you will probably need to install additional packages or software.
 
 ##### What is a terminal and where do I find one?
 
