@@ -47,7 +47,7 @@ Project **CRANE** (Crisis Racism and Narrative Evaluation) aims to **support res
 
 ### Project motivation
 
-While doing literature review we noticed that few papers on online hate speech monitoring had both a sociology research approach and recent natural language processing tools. The literature seems to be divided mainly into methodological papers aiming to develop new machine learning tools to detect and characterise racism, and traditional sociology research approaches, both qualitative and quantitative, that do not take full advantage of the available data and analysis methods.
+While doing literature review, we noticed that few papers on online hate speech monitoring had both a sociology research approach and recent natural language processing tools. The literature seems to be divided mainly into methodological papers aiming to develop new machine learning tools to detect and characterise racism, and traditional sociology research approaches, both qualitative and quantitative, that do not take full advantage of the available data and analysis methods.
 
 We are aware that this is due in part to the difficulty of gathering interdisciplinary teams from very different fields, and in part to the rather young and precarious nature of automated hate speech detection.
 
@@ -55,7 +55,7 @@ Our experiences during the hackathon lead us to believe that these issues could 
 
 ### CRANE Toolbox: The Python package for data analysis
 
-CRANE Toolbox is designed to **support researchers and anti-racist organisations** in studying **how specific events impact online hate speech and racist narratives**. State-of-the-art text analysis algorithms evolve quickly and their spread is often limited to the dedicated field of computer science research. CRANE Toolbox wraps some of those methods, that fit typical social sciences questions, into **user-friendly tools that require no machine learning skills**.
+CRANE Toolbox is designed to **support researchers and anti-racist organisations** in studying **how specific events impact online hate speech and racist narratives**. State-of-the-art text analysis algorithms evolve quickly, and their spread is often limited to the dedicated field of computer science research. CRANE Toolbox wraps some of those methods, that fit typical social sciences questions, into **user-friendly tools that require no machine learning skills**.
 
 :warning:In this first version, CRANE Toolbox will remain **specific to tweet analysis**.
 
@@ -121,11 +121,11 @@ In order to successfully install CRANE Toolbox, you will need:
 - Python 3
 - pip for Python 3
 
-Some **basic knowledge in programming and command-lines is strongly recommanded**, but the brave and the studious may choose to proceed without.
+Some **basic knowledge in programming and command-lines is strongly recommended**, but the brave and the studious may choose to proceed without.
 
 If the above list is clear for you, skip to the [installation instructions](#install-crane-toolbox). Else, read the following paragraphs to get your environment ready.
 
-:warning:If you choose not to follow the recommanded installation process, you will probably need to install additional packages or software.
+:warning:If you choose not to follow the recommended installation process, you will probably need to install additional packages or software.
 
 ##### What is a terminal and where do I find one?
 
@@ -210,7 +210,7 @@ If the output file already exists, it will append to the existing file. In the c
 The import package can be used as a command-line tool and supports a several different options.
 
 - (Required) `--source-folder` The source folder or file to scan for files/archives to process.
-- (Optional) `--output-folder` The folder to save the output. The specified folder must exists. Defaults to `./`.
+- (Optional) `--output-folder` The folder to save the output. The specified folder must exist. Defaults to `./`.
 - (Optional) `--output-name` The name, including extension, of the output file. Defaults to `output.csv`.
 - (Optional) `--text-name` The name to text field, case this field has a different name.
 - (Optional) `--date-name` The name to created_at field, case this field has a different name.
@@ -253,7 +253,7 @@ In order and for a given string, it will:
 - Replace repeated punctuation signs with a textual equivalent (e.g. "!!!" becomes "multiExclamation") and newlines with spaces, or remove all punctuation except underscore characters if `punct` is specified,
 - Replace numbers with their English text version, or remove them if `-num` is specified.
 
-Hashtags are segmented, *i.e.* seperated into words, using the [wordsegment](`https://pypi.org/project/wordsegment/`) package. :warning: Only supported for English language. :warning::warning::warning::warning:Word segmentation runs in polynomial time and increase the preprocessing time by several orders of magnitude.
+Hashtags are segmented, *i.e.* separated into words, using the [wordsegment](`https://pypi.org/project/wordsegment/`) package. :warning: Only supported for English language. :warning::warning::warning::warning:Word segmentation runs in polynomial time and increase the preprocessing time by several orders of magnitude.
 
 :warning: The algorithm to unpack contractions is currently rather basic. It will for example mistakenly interpret the possessive "'s" as a verb contraction.
 
@@ -291,7 +291,7 @@ Currently the analysis module only offers some simple quantitative analysis pipe
 
 This analysis pipeline is accessible from the `crane-analysis-quanti` command-line entry point.
 
-It computes the daily frequency of given keywords in a dataset. It allows for variants of keywords. For example, occurences of "boys" and "boyz" can be counted together.
+It computes the daily frequency of given keywords in a dataset. It allows for variants of keywords. For example, occurrences of "boys" and "boyz" can be counted together.
 
 #### Expected input format
 
@@ -361,7 +361,7 @@ The [Issues page](https://github.com/CRANE-toolbox/analysis-pipelines/issues) wo
 
 ### Adding to the code base
 You are welcome to submit Pull Requests for open issues. In particular, issues tagged "help-wanted" are usually things the core team is struggling with.
-Here is the guidelines we ask you to follow when contributing to the code base.
+Here are the guidelines we ask you to follow when contributing to the code base.
 - Comment on the issue to notify everyone of your intention to do so to make sure no one else is working on the same problem.
 - Tackle only one issue per PR, unless you've discussed it with the core team before and they agree a grouped PR makes more sense.
 - Reference the issue you are tackling in your PR.
@@ -438,7 +438,7 @@ You can use it however you want provided you respect the license requirements: i
 Please link to this repo.
 
 ###### Where can I find Twitter data?
-Sharing of tweets datasets is restricted by [Twitter Developer Terms](https://developer.twitter.com/en/developer-terms/policy). You will not be able to find publicly available datasets with tweets content, but rather datasets of tweet ids. Those can by *hydrated*, using for example [Hydrator](https://github.com/DocNow/hydrator).
+Sharing of tweets datasets is restricted by [Twitter Developer Terms](https://developer.twitter.com/en/developer-terms/policy). You will not be able to find publicly available datasets with tweets content, but rather datasets of tweet ids. Those can be *hydrated*, using for example [Hydrator](https://github.com/DocNow/hydrator).
 
 From there it really depends on your research topic and questions.
 Some are very time-sensitive, some are less. If yours are not very time-sensitive, try your luck with a regular search engine.
@@ -447,7 +447,7 @@ Others require a dataset that has already been filtered for specific keywords or
 If you don't need historical data, you could also start your own Twitter stream to collect exactly the data you desire.
 
 ###### My data is not in your specific input format, what do I do?
-We are working to include several standard input format to our *import* module. If your data format is not supported, please [get in touch](#contributing) and we will do our best to either include support for it in CRANE Toolbox or guide you to transform it into one of our supported format.
+We are working to include several standard input formats to our *import* module. If your data format is not supported, please [get in touch](#contributing) and we will do our best to either include support for it in CRANE Toolbox or guide you to transform it into one of our supported formats.
 
 ###### Method X is very useful and should be included, why is it not there?
 Maybe we don't know about it, maybe we didn't have time to implement it yet, maybe we choose not to include it for a given reason. Please [get in touch](#contributing) to tell us about it. (Unless it's a proprietary method with a use fee.)
