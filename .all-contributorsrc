@@ -103,6 +103,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "WorkInProgress-Development",
+      "name": "Isaac",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/38821590?v=4",
+      "profile": "https://github.com/WorkInProgress-Development",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
