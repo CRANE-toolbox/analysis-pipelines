@@ -1,6 +1,6 @@
 # Crisis Racism and Narrative Evaluation
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Project **CRANE** (Crisis Racism and Narrative Evaluation) aims to **support researchers and anti-racist organisations** that wish to use **state-of-the-art text analysis algorithms** to study how specific **events impact online hate speech and racist narratives**. CRANE Toolbox is a **Python package**: once installed, the tools in CRANE are available as functions that users can use in their Python programs or directly through their terminal. CRANE targets users with basic programming but **no machine learning skills**.
@@ -392,7 +392,10 @@ We do not plan to at the moment. Due to the composition of the team, we have dec
     <td align="center"><a href="https://github.com/SvetlanaMoldavskaya"><img src="https://avatars3.githubusercontent.com/u/9784356?v=4" width="100px;" alt=""/><br /><sub><b>SvetlanaMd</b></sub></a><br /><a href="#content-SvetlanaMoldavskaya" title="Content">🖋</a> <a href="https://github.com/CRANE-toolbox/analysis-pipelines/commits?author=SvetlanaMoldavskaya" title="Documentation">📖</a> <a href="#design-SvetlanaMoldavskaya" title="Design">🎨</a> <a href="#userTesting-SvetlanaMoldavskaya" title="User Testing">📓</a> <a href="#ideas-SvetlanaMoldavskaya" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://github.com/IanSaucy"><img src="https://avatars2.githubusercontent.com/u/30986157?v=4" width="100px;" alt=""/><br /><sub><b>Ian</b></sub></a><br /><a href="https://github.com/CRANE-toolbox/analysis-pipelines/commits?author=IanSaucy" title="Code">💻</a> <a href="https://github.com/CRANE-toolbox/analysis-pipelines/commits?author=IanSaucy" title="Tests">⚠️</a> <a href="https://github.com/CRANE-toolbox/analysis-pipelines/commits?author=IanSaucy" title="Documentation">📖</a> <a href="#ideas-IanSaucy" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-IanSaucy" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#projectManagement-IanSaucy" title="Project Management">📆</a> <a href="https://github.com/CRANE-toolbox/analysis-pipelines/pulls?q=is%3Apr+reviewed-by%3AIanSaucy" title="Reviewed Pull Requests">👀</a></td>
     <td align="center"><a href="http://paulmhan.com"><img src="https://avatars3.githubusercontent.com/u/58451541?v=4" width="100px;" alt=""/><br /><sub><b>Paul Han</b></sub></a><br /><a href="https://github.com/CRANE-toolbox/analysis-pipelines/commits?author=paulmhan" title="Code">💻</a></td>
+  </tr>
+  <tr>
     <td align="center"><a href="https://devpost.com/lykelly19"><img src="https://avatars2.githubusercontent.com/u/40868256?v=4" width="100px;" alt=""/><br /><sub><b>Kelly</b></sub></a><br /><a href="https://github.com/CRANE-toolbox/analysis-pipelines/commits?author=lykelly19" title="Code">💻</a> <a href="#ideas-lykelly19" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/CRANE-toolbox/analysis-pipelines/issues?q=author%3Alykelly19" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="http://www.linkedin.com/in/riibeirogabriel/"><img src="https://avatars0.githubusercontent.com/u/33736256?v=4" width="100px;" alt=""/><br /><sub><b>Gabriel Ribeiro</b></sub></a><br /><a href="https://github.com/CRANE-toolbox/analysis-pipelines/commits?author=riibeirogabriel" title="Code">💻</a></td>
   </tr>
 </table>
 
