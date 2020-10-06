@@ -39,7 +39,7 @@ Project **CRANE** (Crisis Racism and Narrative Evaluation) aims to **support res
 <!-- /TOC -->
 
 ## Introduction
-
+[Back to top](#crisis-racism-and-narrative-evaluation)
 ### Genesis
 
 **Crisis Racism and Narrative Evaluation**, or **CRANE** for short, was born during the [Resiliency Challenge](https://theresiliencychallenge.devpost.com/?ref_content=default&ref_feature=challenge&ref_medium=discover), a COVID19-driven hackathon. During nine weeks, an interdisciplinary team composed of students and professional designers, programmers and computer science researchers developed a [prototype website](https://crane-toolbox.github.io/#/) for **real-time monitoring of racist rhetoric linked to the Covid19 pandemic**. The project was proposed by Gianluca Stringhini, Boston University, following his [work on early emergence of online sinophobic behaviour during the Covid19 (SARS-Cov-2) pandemic](https://arxiv.org/pdf/2004.04046.pdf). Readers may find more details on the approach taken for the Resiliency Challenge on the [corresponding Devpost page](https://devpost.com/software/crane-dvkeuf) and the [resiliency-challenge-legacy branch](https://github.com/CRANE-toolbox/analysis-pipelines/tree/resiliency_challenge-legacy) of this repository.
@@ -66,8 +66,8 @@ CRANE Toolbox is a **Python package**. Once [installed](#install-crane-toolbox),
 
 :warning: As a Python package, CRANE Toolbox **does not provide the data to analyse**. It also does **not substitute for a research framework** in which its tools should be used.  The documentation contains advice on parameter choices and results interpretation, but they remain the responsibility of the user.
 
-
 ## Quick-start
+[Back to top](#crisis-racism-and-narrative-evaluation)
 
 :information_source: This section is for experienced programmers who want to dive head-first into the deep end. If you have no idea what we are talking about in there, please don't run away screaming!
 Though the length of the [Package Documentation section](##Package-documentation) might make it a bit daunting, we wrote it with non-specialists in mind, so you should find all the instructions and advice you need to use the CRANE Toolbox.
@@ -101,8 +101,8 @@ We currently provide a single statistical analysis tool that performs basic freq
 crane-analysis-quanti ./my_preproc_output keywords.json quanti_results.csv
 ```
 
-
 ## Package documentation
+[Back to top](#crisis-racism-and-narrative-evaluation)
 
 This section is divided into two parts: a first one describing how to install CRANE Toolbox and run its tools, either in command-line mode in a terminal or through function calls in Python scripts; and a second one giving details on each module, in particular data format and parameter choice.
 
@@ -344,6 +344,8 @@ crane-analysis-quanti mydataset/preprocessedData keywords.json quanti_results.cs
 **Not implemented yet**
 
 ## Contributing
+[Back to top](#crisis-racism-and-narrative-evaluation)
+
 We welcome all contributions! If you have questions, a feature request or some feedback, please use the **issues** feature of GitHub.
 
 The [Issues page](https://github.com/CRANE-toolbox/analysis-pipelines/issues) works rather like your good old forum page, with many additional features specific to programming and git versioning. GitHub provides a [detailed guide](https://guides.github.com/features/issues/) to them, but here are the basics:
@@ -369,6 +371,7 @@ If you wish to involve yourself further (reviewing PRs, planning for new feature
 We have chosen to onboard people privately instead of sharing all our resources in the repo for two reasons. First, we wanted to make it easier for users not used to open source projects to find what they need. Second, some of our resources contain private information from user research.
 
 ## Frequently asked questions
+[Back to top](#crisis-racism-and-narrative-evaluation)
 
 ### On the CRANE project
 
