@@ -361,7 +361,7 @@ The [Issues page](https://github.com/CRANE-toolbox/analysis-pipelines/issues) wo
 
 ### Adding to the code base
 You are welcome to submit Pull Requests for open issues. In particular, issues tagged "help-wanted" are usually things the core team is struggling with.
-Here is the guidelines we ask you to follow when contributing to the code base.
+Here are the guidelines we ask you to follow when contributing to the code base.
 - Comment on the issue to notify everyone of your intention to do so to make sure no one else is working on the same problem.
 - Tackle only one issue per PR, unless you've discussed it with the core team before and they agree a grouped PR makes more sense.
 - Reference the issue you are tackling in your PR.
