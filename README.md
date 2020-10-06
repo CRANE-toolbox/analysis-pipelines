@@ -39,6 +39,7 @@ Project **CRANE** (Crisis Racism and Narrative Evaluation) aims to **support res
 <!-- /TOC -->
 
 ## Introduction
+[Back to top](#crisis-racism-and-narrative-evaluation)
 
 ### Genesis
 
@@ -68,6 +69,7 @@ CRANE Toolbox is a **Python package**. Once [installed](#install-crane-toolbox),
 
 
 ## Quick-start
+[Back to top](#crisis-racism-and-narrative-evaluation)
 
 :information_source: This section is for experienced programmers who want to dive head-first into the deep end. If you have no idea what we are talking about in there, please don't run away screaming!
 Though the length of the [Package Documentation section](##Package-documentation) might make it a bit daunting, we wrote it with non-specialists in mind, so you should find all the instructions and advice you need to use the CRANE Toolbox.
@@ -103,6 +105,7 @@ crane-analysis-quanti ./my_preproc_output keywords.json quanti_results.csv
 
 
 ## Package documentation
+[Back to top](#crisis-racism-and-narrative-evaluation)
 
 This section is divided into two parts: a first one describing how to install CRANE Toolbox and run its tools, either in command-line mode in a terminal or through function calls in Python scripts; and a second one giving details on each module, in particular data format and parameter choice.
 
@@ -344,6 +347,8 @@ crane-analysis-quanti mydataset/preprocessedData keywords.json quanti_results.cs
 **Not implemented yet**
 
 ## Contributing
+[Back to top](#crisis-racism-and-narrative-evaluation)
+
 We welcome all contributions! If you have questions, a feature request or some feedback, please use the **issues** feature of GitHub.
 
 The [Issues page](https://github.com/CRANE-toolbox/analysis-pipelines/issues) works rather like your good old forum page, with many additional features specific to programming and git versioning. GitHub provides a [detailed guide](https://guides.github.com/features/issues/) to them, but here are the basics:
@@ -369,6 +374,7 @@ If you wish to involve yourself further (reviewing PRs, planning for new feature
 We have chosen to onboard people privately instead of sharing all our resources in the repo for two reasons. First, we wanted to make it easier for users not used to open source projects to find what they need. Second, some of our resources contain private information from user research.
 
 ## Frequently asked questions
+[Back to top](#crisis-racism-and-narrative-evaluation)
 
 ### On the CRANE project
 
