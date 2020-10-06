@@ -209,6 +209,9 @@ The import package can be used as a command-line tool and supports a several dif
 - (Required) `--source-folder` The source folder or file to scan for files/archives to process.
 - (Optional) `--output-folder` The folder to save the output. The specified folder must exists. Defaults to `./`.
 - (Optional) `--output-name` The name, including extension, of the output file. Defaults to `output.csv`.
+- (Optional) `--text-name` The name to text field, case this field has a different name.
+- (Optional) `--date-name` The name to created_at field, case this field has a different name.
+- (Optional) `--id-name` The name to id field, case this field has a different name.
 - (Optional) `--tweet-language` The language of tweets saved to the file. Based on the language field in the
 JSON object. Defaults to `en`.
 - (Optional) `--max-lines-in-memory` The maximum number of lines that will be held in memory. This can be adjusted to

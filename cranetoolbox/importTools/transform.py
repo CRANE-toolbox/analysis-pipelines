@@ -14,13 +14,18 @@ class TransformationOptions:
     include_retweet: bool
     max_in_memory_size: int
 
-    def __init__(self, languagefilter: str, retweets: bool, max_in_mem: int):
+    def __init__(self, languagefilter: str, retweets: bool, max_in_mem: int,
+                 text_field_key: str, id_field_key: str, date_field_key: str):
         self.filter_language = languagefilter
         self.include_retweet = retweets
         self.max_in_memory_size = max_in_mem
+        self.text_field_key = text_field_key
+        self.id_field_key = id_field_key
+        self.date_field_key = date_field_key
 
 
-def process_files(file_list: List[str], opts: TransformationOptions, csv_output_path: str) -> (int, int):
+def process_files(file_list: List[str], opts: TransformationOptions,
+                  csv_output_path: str) -> (int, int):
     """Top-level function to combine input set into a single CSV file.
 
     :param file_list: paths to files to be processed
@@ -39,27 +44,33 @@ def process_files(file_list: List[str], opts: TransformationOptions, csv_output_
         print("Processing file " + str(file))
         if tarfile.is_tarfile(file):
             try:
-                lines_written, failures = process_tar_file(file, opts, csv_output_path)
+                lines_written, failures = process_tar_file(file, opts,
+                                                           csv_output_path)
                 line_count += lines_written
                 failure_count += failures
             except BaseException as e:
-                print("encountered error with " + str(file) + " but recovered and will continue")
+                print("Encountered error with " + str(
+                    file) + " but recovered and will continue")
                 print(e)
                 continue
         else:
             try:
                 with open(file, 'r') as f:
-                    lines_written, failures = write_tweets_by_chunk(f, csv_output_path, opts)
+                    lines_written, failures = write_tweets_by_chunk(f,
+                                                                    csv_output_path,
+                                                                    opts)
                     line_count += lines_written
                     failure_count += failures
             except UnicodeDecodeError:
-                print("Could not open file " + str(file) + " but recovered and will continue")
+                print("Could not open file " + str(
+                    file) + " but recovered and will continue")
                 continue
 
     return line_count, failure_count
 
 
-def write_tweets_by_chunk(lines, csv_output_path: str, opts: TransformationOptions) -> (int, int):
+def write_tweets_by_chunk(lines, csv_output_path: str,
+                          opts: TransformationOptions) -> (int, int):
     """Process an arbitrary number of lines and save them to the CSV outfile
 
     :param lines: Lines of tweets to process and write to file
@@ -84,11 +95,13 @@ def write_tweets_by_chunk(lines, csv_output_path: str, opts: TransformationOptio
             filtered_chunk, failure_count = filter_lighten_chunk(chunk, opts)
             parse_failure_count += failure_count
             line_count += len(filtered_chunk)
-            csv.writer(csv_file, quoting=csv.QUOTE_MINIMAL).writerows(filtered_chunk)
+            csv.writer(csv_file, quoting=csv.QUOTE_MINIMAL).writerows(
+                filtered_chunk)
     return line_count, parse_failure_count
 
 
-def filter_lighten_chunk(chunk, opts: TransformationOptions) -> (List[dict], int):
+def filter_lighten_chunk(chunk, opts: TransformationOptions) -> (
+        List[dict], int):
     """Filter and lighten a given set of lines, keeping only important keys
 
     :param chunk: The chunk of lines to process
@@ -108,21 +121,17 @@ def filter_lighten_chunk(chunk, opts: TransformationOptions) -> (List[dict], int
             parse_failure_count += 1
             continue
         if matches_language_filter(tweet, opts):
-            # This is dirty and redudant but I don't know of a better method.
             # We need to check if it's a retweet, and if it's the case that it is
             # a retweet only include it if the flag has been specified
-            if is_retweet(tweet):
-                if opts.include_retweet:
-                    try:
-                        light_tweet = lighten_tweet(tweet)
-                    except ValueError:
-                        # Issue parsing JSON tweet, raise this as a failure and continue
-                        parse_failure_count += 1
-                        continue
-                    output_buffer.append(light_tweet)
+            if is_retweet(tweet) and not opts.include_retweet:
+                pass
             else:
                 try:
-                    light_tweet = lighten_tweet(tweet)
+                    light_tweet = lighten_tweet(
+                        tweet,
+                        opts.text_field_key,
+                        opts.id_field_key,
+                        opts.date_field_key)
                 except ValueError:
                     # Issue parsing JSON tweet, raise this as a failure and continue
                     parse_failure_count += 1
@@ -131,7 +140,8 @@ def filter_lighten_chunk(chunk, opts: TransformationOptions) -> (List[dict], int
     return output_buffer, parse_failure_count
 
 
-def process_tar_file(file: str, opts: TransformationOptions, csv_output_path: str) -> (int, int):
+def process_tar_file(file: str, opts: TransformationOptions,
+                     csv_output_path: str) -> (int, int):
     """Process any uncompressed nested files contained within a single tar file.
 
     :param file: Path to tar file
@@ -161,7 +171,9 @@ def process_tar_file(file: str, opts: TransformationOptions, csv_output_path: st
                 continue
             print("processing tar member: ", file.name)
             buffer = tf.extractfile(file)
-            lines_written, errors = write_tweets_by_chunk(buffer, csv_output_path, opts)
+            lines_written, errors = write_tweets_by_chunk(buffer,
+                                                          csv_output_path,
+                                                          opts)
             line_count += lines_written
             failure_count += errors
     return line_count, failure_count
@@ -221,30 +233,51 @@ def parse_tweet(tweet: str) -> dict:
     return json.loads(tweet)
 
 
-def lighten_tweet(tweet: dict) -> (str, str, str):
+def lighten_tweet(tweet: dict, text_field_key, id_field_key, date_field_key) -> (
+        str, str, str):
     """Lighten a tweet by returning only the fields required for analysis.
 
     :param tweet: A parsed JSON tweet
     :type tweet: dict
+    :param text_field_key: User-defined name for the "text" field
+    :type text_field_key: str
+    :param id_field_key: User-defined name for the "id" field
+    :type id_field_key: str
+    :param date_field_key: User-defined name for the "created_at" field
+    :type date_field_key: str
     :return: A tuple of the three values scraped from the passed tweet
     :rtype: tuple(str, str, str)
     """
 
-    created_at = tweet.get("created_at", None)
-    tweet_id = tweet.get("id", None)
+    if date_field_key is not None:
+        created_at = tweet.get(date_field_key, None)
+    else:
+        created_at = tweet.get("created_at", None)
+
+    if id_field_key is not None:
+        tweet_id = tweet.get(id_field_key, None)
+    else:
+        tweet_id = tweet.get("id", None)
+
     text = ""
+
     if tweet.get("truncated", False):
         ext_tweet = tweet.get("extended_tweet", None)
         if ext_tweet is not None:
             text = ext_tweet.get("full_text", "")
+
     else:
-        text = tweet.get("text", "")
+        if text_field_key is not None:
+            text = tweet.get(text_field_key, "")
+        else:
+            text = tweet.get("text", "")
+
     # Simple verification to make sure the keys where found
     if not created_at:
         raise ValueError
     if not tweet_id:
         raise ValueError
-    if text is "":
+    if text == "":
         raise ValueError
     # Strip newline chars from the tweet -- we do this here for ease of CSV writing
     text = " ".join(text.splitlines())

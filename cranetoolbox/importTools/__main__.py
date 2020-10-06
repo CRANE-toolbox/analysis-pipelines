@@ -11,6 +11,12 @@ def main():
     parser.add_argument('--source-folder', metavar='s', type=str, required=True, default=None,
                         help='source folder to scan for input '
                              'files')
+    parser.add_argument('--text-field-key', type=str, required=False, default=None,
+                        help="The key of the text field, if not text")
+    parser.add_argument('--date-field-key', type=str, required=False, default=None,
+                        help="The key of the date field, if not created_at")
+    parser.add_argument('--id-field-key', type=str, required=False, default=None,
+                        help="The key of the id field, if not id")
     parser.add_argument('-retweets', type=bool, default=False, help='this flag will include retweets in final output')
     parser.add_argument('--max-lines-in-memory', type=int, default=50000, help='the max number of lines from the source'
                                                                                'files that will be held in memory')
@@ -22,7 +28,12 @@ def main():
     args = parser.parse_args()
 
     # Extract options
-    opts = TransformationOptions(args.tweet_language, args.retweets, args.max_lines_in_memory)
+    opts = TransformationOptions(args.tweet_language,
+                                 args.retweets,
+                                 args.max_lines_in_memory,
+                                 args.text_field_key,
+                                 args.date_field_key,
+                                 args.id_field_key)
 
     # Scan source folder for files
     file_list = scan_folder(args.source_folder)
