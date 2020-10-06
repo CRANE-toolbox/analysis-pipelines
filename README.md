@@ -447,7 +447,7 @@ Others require a dataset that has already been filtered for specific keywords or
 If you don't need historical data, you could also start your own Twitter stream to collect exactly the data you desire.
 
 ###### My data is not in your specific input format, what do I do?
-We are working to include several standard input format to our *import* module. If your data format is not supported, please [get in touch](#contributing) and we will do our best to either include support for it in CRANE Toolbox or guide you to transform it into one of our supported format.
+We are working to include several standard input formats to our *import* module. If your data format is not supported, please [get in touch](#contributing) and we will do our best to either include support for it in CRANE Toolbox or guide you to transform it into one of our supported formats.
 
 ###### Method X is very useful and should be included, why is it not there?
 Maybe we don't know about it, maybe we didn't have time to implement it yet, maybe we choose not to include it for a given reason. Please [get in touch](#contributing) to tell us about it. (Unless it's a proprietary method with a use fee.)
