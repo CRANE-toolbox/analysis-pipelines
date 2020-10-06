@@ -210,7 +210,7 @@ If the output file already exists, it will append to the existing file. In the c
 The import package can be used as a command-line tool and supports a several different options.
 
 - (Required) `--source-folder` The source folder or file to scan for files/archives to process.
-- (Optional) `--output-folder` The folder to save the output. The specified folder must exists. Defaults to `./`.
+- (Optional) `--output-folder` The folder to save the output. The specified folder must exist. Defaults to `./`.
 - (Optional) `--output-name` The name, including extension, of the output file. Defaults to `output.csv`.
 - (Optional) `--text-name` The name to text field, case this field has a different name.
 - (Optional) `--date-name` The name to created_at field, case this field has a different name.
