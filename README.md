@@ -438,7 +438,7 @@ You can use it however you want provided you respect the license requirements: i
 Please link to this repo.
 
 ###### Where can I find Twitter data?
-Sharing of tweets datasets is restricted by [Twitter Developer Terms](https://developer.twitter.com/en/developer-terms/policy). You will not be able to find publicly available datasets with tweets content, but rather datasets of tweet ids. Those can by *hydrated*, using for example [Hydrator](https://github.com/DocNow/hydrator).
+Sharing of tweets datasets is restricted by [Twitter Developer Terms](https://developer.twitter.com/en/developer-terms/policy). You will not be able to find publicly available datasets with tweets content, but rather datasets of tweet ids. Those can be *hydrated*, using for example [Hydrator](https://github.com/DocNow/hydrator).
 
 From there it really depends on your research topic and questions.
 Some are very time-sensitive, some are less. If yours are not very time-sensitive, try your luck with a regular search engine.
