@@ -253,7 +253,7 @@ In order and for a given string, it will:
 - Replace repeated punctuation signs with a textual equivalent (e.g. "!!!" becomes "multiExclamation") and newlines with spaces, or remove all punctuation except underscore characters if `punct` is specified,
 - Replace numbers with their English text version, or remove them if `-num` is specified.
 
-Hashtags are segmented, *i.e.* seperated into words, using the [wordsegment](`https://pypi.org/project/wordsegment/`) package. :warning: Only supported for English language. :warning::warning::warning::warning:Word segmentation runs in polynomial time and increase the preprocessing time by several orders of magnitude.
+Hashtags are segmented, *i.e.* separated into words, using the [wordsegment](`https://pypi.org/project/wordsegment/`) package. :warning: Only supported for English language. :warning::warning::warning::warning:Word segmentation runs in polynomial time and increase the preprocessing time by several orders of magnitude.
 
 :warning: The algorithm to unpack contractions is currently rather basic. It will for example mistakenly interpret the possessive "'s" as a verb contraction.
 
