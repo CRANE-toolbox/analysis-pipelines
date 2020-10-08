@@ -1,7 +1,14 @@
 # Crisis Racism and Narrative Evaluation
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors-)
+[all-contributors]: https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square 'Number of contributors'
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
+
+[![All Contributors][all-contributors]](#link)
+![alt text](https://img.shields.io/github/license/CRANE-toolbox/analysis-pipelines "License")
+![alt text](https://img.shields.io/pypi/v/cranetoolbox "Pypi version")
+![alt text](https://img.shields.io/github/last-commit/CRANE-toolbox/analysis-pipelines "Last commit")
+![alt text](https://img.shields.io/github/issues/CRANE-toolbox/analysis-pipelines/help%20wanted "Number of 'help wanted' issues")
 
 Project **CRANE** (Crisis Racism and Narrative Evaluation) aims to **support researchers and anti-racist organisations** that wish to use **state-of-the-art text analysis algorithms** to study how specific **events impact online hate speech and racist narratives**. CRANE Toolbox is a **Python package**: once installed, the tools in CRANE are available as functions that users can use in their Python programs or directly through their terminal. CRANE targets users with basic programming but **no machine learning skills**.
 
