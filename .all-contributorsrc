@@ -4,6 +4,7 @@
   ],
   "imageSize": 100,
   "commit": false,
+  "badgeTemplate": "[all-contributors]: https://img.shields.io/badge/all_contributors-<%= contributors.length %>-orange.svg?style=flat 'Number of contributors'",
   "contributors": [
     {
       "login": "LaChapeliere",
