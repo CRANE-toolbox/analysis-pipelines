@@ -113,6 +113,16 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "tomasloksa",
+      "name": "Tomáš Lokša",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/28986303?v=4",
+      "profile": "https://github.com/tomasloksa",
+      "contributions": [
+        "code",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,

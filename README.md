@@ -1,7 +1,7 @@
 # Crisis Racism and Narrative Evaluation
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[all-contributors]: https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square 'Number of contributors'
+[all-contributors]: https://img.shields.io/badge/all_contributors-11-orange.svg?style=flat 'Number of contributors'
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![All Contributors][all-contributors]](#link)
@@ -410,6 +410,7 @@ We do not plan to at the moment. Due to the composition of the team, we have dec
     <td align="center"><a href="https://devpost.com/lykelly19"><img src="https://avatars2.githubusercontent.com/u/40868256?v=4" width="100px;" alt=""/><br /><sub><b>Kelly</b></sub></a><br /><a href="https://github.com/CRANE-toolbox/analysis-pipelines/commits?author=lykelly19" title="Code">💻</a> <a href="#ideas-lykelly19" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/CRANE-toolbox/analysis-pipelines/issues?q=author%3Alykelly19" title="Bug reports">🐛</a></td>
     <td align="center"><a href="http://www.linkedin.com/in/riibeirogabriel/"><img src="https://avatars0.githubusercontent.com/u/33736256?v=4" width="100px;" alt=""/><br /><sub><b>Gabriel Ribeiro</b></sub></a><br /><a href="https://github.com/CRANE-toolbox/analysis-pipelines/commits?author=riibeirogabriel" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/WorkInProgress-Development"><img src="https://avatars2.githubusercontent.com/u/38821590?v=4" width="100px;" alt=""/><br /><sub><b>Isaac</b></sub></a><br /><a href="https://github.com/CRANE-toolbox/analysis-pipelines/commits?author=WorkInProgress-Development" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/tomasloksa"><img src="https://avatars2.githubusercontent.com/u/28986303?v=4" width="100px;" alt=""/><br /><sub><b>Tomáš Lokša</b></sub></a><br /><a href="https://github.com/CRANE-toolbox/analysis-pipelines/commits?author=tomasloksa" title="Code">💻</a> <a href="https://github.com/CRANE-toolbox/analysis-pipelines/commits?author=tomasloksa" title="Documentation">📖</a></td>
   </tr>
 </table>
 
