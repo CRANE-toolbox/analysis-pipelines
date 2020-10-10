@@ -38,14 +38,15 @@ def preprocessing_text(text: str, replace_or_remove_url: bool, replace_or_remove
     # Lowercase
     lowercase_text = text.lower()
 
-    # Remove unicode noise
-    no_unicode_text = preprocessTools.remove_unicode(
-        lowercase_text)  # Technique 0
+    # Remove escaped unicode and non ascii characters
+    # Technique 0
+    no_esc_unicode_text = preprocessTools.remove_escaped_unicode(lowercase_text)
+    ascii_text = preprocessTools.remove_non_ascii(no_esc_unicode_text)
 
     if replace_or_remove_url:
         # Replace URLs
         no_link_text = preprocessTools.replace_url(
-            no_unicode_text)  # Technique 1
+            ascii_text)  # Technique 1
     else:
         # Remove URLs
         no_link_text = preprocessTools.remove_url(no_unicode_text)

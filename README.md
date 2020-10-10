@@ -252,7 +252,8 @@ The dataset given as the first positional argument can be either a folder of CSV
 
 In order and for a given string, it will:
 - Transform uppercase characters to lowercase,
-- Remove unicode strings (e.g. `\u002c`),
+- Remove escaped unicode strings (e.g. `\u002c`),
+- Remove non-ascii characters,
 - Replace urls with "url", or remove them if `-url` is specified,
 - Replace mentions (e.g. "@BobTheSurfer") with "atUser", or remove them if `-mention` is specified,
 - Remove the hash symbol in front of hashtags (e.g. "#spreadTheLove", and segment the hashtags if `-hashtag` is specified,

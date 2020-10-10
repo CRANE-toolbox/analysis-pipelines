@@ -6,11 +6,20 @@
 from cranetoolbox.preprocess.preprocessTools import *
 
 
-def test_remove_unicode():
-    assert remove_unicode(r"bob\uff2c is \u008c my \u022c\u002c uncle\ua02dishe?") == r"bob is  my  uncleishe?"
-    # Should find a way to test for the removal of \x00-type non-ASCI characters
-    # assert remove_unicode(r"bobx96 is x2a my uncle x01xffis he?") == r"bob is  my uncle xffis he?"
-    # assert remove_unicode(r"bobx96\uff2c is my \ufx96f2c uncle is he?") == r"bob is my \uff2c uncle is he?"
+def test_remove_escaped_unicode():
+    assert remove_escaped_unicode("`\u2020` is a unicode char.") == "`\u2020` is a unicode char."
+    assert remove_escaped_unicode("`\\u2020` is an escaped unicode char.") == "`` is an escaped unicode char."
+    assert remove_escaped_unicode("`†` is an other unicode char while `\\u002c` is not.") == "`†` is an other unicode char while `` is not."
+    assert remove_escaped_unicode(r"With raw strings `\u2020` is an escaped unicode.") == "With raw strings `` is an escaped unicode."
+
+
+def test_remove_non_ascii():
+    assert remove_non_ascii("bob \x00is \x2a my uncle \x01\xffis he?") == "bob \x00is \x2a my uncle \x01is he?"
+    assert remove_non_ascii("All the english letters are ascii while `九` is not.") == "All the english letters are ascii while `` is not."
+    assert remove_non_ascii("Bytes from `\x00` to `\x7f` can be represented as ascii.") == "Bytes from `\x00` to `\x7f` can be represented as ascii."
+    assert remove_non_ascii("Bytes from `\x80` to `\xff` don't.") == "Bytes from `` to `` don't."
+    assert remove_non_ascii("Some unicode chars, like `\u0031`, are ascii compatible.") == "Some unicode chars, like `\u0031`, are ascii compatible."
+    assert remove_non_ascii("Others, like `\u2020`, don't.") == "Others, like ``, don't."
 
 
 def test_replace_url():

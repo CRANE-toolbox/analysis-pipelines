@@ -156,7 +156,7 @@
 <span id="importtools-module"></span><h1>importTools module<a class="headerlink" href="#module-cranetoolbox.importTools.transform" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="cranetoolbox.importTools.transform.TransformationOptions">
-<em class="property">class </em><code class="sig-prename descclassname">cranetoolbox.importTools.transform.</code><code class="sig-name descname">TransformationOptions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">languagefilter</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em>, <em class="sig-param"><span class="n">retweets</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)">bool</a></span></em>, <em class="sig-param"><span class="n">max_in_mem</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)">int</a></span></em>, <em class="sig-param"><span class="n">text_field_key</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em>, <em class="sig-param"><span class="n">id_field_key</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em>, <em class="sig-param"><span class="n">date_field_key</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cranetoolbox.importTools.transform.TransformationOptions" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">cranetoolbox.importTools.transform.</code><code class="sig-name descname">TransformationOptions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">languagefilter</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a></span></em>, <em class="sig-param"><span class="n">retweets</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a></span></em>, <em class="sig-param"><span class="n">max_in_mem</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a></span></em>, <em class="sig-param"><span class="n">text_field_key</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a></span></em>, <em class="sig-param"><span class="n">id_field_key</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a></span></em>, <em class="sig-param"><span class="n">date_field_key</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cranetoolbox.importTools.transform.TransformationOptions" title="Permalink to this definition">¶</a></dt>
 <dd><p>A simple class to handle ETL options as specified in the driver</p>
 </dd></dl>
 
@@ -167,7 +167,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>chunk</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a><em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>) or </em><em>buffer of str</em>) – The chunk of lines to process</p></li>
+<li><p><strong>chunk</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a><em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>) or </em><em>buffer of str</em>) – The chunk of lines to process</p></li>
 <li><p><strong>opts</strong> (<a class="reference internal" href="#cranetoolbox.importTools.transform.TransformationOptions" title="cranetoolbox.importTools.transform.TransformationOptions"><em>TransformationOptions</em></a>) – Transformation options</p></li>
 </ul>
 </dd>
@@ -175,24 +175,24 @@
 <dd class="field-even"><p>List of filtered tweets and parse failure count</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)">list</a>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a>), <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)">int</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)">dict</a>), <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
 <dt id="cranetoolbox.importTools.transform.is_retweet">
-<code class="sig-prename descclassname">cranetoolbox.importTools.transform.</code><code class="sig-name descname">is_retweet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tweet</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)">bool</a><a class="headerlink" href="#cranetoolbox.importTools.transform.is_retweet" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cranetoolbox.importTools.transform.</code><code class="sig-name descname">is_retweet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tweet</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)">dict</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a><a class="headerlink" href="#cranetoolbox.importTools.transform.is_retweet" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check whether a tweet is a retweet.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tweet</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a>) – A dictionary representing a single tweet</p>
+<dd class="field-odd"><p><strong>tweet</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><em>dict</em></a>) – A dictionary representing a single tweet</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>True/False if the tweet has been labeled as a retweet.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)">bool</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a></p>
 </dd>
 </dl>
 <div class="admonition note">
@@ -208,30 +208,30 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>tweet</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a>) – A parsed JSON tweet</p></li>
-<li><p><strong>text_field_key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – User-defined name for the “text” field</p></li>
-<li><p><strong>id_field_key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – User-defined name for the “id” field</p></li>
-<li><p><strong>date_field_key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – User-defined name for the “created_at” field</p></li>
+<li><p><strong>tweet</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><em>dict</em></a>) – A parsed JSON tweet</p></li>
+<li><p><strong>text_field_key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – User-defined name for the “text” field</p></li>
+<li><p><strong>id_field_key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – User-defined name for the “id” field</p></li>
+<li><p><strong>date_field_key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – User-defined name for the “created_at” field</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>A tuple of the three values scraped from the passed tweet</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)">tuple</a>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a>)</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)">tuple</a>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a>)</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
 <dt id="cranetoolbox.importTools.transform.matches_language_filter">
-<code class="sig-prename descclassname">cranetoolbox.importTools.transform.</code><code class="sig-name descname">matches_language_filter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tweet</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a></span></em>, <em class="sig-param"><span class="n">opts</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#cranetoolbox.importTools.transform.TransformationOptions" title="cranetoolbox.importTools.transform.TransformationOptions">cranetoolbox.importTools.transform.TransformationOptions</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)">bool</a><a class="headerlink" href="#cranetoolbox.importTools.transform.matches_language_filter" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cranetoolbox.importTools.transform.</code><code class="sig-name descname">matches_language_filter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tweet</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)">dict</a></span></em>, <em class="sig-param"><span class="n">opts</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#cranetoolbox.importTools.transform.TransformationOptions" title="cranetoolbox.importTools.transform.TransformationOptions">cranetoolbox.importTools.transform.TransformationOptions</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a><a class="headerlink" href="#cranetoolbox.importTools.transform.matches_language_filter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check whether a tweet is in the desired language. If JSON key does not
 exist it assumes that the text matches the language filter(returns True)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>tweet</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a>) – A dictionary representing a full JSON tweet(with no data removed etc)</p></li>
+<li><p><strong>tweet</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><em>dict</em></a>) – A dictionary representing a full JSON tweet(with no data removed etc)</p></li>
 <li><p><strong>opts</strong> (<a class="reference internal" href="#cranetoolbox.importTools.transform.TransformationOptions" title="cranetoolbox.importTools.transform.TransformationOptions"><em>TransformationOptions</em></a>) – Transformation options</p></li>
 </ul>
 </dd>
@@ -239,24 +239,24 @@ exist it assumes that the text matches the language filter(returns True)</p>
 <dd class="field-even"><p>True/False if the tweet matches the user specified language filter</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)">bool</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
 <dt id="cranetoolbox.importTools.transform.parse_tweet">
-<code class="sig-prename descclassname">cranetoolbox.importTools.transform.</code><code class="sig-name descname">parse_tweet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tweet</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a><a class="headerlink" href="#cranetoolbox.importTools.transform.parse_tweet" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cranetoolbox.importTools.transform.</code><code class="sig-name descname">parse_tweet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tweet</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)">dict</a><a class="headerlink" href="#cranetoolbox.importTools.transform.parse_tweet" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parse the passed JSON format tweet from str to dictionary.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tweet</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – JSON tweet as a string</p>
+<dd class="field-odd"><p><strong>tweet</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – JSON tweet as a string</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Dictionary representing the JSON parse results of the passed tweet</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)">dict</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -268,16 +268,16 @@ exist it assumes that the text matches the language filter(returns True)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>file_list</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a><em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>)</em>) – paths to files to be processed</p></li>
+<li><p><strong>file_list</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a><em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>)</em>) – paths to files to be processed</p></li>
 <li><p><strong>opts</strong> (<a class="reference internal" href="#cranetoolbox.importTools.transform.TransformationOptions" title="cranetoolbox.importTools.transform.TransformationOptions"><em>TransformationOptions</em></a>) – An instance of the transformation options, used to control filtering and parsing of tweets</p></li>
-<li><p><strong>csv_output_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – Full output path, folder, filename and extension</p></li>
+<li><p><strong>csv_output_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – Full output path, folder, filename and extension</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>A tuple of (successes, failures) that represents the number of lines written to the file</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)">tuple</a>(<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)">int</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)">int</a>)</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)">tuple</a>(<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a>)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -289,16 +289,16 @@ exist it assumes that the text matches the language filter(returns True)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>file</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – Path to tar file</p></li>
+<li><p><strong>file</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – Path to tar file</p></li>
 <li><p><strong>opts</strong> (<a class="reference internal" href="#cranetoolbox.importTools.transform.TransformationOptions" title="cranetoolbox.importTools.transform.TransformationOptions"><em>TransformationOptions</em></a>) – Transformation options</p></li>
-<li><p><strong>csv_output_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – Output path for the combined CSV file</p></li>
+<li><p><strong>csv_output_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – Output path for the combined CSV file</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Pass/fail counts</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)">tuple</a>(<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)">int</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)">int</a>)</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)">tuple</a>(<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a>)</p>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -314,8 +314,8 @@ exist it assumes that the text matches the language filter(returns True)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>lines</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a><em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>) or </em><em>buffer</em>) – Lines of tweets to process and write to file</p></li>
-<li><p><strong>csv_output_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – Full output path of CSV file, including filename and extension</p></li>
+<li><p><strong>lines</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a><em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>) or </em><em>buffer</em>) – Lines of tweets to process and write to file</p></li>
+<li><p><strong>csv_output_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – Full output path of CSV file, including filename and extension</p></li>
 <li><p><strong>opts</strong> (<a class="reference internal" href="#cranetoolbox.importTools.transform.TransformationOptions" title="cranetoolbox.importTools.transform.TransformationOptions"><em>TransformationOptions</em></a>) – Transformation options</p></li>
 </ul>
 </dd>
@@ -323,7 +323,7 @@ exist it assumes that the text matches the language filter(returns True)</p>
 <dd class="field-even"><p>Tuple of write pass/failures</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)">tuple</a>(<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)">int</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)">int</a>)</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)">tuple</a>(<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a>)</p>
 </dd>
 </dl>
 </dd></dl>
