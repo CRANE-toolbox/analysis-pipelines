@@ -120,6 +120,9 @@ def filter_lighten_chunk(chunk, opts: TransformationOptions) -> (
         except json.JSONDecodeError as e:
             parse_failure_count += 1
             continue
+        except ValueError as e:
+            parse_failure_count += 1
+            continue
         if matches_language_filter(tweet, opts):
             # We need to check if it's a retweet, and if it's the case that it is
             # a retweet only include it if the flag has been specified
@@ -230,7 +233,10 @@ def parse_tweet(tweet: str) -> dict:
     :return: Dictionary representing the JSON parse results of the passed tweet
     :rtype: dict
     """
-    return json.loads(tweet)
+    tweet_dict = json.loads(tweet)
+    if not isinstance(tweet_dict, dict):
+        raise ValueError
+    return tweet_dict
 
 
 def lighten_tweet(tweet: dict, text_field_key, id_field_key, date_field_key) -> (
@@ -263,7 +269,7 @@ def lighten_tweet(tweet: dict, text_field_key, id_field_key, date_field_key) -> 
 
     if tweet.get("truncated", False):
         ext_tweet = tweet.get("extended_tweet", None)
-        if ext_tweet is not None:
+        if ext_tweet and isinstance(ext_tweet, dict):
             text = ext_tweet.get("full_text", "")
 
     else:
