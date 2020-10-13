@@ -123,6 +123,15 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "jd7h",
+      "name": "Judith van Stegeren",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/690008?v=4",
+      "profile": "http://jd7h.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
