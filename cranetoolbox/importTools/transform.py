@@ -203,7 +203,7 @@ def is_retweet(tweet: dict, text_field_key: str) -> bool:
 
     :param tweet: A dictionary representing a single tweet
     :type tweet: dict
-    :param tweet: Optional user-defined name for the text field
+    :param tweet: Oser-defined name for the "text" field
     :type tweet: str or None
     :return: True/False if the tweet has been labeled as a retweet.
     :rtype: bool
@@ -239,7 +239,7 @@ def parse_tweet(tweet: str) -> dict:
     return json.loads(tweet)
 
 
-def lighten_tweet(tweet: dict, text_field_key, id_field_key, date_field_key) -> (
+def lighten_tweet(tweet: dict, text_field_key: str, id_field_key: str, date_field_key: str) -> (
         str, str, str):
     """Lighten a tweet by returning only the fields required for analysis.
 
