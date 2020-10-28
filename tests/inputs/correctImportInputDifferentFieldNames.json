@@ -1,0 +1,9 @@
+{"UID": 1, "content": "yes", "tweet_date":"date", "lang":"en"}
+{"UID": 2, "content": "yes", "tweet_date":"date"}
+{"UID": 3, "content": "no", "tweet_date":"date", "lang":"du"}
+{"UID": 4, "content": "yes", "tweet_date":"date", "lang":"en", "retweeted": false}
+{"UID": 5, "content": "no", "tweet_date":"date", "lang":"en", "retweeted": true}
+{"UID": 6, "content": "RT no", "tweet_date":"date", "lang":"en", "retweeted": false}
+{"UID": 7, "content": "yes", "tweet_date":"date", "lang":"en", "truncated": false}
+{"UID": 8, "content": "extended", "tweet_date":"date", "lang":"en", "truncated": true, "extended_tweet": {"full_content": "yes"}}
+{"UID": 5, "content": "yes", "tweet_date":"date", "lang":"en","extended_tweet": {"full_content": "no"}}

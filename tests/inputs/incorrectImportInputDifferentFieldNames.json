@@ -1,0 +1,6 @@
+{"UID": 1, "content": "yes", "tweet_date":"date", "lang":"en"}
+{"UID": 2, "content": "fail", "tweet_date":"date", "lang":"en", "truncated": true}
+{"UID": 3, "content": "fail", "tweet_date":"date", "lang":"en", "truncated": true, "extended_tweet": {"content": "blob"}}
+{"fake_UID": 4, "content": "fail", "tweet_date":"date", "lang":"en"}
+{"UID": 5, "fake_content": "fail", "tweet_date":"date", "lang":"en"}
+{"UID": 6, "content": "fail", "fake_tweet_date":"date", "lang":"en"}

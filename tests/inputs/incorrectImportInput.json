@@ -1,0 +1,6 @@
+{"id": 1, "text": "yes", "created_at":"date", "lang":"en"}
+{"id": 2, "text": "fail", "created_at":"date", "lang":"en", "truncated": true}
+{"id": 3, "text": "fail", "created_at":"date", "lang":"en", "truncated": true, "extended_tweet": {"text": "blob"}}
+{"fake_id": 4, "text": "fail", "created_at":"date", "lang":"en"}
+{"id": 5, "fake_text": "fail", "created_at":"date", "lang":"en"}
+{"id": 6, "text": "fail", "fake_created_at":"date", "lang":"en"}

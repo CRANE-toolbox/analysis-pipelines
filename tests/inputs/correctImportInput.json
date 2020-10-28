@@ -1,0 +1,9 @@
+{"id": 1, "text": "yes", "created_at":"date", "lang":"en"}
+{"id": 2, "text": "yes", "created_at":"date"}
+{"id": 3, "text": "no", "created_at":"date", "lang":"du"}
+{"id": 4, "text": "yes", "created_at":"date", "lang":"en", "retweeted": false}
+{"id": 5, "text": "no", "created_at":"date", "lang":"en", "retweeted": true}
+{"id": 6, "text": "RT no", "created_at":"date", "lang":"en", "retweeted": false}
+{"id": 7, "text": "yes", "created_at":"date", "lang":"en", "truncated": false}
+{"id": 8, "text": "extended", "created_at":"date", "lang":"en", "truncated": true, "extended_tweet": {"full_text": "yes"}}
+{"id": 5, "text": "yes", "created_at":"date", "lang":"en","extended_tweet": {"full_text": "no"}}

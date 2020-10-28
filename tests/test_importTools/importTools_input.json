@@ -1,0 +1,23 @@
+{"id": 1, "text": "yes", "created_at":"date", "lang":"en"}
+{"id": 2, "text": "yes", "created_at":"date"}
+{"id": 3, "text": "fr only", "created_at":"date", "lang":"fr"}
+{"id": 4, "text": "yes", "created_at":"date", "lang":"en", "retweeted": false}
+{"id": 5, "text": "retweet only", "created_at":"date", "lang":"en", "retweeted": true}
+{"id": 6, "text": "RT retweet only", "created_at":"date", "lang":"en", "retweeted": false}
+{"id": 7, "text": "yes", "created_at":"date", "lang":"en", "truncated": false}
+{"id": 8, "text": "never", "created_at":"date", "lang":"en", "truncated": true, "extended_tweet": {"full_text": "yes"}}
+{"id": 9, "text": "yes", "created_at":"date", "lang":"en", "extended_tweet": {"full_text": "not read"}}
+{"id": 10, "text": "fail", "created_at":"date", "lang":"en", "truncated": true}
+{"id": 11, "text": "fail", "created_at":"date", "lang":"en", "truncated": true, "extended_tweet": {"fake_text": "not read"}}
+{"fake_id": 12, "text": "fail", "created_at":"date", "lang":"en"}
+{"id": 13, "fake_text": "fail", "created_at":"date", "lang":"en"}
+{"id": 14, "text": "fail", "fake_created_at":"date", "lang":"en"}
+{"fake_id": 15, "fake_text": "fail", "fake_created_at":"date", "lang":"en"}
+{"fake_id": 16, "fake_text": "fr only fail", "fake_created_at":"date", "lang":"fr"}
+{"fake_id": 17, "fake_text": "fail", "fake_created_at":"date", "lang":"en", "retweeted": false}
+{"fake_id": 18, "fake_text": "retweet only fail", "fake_created_at":"date", "lang":"en", "retweeted": true}
+{"fake_id": 19, "fake_text": "RT fail", "fake_created_at":"date", "lang":"en"}
+{"fake_id": 20, "fake_text": "fail", "fake_created_at":"date", "lang":"en", "truncated": false}
+{"fake_id": 21, "fake_text": "fail", "fake_created_at":"date", "lang":"en", "truncated": true, "extended_tweet": {"full_text": "yes"}}
+{"fake_id": 22, "fake_text": "fail", "fake_created_at":"date", "lang":"en", "truncated": true}
+{"fake_id": 23, "fake_text": "fail", "fake_created_at":"date", "lang":"en", "extended_tweet": {"full_text": "not read"}}
