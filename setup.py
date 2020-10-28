@@ -27,4 +27,7 @@ setuptools.setup(
         }
     },
     python_requires='>=3.6',
+    install_requires=['argparse', 'datetime', 'num2words', 'pathlib', 'pandas', 'typing', 'wordsegment'],
+    setup_requires=['pytest-runner'],
+    tests_require=['pytest', 'pytest-datafiles'],
 )
