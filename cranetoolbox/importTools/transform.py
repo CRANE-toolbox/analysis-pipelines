@@ -126,7 +126,7 @@ def filter_lighten_chunk(chunk, opts: TransformationOptions) -> (
         if matches_language_filter(tweet, opts):
             # We need to check if it's a retweet, and if it's the case that it is
             # a retweet only include it if the flag has been specified
-            if is_retweet(tweet) and not opts.include_retweet:
+            if is_retweet(tweet, opts.text_field_key) and not opts.include_retweet:
                 pass
             else:
                 try:
@@ -201,11 +201,13 @@ def matches_language_filter(tweet: dict, opts: TransformationOptions) -> bool:
     return language == opts.filter_language
 
 
-def is_retweet(tweet: dict) -> bool:
+def is_retweet(tweet: dict, text_field_key: str) -> bool:
     """Check whether a tweet is a retweet.
 
     :param tweet: A dictionary representing a single tweet
     :type tweet: dict
+    :param tweet: Oser-defined name for the "text" field
+    :type tweet: str or None
     :return: True/False if the tweet has been labeled as a retweet.
     :rtype: bool
 
@@ -218,7 +220,11 @@ def is_retweet(tweet: dict) -> bool:
         return True
     # If the field does not exist that means it isn't a "modern" retweet
     # Check for manual retweets
-    text = tweet.get("text", "")
+    text = ""
+    if text_field_key is not None:
+        text = tweet.get(text_field_key, "")
+    else:
+        text = tweet.get("text", "")
     if len(text) >= 2 and text[0:2] == "RT":
         return True
     # If it got here, not a retweet.
@@ -239,7 +245,7 @@ def parse_tweet(tweet: str) -> dict:
     return tweet_dict
 
 
-def lighten_tweet(tweet: dict, text_field_key, id_field_key, date_field_key) -> (
+def lighten_tweet(tweet: dict, text_field_key: str, id_field_key: str, date_field_key: str) -> (
         str, str, str):
     """Lighten a tweet by returning only the fields required for analysis.
 
