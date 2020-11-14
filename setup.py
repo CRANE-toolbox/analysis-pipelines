@@ -6,7 +6,7 @@ HERE = pathlib.Path(__file__).parent
 README = (HERE / "README.md").read_text()
 setuptools.setup(
     name="cranetoolbox",
-    version="0.0.0.9", # Don't forget to also update docs/conf.py
+    version="0.0.0.10", # Don't forget to also update docs/source/conf.py
     author="The CRANE Team",
     author_email="author@example.com",
     description="A package against racism around COVID-19",

@@ -21,7 +21,7 @@ copyright = '2020, The CRANE team'
 author = 'The CRANE team'
 
 # The full version, including alpha/beta/rc tags
-release = '0.0.0.7'
+release = '0.0.0.10'
 
 
 # -- General configuration ---------------------------------------------------
