@@ -2,8 +2,10 @@ import pathlib
 
 import setuptools
 
-HERE = pathlib.Path(__file__).parent
-README = (HERE / "README.md").read_text()
+from os import path
+HERE = path.abspath(path.dirname(__file__))
+with open(path.join(HERE, 'README.md'), encoding='utf-8') as f:
+    README = f.read()
 setuptools.setup(
     name="cranetoolbox",
     version="0.0.0.10", # Don't forget to also update docs/source/conf.py
