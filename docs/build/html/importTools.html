@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>importTools module &mdash; CRANE Toolbox 0.0.0.7 documentation</title>
+  <title>importTools module &mdash; CRANE Toolbox 0.1.1 documentation</title>
   
 
   
@@ -182,11 +182,14 @@
 
 <dl class="py function">
 <dt id="cranetoolbox.importTools.transform.is_retweet">
-<code class="sig-prename descclassname">cranetoolbox.importTools.transform.</code><code class="sig-name descname">is_retweet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tweet</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)">dict</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a><a class="headerlink" href="#cranetoolbox.importTools.transform.is_retweet" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cranetoolbox.importTools.transform.</code><code class="sig-name descname">is_retweet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tweet</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)">dict</a></span></em>, <em class="sig-param"><span class="n">text_field_key</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a><a class="headerlink" href="#cranetoolbox.importTools.transform.is_retweet" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check whether a tweet is a retweet.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tweet</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><em>dict</em></a>) – A dictionary representing a single tweet</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tweet</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><em>None</em></a>) – A dictionary representing a single tweet</p></li>
+<li><p><strong>tweet</strong> – Oser-defined name for the “text” field</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>True/False if the tweet has been labeled as a retweet.</p>
@@ -203,7 +206,7 @@
 
 <dl class="py function">
 <dt id="cranetoolbox.importTools.transform.lighten_tweet">
-<code class="sig-prename descclassname">cranetoolbox.importTools.transform.</code><code class="sig-name descname">lighten_tweet</code><span class="sig-paren">(</span><em class="sig-param">tweet: dict</em>, <em class="sig-param">text_field_key</em>, <em class="sig-param">id_field_key</em>, <em class="sig-param">date_field_key) -&gt; (&lt;class 'str'&gt;</em>, <em class="sig-param">&lt;class 'str'&gt;</em>, <em class="sig-param">&lt;class 'str'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#cranetoolbox.importTools.transform.lighten_tweet" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cranetoolbox.importTools.transform.</code><code class="sig-name descname">lighten_tweet</code><span class="sig-paren">(</span><em class="sig-param">tweet: dict</em>, <em class="sig-param">text_field_key: str</em>, <em class="sig-param">id_field_key: str</em>, <em class="sig-param">date_field_key: str) -&gt; (&lt;class 'str'&gt;</em>, <em class="sig-param">&lt;class 'str'&gt;</em>, <em class="sig-param">&lt;class 'str'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#cranetoolbox.importTools.transform.lighten_tweet" title="Permalink to this definition">¶</a></dt>
 <dd><p>Lighten a tweet by returning only the fields required for analysis.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
